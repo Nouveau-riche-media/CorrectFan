@@ -50,9 +50,9 @@ flutter:
   assets:
     - assets/images/cflettermark.svg
     - assets/images/logo.svg
-    - assets/images/happyguy 1.svg
-    - assets/images/happyguy 1-1.svg
-    - assets/images/happyguy 1-2.svg
+    - assets/images/happyguy 1.png
+    - assets/images/happyguy 1-1.png
+    - assets/images/happyguy 1-2.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

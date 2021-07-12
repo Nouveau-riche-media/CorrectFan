@@ -1,5 +1,6 @@
 import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class Onboarding1 extends StatefulWidget {
   const Onboarding1({ Key? key }) : super(key: key);
@@ -18,10 +19,17 @@ class _Onboarding1State extends State<Onboarding1> {
 
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: Column(
+      body: Stack(
         children: [
-          IlwLogo(),
-          
+          Positioned(
+            right: -150,
+            top: -100,
+            child: IlwLogo()
+            ),
+            Positioned(
+              left: 100,
+              bottom: 100,
+              child:SvgPicture.asset('assets/images/happyguy 1.svg')),
         ]),
     );
   }

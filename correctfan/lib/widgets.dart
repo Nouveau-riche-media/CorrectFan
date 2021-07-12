@@ -17,15 +17,13 @@ class IlwLogo extends StatelessWidget {
       child: Container(
         width: 30,
         height: 30,
-        // padding: EdgeInsets.all(),
+        alignment: Alignment.bottomLeft,
+        padding: EdgeInsets.all(30),
         margin: EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(200)),
-          
-        child: Container(
-          width: 20,
-          child: SvgPicture.asset('assets/images/logo.svg')),
+        child: SvgPicture.asset('assets/images/logo.svg',),
         )
     );
   }
