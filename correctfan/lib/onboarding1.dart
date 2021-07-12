@@ -20,7 +20,8 @@ class _Onboarding1State extends State<Onboarding1> {
       backgroundColor: backgroundColor,
       body: Column(
         children: [
-          IlwLogo()
+          IlwLogo(),
+          
         ]),
     );
   }

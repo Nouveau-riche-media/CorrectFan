@@ -23,8 +23,8 @@ class IlwLogo extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(200)),
           
-        child: SizedBox(
-          width: 50,
+        child: Container(
+          width: 20,
           child: SvgPicture.asset('assets/images/logo.svg')),
         )
     );
