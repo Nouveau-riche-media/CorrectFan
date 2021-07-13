@@ -64,19 +64,19 @@ class _Onboarding1State extends State<Onboarding1> {
                 ],
               )),
               Positioned(
-                bottom: 46,
+                bottom: 96,
                 right: 32,
-                // left: 32,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [  
-                      Button(
+                left: 32,
+                
+                      child: Button(
                       onPressed: () => Navigator.of(context).pushNamed('on2'),
                       label: 'next',
-                      ),
+                      ),),
 
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
+                      Positioned(
+                        bottom: 46,
+                        right: 32,
+                        child: Row(
                         children: [
                           TextButton(
                             onPressed:  () => Navigator.of(context).pushNamed('on2'),
@@ -86,9 +86,7 @@ class _Onboarding1State extends State<Onboarding1> {
                               color: Colors.white,
                               decorationStyle: TextDecorationStyle.solid,
                               fontSize: 12),)),
-                        ])
-
-                        ],))
+                        ]))
         ]),
     );
   }
