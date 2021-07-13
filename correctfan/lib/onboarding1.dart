@@ -66,7 +66,7 @@ class _Onboarding1State extends State<Onboarding1> {
               Positioned(
                 bottom: 46,
                 right: 32,
-                left: 32,
+                // left: 32,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [  
