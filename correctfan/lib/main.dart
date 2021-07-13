@@ -1,5 +1,6 @@
 import 'package:correctfan/onboarding1.dart';
 import 'package:correctfan/onboarding2.dart';
+import 'package:correctfan/onboarding3.dart';
 import 'package:correctfan/splash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +68,7 @@ class MyApp extends StatelessWidget {
         // primarySwatch: Colors.blue,
         
       
-      home: Onboarding2(),
+      home: Onboarding3(),
       routes :
       {
         'yeyu': (context) => Splash(),

@@ -69,7 +69,6 @@ class _Onboarding2State extends State<Onboarding2> {
                 left: 32,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  
                   children: [  
                       Button(
                       onPressed: () => Navigator.of(context).pushNamed('on3'),

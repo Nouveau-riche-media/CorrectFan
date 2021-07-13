@@ -33,7 +33,7 @@ class _Onboarding3State extends State<Onboarding3> {
             child: IlwLogo()
             ),
             Positioned(
-              right: 0,
+              left: 0,
               bottom: 0,
               child: Image.asset('assets/images/happyguy 1-2.png', )),
             Positioned(
