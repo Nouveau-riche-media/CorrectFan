@@ -73,8 +73,8 @@ class MyApp extends StatelessWidget {
       {
         'yeyu': (context) => Splash(),
         'on1': (context) => Onboarding1(),
-        // 'on2': (context) => Splash()
-        // 'on3': (context) => Splash()
+        'on2': (context) => Onboarding2(),
+        'on3': (context) => Onboarding3(),
       }
     );
   }

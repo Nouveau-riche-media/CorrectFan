@@ -2,7 +2,7 @@
     package="com.example.correctfan">
    <application
         android:label="correctfan"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/correctFanIcon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
