@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Onboarding1 extends StatefulWidget {
-  const Onboarding1({ Key? key }) : super(key: key);
+class Onboarding2 extends StatefulWidget {
+  const Onboarding2({ Key? key }) : super(key: key);
 
   @override
-  _Onboarding1State createState() => _Onboarding1State();
+  _Onboarding2State createState() => _Onboarding2State();
 }
 
-class _Onboarding1State extends State<Onboarding1> {
+class _Onboarding2State extends State<Onboarding2> {
   @override
   Widget build(BuildContext context) {
 
@@ -33,9 +33,9 @@ class _Onboarding1State extends State<Onboarding1> {
             child: IlwLogo()
             ),
             Positioned(
-              left: 0,
+              right: 0,
               bottom: 0,
-              child: Image.asset('assets/images/happyguy 1.png', )),
+              child: Image.asset('assets/images/happyguy 1-1.png', )),
             Positioned(
               left: 32,
               top: 207,
@@ -49,18 +49,18 @@ class _Onboarding1State extends State<Onboarding1> {
                     style: headline5,
                   ),
 
-                  SizedBox(height: 12,),
+                  // SizedBox(height: 12,),
 
-                  Text(
-                    'WIN CASH DAILY',
-                    style: GoogleFonts.inter(
-                        textStyle: TextStyle(
-                        fontSize: 16,
-                        letterSpacing: 10,
-                        color: Colors.white,
-                        height: 1.1
-                      ),),
-                  )
+                  // Text(
+                  //   'WIN CASH DAILY',
+                  //   style: GoogleFonts.inter(
+                  //       textStyle: TextStyle(
+                  //       fontSize: 16,
+                  //       letterSpacing: 10,
+                  //       color: Colors.white,
+                  //       height: 1.1
+                  //     ),),
+                  // )
                 ],
               )),
               Positioned(
@@ -69,9 +69,10 @@ class _Onboarding1State extends State<Onboarding1> {
                 left: 32,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
+                  
                   children: [  
                       Button(
-                      onPressed: () => Navigator.of(context).pushNamed('on2'),
+                      onPressed: () => Navigator.of(context).pushNamed('on3'),
                       label: 'next',
                       ),
 
@@ -79,7 +80,7 @@ class _Onboarding1State extends State<Onboarding1> {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           TextButton(
-                            onPressed:  () => Navigator.of(context).pushNamed('on2'),
+                            onPressed:  () => Navigator.of(context).pushNamed('on3'),
                             child: Text('Skip',
                             style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,

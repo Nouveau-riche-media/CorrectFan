@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Onboarding1 extends StatefulWidget {
-  const Onboarding1({ Key? key }) : super(key: key);
+class Onboarding3 extends StatefulWidget {
+  const Onboarding3({ Key? key }) : super(key: key);
 
   @override
-  _Onboarding1State createState() => _Onboarding1State();
+  _Onboarding3State createState() => _Onboarding3State();
 }
 
-class _Onboarding1State extends State<Onboarding1> {
+class _Onboarding3State extends State<Onboarding3> {
   @override
   Widget build(BuildContext context) {
 
@@ -33,9 +33,9 @@ class _Onboarding1State extends State<Onboarding1> {
             child: IlwLogo()
             ),
             Positioned(
-              left: 0,
+              right: 0,
               bottom: 0,
-              child: Image.asset('assets/images/happyguy 1.png', )),
+              child: Image.asset('assets/images/happyguy 1-2.png', )),
             Positioned(
               left: 32,
               top: 207,
@@ -69,6 +69,7 @@ class _Onboarding1State extends State<Onboarding1> {
                 left: 32,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
+                  
                   children: [  
                       Button(
                       onPressed: () => Navigator.of(context).pushNamed('on2'),
@@ -76,7 +77,6 @@ class _Onboarding1State extends State<Onboarding1> {
                       ),
 
                       Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           TextButton(
                             onPressed:  () => Navigator.of(context).pushNamed('on2'),

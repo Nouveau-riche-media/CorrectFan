@@ -1,4 +1,5 @@
 import 'package:correctfan/onboarding1.dart';
+import 'package:correctfan/onboarding2.dart';
 import 'package:correctfan/splash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         accentColor: Color(0xFFF2994A),  
 
 
-        fontFamily: 'Inter',
+        fontFamily: 'Inter', 
 
 
         // TextTheme
@@ -66,7 +67,7 @@ class MyApp extends StatelessWidget {
         // primarySwatch: Colors.blue,
         
       
-      home: Onboarding1(),
+      home: Onboarding2(),
       routes :
       {
         'yeyu': (context) => Splash(),
