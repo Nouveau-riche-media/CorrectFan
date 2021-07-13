@@ -1,5 +1,6 @@
 import 'package:correctfan/onboarding1.dart';
 import 'package:correctfan/splash.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,12 +15,45 @@ class MyApp extends StatelessWidget {
       title: 'Correct Fan',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        
+        // Colors
         backgroundColor: Color(0xFF003E75),
         primaryColor: Color(0xFF092C4C),
         accentColor: Color(0xFFF2994A),  
+
+
         fontFamily: 'Inter',
+
+
+        // TextTheme
         textTheme: TextTheme(
-        )
+          headline5: GoogleFonts.inter(
+              textStyle: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                // letterSpacing: ,
+                letterSpacing: 5,
+                fontSize: 24,
+                height: 1.1
+                
+              ),),
+          headline4: GoogleFonts.inter(
+            textStyle: TextStyle(
+            fontSize: 32,
+            height: 1.1
+          ),),
+          headline3: GoogleFonts.inter(
+            textStyle: TextStyle(
+            fontSize: 40,
+            height: 1.1
+          ),),
+          headline6: GoogleFonts.inter(
+            textStyle: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            height: 1.1
+          ),),
+        ),),
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -31,14 +65,14 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         // primarySwatch: Colors.blue,
         
-      ),
+      
       home: Onboarding1(),
       routes :
       {
         'yeyu': (context) => Splash(),
         'on1': (context) => Onboarding1(),
-        // 'yeyu': (context) => Splash()
-        // 'yeyu': (context) => Splash()
+        // 'on2': (context) => Splash()
+        // 'on3': (context) => Splash()
       }
     );
   }
