@@ -16,7 +16,7 @@ class _Onboarding1State extends State<Onboarding1> {
 
     Color backgroundColor = Theme.of(context).backgroundColor;
     dynamic headline5 = Theme.of(context).textTheme.headline5;
-    dynamic headline6 = Theme.of(context).textTheme.headline6;
+    // dynamic headline6 = Theme.of(context).textTheme.headline6;
     // Color primaryColor = Theme.of(context).primaryColor;
     // Color backgroundColor = Theme.of(context).backgroundColor;
 
@@ -48,9 +48,9 @@ class _Onboarding1State extends State<Onboarding1> {
                     textAlign: TextAlign.left,
                     style: headline5,
                   ),
-
+    
                   SizedBox(height: 12,),
-
+    
                   Text(
                     'WIN CASH DAILY',
                     style: GoogleFonts.inter(
@@ -63,32 +63,19 @@ class _Onboarding1State extends State<Onboarding1> {
                   )
                 ],
               )),
-              Positioned(
-                bottom: 46,
-                right: 32,
-                left: 32,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [  
-                      Button(
-                      onPressed: () => Navigator.of(context).pushNamed('on2'),
-                      label: 'next',
-                      ),
-
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          TextButton(
-                            onPressed:  () => Navigator.of(context).pushNamed('on2'),
-                            child: Text('Skip',
-                            style: GoogleFonts.inter(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              decorationStyle: TextDecorationStyle.solid,
-                              fontSize: 12),)),
-                        ])
-
-                        ],))
+                      Positioned(
+                        bottom: 46,
+                        right: 32,
+                        child: TextButton(
+                          onPressed:  () => Navigator.of(context).pushNamed('signIn'),
+                          child: Text('Skip>',
+                          style: GoogleFonts.inter(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            decoration: TextDecoration.underline,
+                            decorationThickness: 3,
+                            decorationStyle: TextDecorationStyle.solid,
+                            fontSize: 12),)))
         ]),
     );
   }

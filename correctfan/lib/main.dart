@@ -1,6 +1,10 @@
+import 'package:correctfan/follow.dart';
 import 'package:correctfan/onboarding1.dart';
 import 'package:correctfan/onboarding2.dart';
 import 'package:correctfan/onboarding3.dart';
+import 'package:correctfan/setFavourites.dart';
+import 'package:correctfan/signIn.dart';
+import 'package:correctfan/signUp.dart';
 import 'package:correctfan/splash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
@@ -55,6 +59,17 @@ class MyApp extends StatelessWidget {
             color: Colors.white,
             height: 1.1
           ),),
+          caption: GoogleFonts.inter(
+            fontWeight: FontWeight.w800,
+            fontSize: 12,
+            color: Color(0xFF007BEA),
+            shadows: [
+              BoxShadow(
+                color: Color.fromARGB(25, 0, 0, 0),
+                offset: Offset(0, 4),
+                blurRadius: 4)
+            ]
+          )
         ),),
         // This is the theme of your application.
         //
@@ -68,13 +83,17 @@ class MyApp extends StatelessWidget {
         // primarySwatch: Colors.blue,
         
       
-      home: Onboarding3(),
+      home: SetFavourite(),
       routes :
       {
         'yeyu': (context) => Splash(),
         'on1': (context) => Onboarding1(),
-        // 'on2': (context) => Splash()
-        // 'on3': (context) => Splash()
+        'on2': (context) => Onboarding2(),
+        'on3': (context) => Onboarding3(),
+        'signIn': (context) => SignIn(),
+        'signUp': (context) => SignUp(),
+        'favourites': (context) => SetFavourite(),
+        'follow': (context) => Follow()
       }
     );
   }

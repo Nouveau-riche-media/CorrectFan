@@ -16,7 +16,7 @@ class _Onboarding3State extends State<Onboarding3> {
 
     Color backgroundColor = Theme.of(context).backgroundColor;
     dynamic headline5 = Theme.of(context).textTheme.headline5;
-    dynamic headline6 = Theme.of(context).textTheme.headline6;
+    // dynamic headline6 = Theme.of(context).textTheme.headline6;
     // Color primaryColor = Theme.of(context).primaryColor;
     // Color backgroundColor = Theme.of(context).backgroundColor;
 
@@ -44,7 +44,7 @@ class _Onboarding3State extends State<Onboarding3> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'ENTER\n\nDAILY\n\nCONTESTS',
+                    'COONECT\n\nWITH\n\nFRIENDS',
                     textAlign: TextAlign.left,
                     style: headline5,
                   ),
@@ -64,31 +64,14 @@ class _Onboarding3State extends State<Onboarding3> {
                 ],
               )),
               Positioned(
-                bottom: 46,
+                bottom: 96,
                 right: 32,
                 left: 32,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  
-                  children: [  
-                      Button(
-                      onPressed: () => Navigator.of(context).pushNamed('on2'),
+                
+                      child: Button(
+                      onPressed: () => Navigator.of(context).pushNamed('signIn'),
                       label: 'next',
-                      ),
-
-                      Row(
-                        children: [
-                          TextButton(
-                            onPressed:  () => Navigator.of(context).pushNamed('on2'),
-                            child: Text('Skip',
-                            style: GoogleFonts.inter(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              decorationStyle: TextDecorationStyle.solid,
-                              fontSize: 12),)),
-                        ])
-
-                        ],))
+                      ),),
         ]),
     );
   }
