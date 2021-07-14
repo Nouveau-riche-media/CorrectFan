@@ -48,9 +48,9 @@ class _Onboarding1State extends State<Onboarding1> {
                     textAlign: TextAlign.left,
                     style: headline5,
                   ),
-
+    
                   SizedBox(height: 12,),
-
+    
                   Text(
                     'WIN CASH DAILY',
                     style: GoogleFonts.inter(
@@ -63,30 +63,19 @@ class _Onboarding1State extends State<Onboarding1> {
                   )
                 ],
               )),
-              Positioned(
-                bottom: 96,
-                right: 32,
-                left: 32,
-                
-                      child: Button(
-                      onPressed: () => Navigator.of(context).pushNamed('on2'),
-                      label: 'next',
-                      ),),
-
                       Positioned(
                         bottom: 46,
                         right: 32,
-                        child: Row(
-                        children: [
-                          TextButton(
-                            onPressed:  () => Navigator.of(context).pushNamed('on2'),
-                            child: Text('Skip',
-                            style: GoogleFonts.inter(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              decorationStyle: TextDecorationStyle.solid,
-                              fontSize: 12),)),
-                        ]))
+                        child: TextButton(
+                          onPressed:  () => Navigator.of(context).pushNamed('on2'),
+                          child: Text('Skip>',
+                          style: GoogleFonts.inter(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            decoration: TextDecoration.underline,
+                            decorationThickness: 3,
+                            decorationStyle: TextDecorationStyle.solid,
+                            fontSize: 12),)))
         ]),
     );
   }

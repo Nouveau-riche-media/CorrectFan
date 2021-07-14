@@ -30,6 +30,31 @@ class IlwLogo extends StatelessWidget {
   }
 }
 
+class IlwoLogo extends StatelessWidget {
+  const IlwoLogo({ Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 300,
+      width: 300,
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(200)),
+      child: Container(
+        width: 100,
+        height: 100,
+        alignment: Alignment.bottomLeft,
+        padding: EdgeInsets.all(30),
+        margin: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(200)),
+        )
+    );
+  }
+}
+
 class Button extends StatelessWidget {
 
   final GestureTapCallback onPressed;

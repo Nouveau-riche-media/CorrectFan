@@ -1,6 +1,8 @@
 import 'package:correctfan/onboarding1.dart';
 import 'package:correctfan/onboarding2.dart';
 import 'package:correctfan/onboarding3.dart';
+import 'package:correctfan/signIn.dart';
+import 'package:correctfan/signUp.dart';
 import 'package:correctfan/splash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
@@ -68,13 +70,15 @@ class MyApp extends StatelessWidget {
         // primarySwatch: Colors.blue,
         
       
-      home: Splash(),
+      home: SignIn(),
       routes :
       {
         'yeyu': (context) => Splash(),
         'on1': (context) => Onboarding1(),
         'on2': (context) => Onboarding2(),
         'on3': (context) => Onboarding3(),
+        'signIn': (context) => SignIn(),
+        'signUp': (context) => SignUp(),
       }
     );
   }

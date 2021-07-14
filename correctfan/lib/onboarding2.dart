@@ -63,16 +63,6 @@ class _Onboarding2State extends State<Onboarding2> {
                   // )
                 ],
               )),
-              Positioned(
-                bottom: 96,
-                right: 32,
-                left: 32,
-                
-                      child: Button(
-                      onPressed: () => Navigator.of(context).pushNamed('on2'),
-                      label: 'next',
-                      ),),
-
                       Positioned(
                         bottom: 46,
                         right: 32,

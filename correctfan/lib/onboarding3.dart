@@ -72,21 +72,6 @@ class _Onboarding3State extends State<Onboarding3> {
                       onPressed: () => Navigator.of(context).pushNamed('on'),
                       label: 'next',
                       ),),
-
-                      Positioned(
-                        bottom: 46,
-                        right: 32,
-                        child: Row(
-                        children: [
-                          TextButton(
-                            onPressed:  () => Navigator.of(context).pushNamed('on'),
-                            child: Text('Skip',
-                            style: GoogleFonts.inter(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              decorationStyle: TextDecorationStyle.solid,
-                              fontSize: 12),)),
-                        ]))
         ]),
     );
   }
