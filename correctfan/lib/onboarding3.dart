@@ -69,7 +69,7 @@ class _Onboarding3State extends State<Onboarding3> {
                 left: 32,
                 
                       child: Button(
-                      onPressed: () => Navigator.of(context).pushNamed('on'),
+                      onPressed: () => Navigator.of(context).pushNamed('signIn'),
                       label: 'next',
                       ),),
         ]),

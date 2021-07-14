@@ -1,6 +1,8 @@
+import 'package:correctfan/follow.dart';
 import 'package:correctfan/onboarding1.dart';
 import 'package:correctfan/onboarding2.dart';
 import 'package:correctfan/onboarding3.dart';
+import 'package:correctfan/setFavourites.dart';
 import 'package:correctfan/signIn.dart';
 import 'package:correctfan/signUp.dart';
 import 'package:correctfan/splash.dart';
@@ -81,7 +83,7 @@ class MyApp extends StatelessWidget {
         // primarySwatch: Colors.blue,
         
       
-      home: SignUp(),
+      home: SetFavourite(),
       routes :
       {
         'yeyu': (context) => Splash(),
@@ -90,6 +92,8 @@ class MyApp extends StatelessWidget {
         'on3': (context) => Onboarding3(),
         'signIn': (context) => SignIn(),
         'signUp': (context) => SignUp(),
+        'favourites': (context) => SetFavourite(),
+        'follow': (context) => Follow()
       }
     );
   }

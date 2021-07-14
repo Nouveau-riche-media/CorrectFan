@@ -69,7 +69,7 @@ class _Onboarding2State extends State<Onboarding2> {
                         child: Row(
                         children: [
                           TextButton(
-                            onPressed:  () => Navigator.of(context).pushNamed('on3'),
+                            onPressed:  () => Navigator.of(context).pushNamed('signIn'),
                             child: Text('Skip',
                             style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
