@@ -44,7 +44,6 @@ class IlwoLogo extends StatelessWidget {
       child: Container(
         width: 100,
         height: 100,
-        alignment: Alignment.bottomLeft,
         padding: EdgeInsets.all(30),
         margin: EdgeInsets.all(20),
         decoration: BoxDecoration(

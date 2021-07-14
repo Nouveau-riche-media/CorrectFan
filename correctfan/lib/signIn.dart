@@ -21,9 +21,13 @@ class _SignInState extends State<SignIn> {
       backgroundColor: backgroundColor,
       body: Center(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset('assets/images/logo.svg'),
-            SvgPicture.asset('assets/images/cflettermark.svg'),
+            SvgPicture.asset('assets/images/logo.svg',
+            width: 42,),
+            SvgPicture.asset('assets/images/cflettermark.svg',
+            width: 120,),
 
             SizedBox(height: 32,),
 
@@ -75,9 +79,14 @@ class _SignInState extends State<SignIn> {
                   children: [
                     TextFormField(
                       decoration: InputDecoration(
+
                         prefixIcon: Icon(Icons.person),
                         isCollapsed: true,  
                         border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.white,
+                            width: 2
+                            ),
                           borderRadius: BorderRadius.circular(8),
                           ),
                         hintText: 'Username',
@@ -98,6 +107,10 @@ class _SignInState extends State<SignIn> {
                         isCollapsed: true,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide(
+                            color: Colors.white,
+                            width: 2
+                            ),
                           ),
                         hintText: 'Password',
                         hintStyle: GoogleFonts.inter(
@@ -108,8 +121,61 @@ class _SignInState extends State<SignIn> {
                       ),),
                   ],
                 ),
-              )
+              ),
 
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 52.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        // Switch(
+                        //   value: value, onChanged: onChanged)
+                        // Checkbox(
+                        //   activeColor: Colors.white,
+                        //   checkColor: Colors.black,
+                          
+                        //   onChanged: (bool) {},
+                        //   value: true,
+                        //   ),
+                        Text('Remember Me',
+                            style: GoogleFonts.inter(
+                              color: Colors.white,
+                              fontSize: 8
+                            ),),
+                      ],
+                    ),
+
+                      TextButton(
+                        onPressed: () {},
+                        child: Text('Forgot Your Password?',
+                          style: GoogleFonts.inter(
+                            fontSize: 8,
+                            color: Colors.white,
+                          ),))
+                  ],
+                ),
+              ),
+
+              SizedBox(height: 32,),
+
+              Button(
+                onPressed: () => Navigator.of(context).pushNamed(''),
+                label: 'Sign in'),
+
+              Text(
+                'Dont have an account yet?', 
+                style: GoogleFonts.inter(
+                  fontSize: 12,
+                  color: Colors.white
+                ),),
+
+              TextButton(
+                onPressed: () => Navigator.of(context).pushNamed('signUp'),
+                child: Text('sign up to win cash daily'.toUpperCase(),
+                  style: Theme.of(context).textTheme.caption,)
+              )
 
           ]),
       )

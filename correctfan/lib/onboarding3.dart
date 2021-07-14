@@ -16,7 +16,7 @@ class _Onboarding3State extends State<Onboarding3> {
 
     Color backgroundColor = Theme.of(context).backgroundColor;
     dynamic headline5 = Theme.of(context).textTheme.headline5;
-    dynamic headline6 = Theme.of(context).textTheme.headline6;
+    // dynamic headline6 = Theme.of(context).textTheme.headline6;
     // Color primaryColor = Theme.of(context).primaryColor;
     // Color backgroundColor = Theme.of(context).backgroundColor;
 
@@ -44,7 +44,7 @@ class _Onboarding3State extends State<Onboarding3> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'ENTER\n\nDAILY\n\nCONTESTS',
+                    'COONECT\n\nWITH\n\nFRIENDS',
                     textAlign: TextAlign.left,
                     style: headline5,
                   ),

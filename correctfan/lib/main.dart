@@ -57,6 +57,17 @@ class MyApp extends StatelessWidget {
             color: Colors.white,
             height: 1.1
           ),),
+          caption: GoogleFonts.inter(
+            fontWeight: FontWeight.w800,
+            fontSize: 12,
+            color: Color(0xFF007BEA),
+            shadows: [
+              BoxShadow(
+                color: Color.fromARGB(25, 0, 0, 0),
+                offset: Offset(0, 4),
+                blurRadius: 4)
+            ]
+          )
         ),),
         // This is the theme of your application.
         //
@@ -70,7 +81,7 @@ class MyApp extends StatelessWidget {
         // primarySwatch: Colors.blue,
         
       
-      home: SignIn(),
+      home: SignUp(),
       routes :
       {
         'yeyu': (context) => Splash(),

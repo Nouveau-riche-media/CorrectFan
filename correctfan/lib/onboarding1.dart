@@ -16,7 +16,7 @@ class _Onboarding1State extends State<Onboarding1> {
 
     Color backgroundColor = Theme.of(context).backgroundColor;
     dynamic headline5 = Theme.of(context).textTheme.headline5;
-    dynamic headline6 = Theme.of(context).textTheme.headline6;
+    // dynamic headline6 = Theme.of(context).textTheme.headline6;
     // Color primaryColor = Theme.of(context).primaryColor;
     // Color backgroundColor = Theme.of(context).backgroundColor;
 
