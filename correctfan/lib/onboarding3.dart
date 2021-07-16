@@ -46,7 +46,7 @@ class _Onboarding3State extends State<Onboarding3> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'COONECT\n\nWITH\n\nFRIENDS',
+                    'CONNECT\n\nWITH\n\nFRIENDS',
                     textAlign: TextAlign.left,
                     style: headline5,
                   ),
