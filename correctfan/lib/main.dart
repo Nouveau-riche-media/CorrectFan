@@ -83,7 +83,7 @@ class MyApp extends StatelessWidget {
         // primarySwatch: Colors.blue,
         
       
-      home: SetFavourite(),
+      home: SignUp(),
       routes :
       {
         'yeyu': (context) => Splash(),

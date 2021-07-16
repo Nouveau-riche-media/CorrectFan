@@ -10,6 +10,7 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
+  
   changeScreen(BuildContext context){
   return Timer(Duration(milliseconds: 2500), () async {
     await Navigator.pushNamed(context, 'on1');
