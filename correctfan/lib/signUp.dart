@@ -102,7 +102,6 @@ class _SignUpState extends State<SignUp> {
                           SizedBox(height: 16),
         
                         TextFormField(
-        
                           obscureText: true,
                           decoration: InputDecoration(
                             alignLabelWithHint: true,
@@ -116,6 +115,29 @@ class _SignUpState extends State<SignUp> {
                                 ),
                               ),
                             hintText: 'Password',
+                            hintStyle: GoogleFonts.inter(
+                              fontSize: 12,
+                            ),
+                            contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                            
+                          ),),
+
+                          SizedBox(height: 16),
+        
+                        TextFormField(
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            alignLabelWithHint: true,
+                            prefixIcon: Icon(Icons.lock),
+                            isCollapsed: true,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                              borderSide: BorderSide(
+                                color: Colors.white,
+                                width: 2
+                                ),
+                              ),
+                            hintText: 'Confirm Password',
                             hintStyle: GoogleFonts.inter(
                               fontSize: 12,
                             ),

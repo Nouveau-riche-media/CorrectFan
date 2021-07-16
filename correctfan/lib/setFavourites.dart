@@ -1,3 +1,4 @@
+import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -47,6 +48,34 @@ class _SetFavouriteState extends State<SetFavourite> {
                 ]
             ),),)
         ),
-      );
+
+        body: Column(
+          // crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 16),
+            Text('*Required',
+              style: GoogleFonts.inter(
+                fontSize: 12,
+                color: Colors.red
+              ),),
+              
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 32),
+              child: Container(
+                height: 406,
+                child: ListView.builder(
+                  itemBuilder: (x, index) => Club(),
+                  itemCount: 24,
+                  
+                  ),
+              ),
+            ),
+            
+          Button(
+            label: 'Continue',
+            onPressed: () => Navigator.pushNamed(context, 'follow'),)
+          ],
+        )
+    );
   }
 }

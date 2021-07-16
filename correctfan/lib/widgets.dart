@@ -84,3 +84,39 @@ class Button extends StatelessWidget {
     );
   }
 }
+
+
+class Club extends StatelessWidget {
+  const Club({ Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 32),
+      padding: EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        border: Border.all(
+          style: BorderStyle.solid,
+          width: 1,
+          color: Color(0xFFBDBDBD),)
+        ),
+      child: Row(
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            height: 32,
+            width: 32,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(400),
+              color: Colors.cyanAccent[200]
+            ),
+          ),
+
+          SizedBox(width: 16,),
+
+          Text('ClubName')
+        ],
+      ),
+    );
+  }
+}
