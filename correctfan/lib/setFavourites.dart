@@ -15,6 +15,7 @@ class _SetFavouriteState extends State<SetFavourite> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: null,
         centerTitle: true,
         toolbarHeight: 120,
         title: SvgPicture.asset('assets/images/cflettermark.svg', width: 120,),
