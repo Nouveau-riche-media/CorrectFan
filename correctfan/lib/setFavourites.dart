@@ -17,7 +17,7 @@ class _SetFavouriteState extends State<SetFavourite> {
       appBar: AppBar(
         centerTitle: true,
         toolbarHeight: 120,
-        title: SvgPicture.asset('assets/images/cflettermark.svg',width: 120,),
+        title: SvgPicture.asset('assets/images/cflettermark.svg', width: 120,),
         // bottom: ,
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(16),
@@ -60,13 +60,24 @@ class _SetFavouriteState extends State<SetFavourite> {
               ),),
               
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 32),
+              padding: const EdgeInsets.all(32),
               child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(
+                    style: BorderStyle.solid,
+                    width: 1,
+                    color: Color(0xFFBDBDBD)
+                  )
+                  ),
                 height: 406,
-                child: ListView.builder(
+                child: ListView.separated(
                   itemBuilder: (x, index) => Club(),
                   itemCount: 24,
-                  
+                  separatorBuilder: (x, index) => Divider(
+                    thickness: 1,
+                    color: Color(0xFFBDBDBD),
+                    ),
                   ),
               ),
             ),

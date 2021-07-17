@@ -132,15 +132,6 @@ class _SignInState extends State<SignIn> {
                       children: [
                         Row(
                           children: [
-                            // Switch(
-                            //   value: value, onChanged: onChanged)
-                            // Checkbox(
-                            //   activeColor: Colors.white,
-                            //   checkColor: Colors.black,
-                              
-                            //   onChanged: (bool) {},
-                            //   value: true,
-                            //   ),
                             Text('Remember Me',
                                 style: GoogleFonts.inter(
                                   color: Colors.white,
@@ -163,7 +154,7 @@ class _SignInState extends State<SignIn> {
                   SizedBox(height: 32,),
         
                   Button(
-                    onPressed: () => Navigator.of(context).pushNamed(''),
+                    onPressed: () => Navigator.of(context).pushNamed('favourites'),
                     label: 'Sign in'),
         
                     SizedBox(height: 16,),

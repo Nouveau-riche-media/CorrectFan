@@ -92,14 +92,8 @@ class Club extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 32),
-      padding: EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        border: Border.all(
-          style: BorderStyle.solid,
-          width: 1,
-          color: Color(0xFFBDBDBD),)
-        ),
+      // margin: EdgeInsets.symmetric(horizontal: 32),
+      padding: EdgeInsets.all(12),
       child: Row(
         // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
