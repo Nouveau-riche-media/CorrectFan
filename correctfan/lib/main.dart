@@ -9,6 +9,8 @@ import 'package:correctfan/splash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
+import 'news.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -83,7 +85,7 @@ class MyApp extends StatelessWidget {
         // primarySwatch: Colors.blue,
         
       
-      home: Splash(),
+      home: News(),
       routes :
       {
         'yeyu': (context) => Splash(),

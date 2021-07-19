@@ -114,3 +114,19 @@ class Club extends StatelessWidget {
     );
   }
 }
+
+class NewsFeed extends StatefulWidget {
+  const NewsFeed({ Key? key }) : super(key: key);
+
+  @override
+  _NewsFeedState createState() => _NewsFeedState();
+}
+
+class _NewsFeedState extends State<NewsFeed> {
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      
+    );
+  }
+}
