@@ -133,56 +133,84 @@ class _NewsFeedState extends State<NewsFeed> {
     return Card(
       elevation: 8,
       margin: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              CircleAvatar(
-                backgroundColor: Theme.of(context).primaryColor,
-                child: Text('A'),
-              ),
-              Text('MARTIN ODEGAARD CONFIRMS ARSENAL EXIT',
-                      style: GoogleFonts.inter(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).primaryColor
-                      ),),
-            ],
-          ),
-          Text('Martin Odegaard penned a heartfelt goodbye message to\nArsenal fans after confirming he would return to Real Madrid.',
-            style: Theme.of(context).textTheme.bodyText1,),
-          Container(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                CircleAvatar(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  child: Text('A'),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('MARTIN ODEGAARD CONFIRMS\nARSENAL EXIT',
+                    textWidthBasis: TextWidthBasis.parent,
+                      softWrap: true,
+                            style: GoogleFonts.inter(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Theme.of(context).primaryColor
+                            ),),
 
-            children: [
-              Container(
-                height: 24,
-                width: 120,
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide(
-                        style: BorderStyle.solid,
-                        color: Color(0xFFBDBDBD),
-                        width: 1
-                      )
-                      )
-                    )),
-              ),
-              Row(children: [
-                Icon(Icons.message),
-                Text('data')
-              ],),
-              Row(children: [
-                Icon(Icons.favorite),
-                Text('data')
-              ],),
-            ],
-          ),
+                            SizedBox(height: 8,),
 
-        ]
+            Text('Martin Odegaard penned a heartfelt goodbye message to\nArsenal fans after confirming he would return to Real Madrid.',
+              style: Theme.of(context).textTheme.bodyText1,)
+              ],
+                ),
+              ],
+            ),
+
+            SizedBox(height: 16,),
+
+            Container(
+              height: 160,
+              width: 320,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Color.fromARGB(50, 229, 229, 229)
+              ),
+              child: SvgPicture.asset('assets/images/logo.svg',
+                color: Color.fromARGB(100, 229, 229, 229),)
+            ),
+
+            SizedBox(height: 16,),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  height: 24,
+                  width: 120,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide(
+                          style: BorderStyle.solid,
+                          color: Color(0xFFBDBDBD),
+                          width: 1
+                        )
+                        )
+                      )),
+                ),
+                Row(children: [
+                  Icon(Icons.message),
+                  Text('data')
+                ],),
+                Row(children: [
+                  Icon(Icons.favorite),
+                  Text('data')
+                ],),
+              ],
+            ),
+
+          ]
+        ),
       ),
     );
   }
