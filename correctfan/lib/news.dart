@@ -18,28 +18,60 @@ class _NewsState extends State<News> {
     Color primaryColor = Theme.of(context).primaryColor;
 
     return Scaffold(
+
+      // App Bar
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => Navigator.pop(context),
-          icon: Icon(Icons.chevron_left_rounded),),
+        
         centerTitle: true,
-        toolbarHeight: 120,
+        toolbarHeight: 136,
         title: SvgPicture.asset('assets/images/cflettermark.svg',width: 120,),
-        // bottom: ,
+
+        
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(16),
+          preferredSize: Size.fromWidth(120),
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 32),
-            alignment: Alignment.centerLeft,
-            child: Text('Follow Other Clubs',
-            style: GoogleFonts.inter(
-              color: Colors.white,
-              fontSize: 15,
-              fontWeight: FontWeight.w800
-            ),),),)
+            height: 114,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListView.builder(
+                itemBuilder: (x, index) => CircleAvatar(
+                  radius: 32,
+                  child: Text('A'),
+                ),
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.symmetric(horizontal: 12),
+                primary: true,
+                // physics: BouncingScrollPhysics(parent: ScrollPhysics),
+                itemCount: 10,
+                ),
+            ),
+          ),)
         ),
+
+        // Floating Action Button
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar:  BottomNavigationBar(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: primaryColor,
+        onPressed: () {},
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            SvgPicture.asset('assets/images/logo.svg'),
+            Text('Play'.toUpperCase(),
+              style: GoogleFonts.inter(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize:12
+              ),)
+          ],
+        ),),
+
+
+        // Navigation Bar
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: primaryColor,
+          currentIndex: 0,
+          type: BottomNavigationBarType.shifting,
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.comment),
@@ -57,12 +89,12 @@ class _NewsState extends State<News> {
               icon: Icon(Icons.notifications),
               label: 'Inbox'),
           ],
-          backgroundColor: primaryColor,
-          
           ),
+
+          // feed
       body: ListView.builder(
         itemBuilder: (x, index) => NewsFeed(),
-        
+        itemCount: 4,
         )
       );
   }

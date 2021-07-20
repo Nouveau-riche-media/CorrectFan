@@ -126,7 +126,44 @@ class _NewsFeedState extends State<NewsFeed> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      
+      elevation: 8,
+      margin: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+      child: Column(
+        children: [
+          Text('data'),
+          Container(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+
+            children: [
+              Container(
+                height: 24,
+                width: 120,
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        style: BorderStyle.solid,
+                        color: Color(0xFFBDBDBD),
+                        width: 1
+                      )
+                      )
+                    )),
+              ),
+              Row(children: [
+                Icon(Icons.message),
+                Text('data')
+              ],),
+              Row(children: [
+                Icon(Icons.favorite),
+                Text('data')
+              ],),
+            ],
+          ),
+
+        ]
+      ),
     );
   }
 }
