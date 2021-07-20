@@ -61,6 +61,12 @@ class MyApp extends StatelessWidget {
             color: Colors.white,
             height: 1.1
           ),),
+          bodyText1: GoogleFonts.inter(
+            textStyle: TextStyle(
+            fontSize: 8,
+            color: Colors.black,
+            height: 1.1
+          ),),
           caption: GoogleFonts.inter(
             fontWeight: FontWeight.w800,
             fontSize: 12,

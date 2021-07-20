@@ -1,6 +1,11 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+
+
 
 
 
@@ -125,12 +130,28 @@ class NewsFeed extends StatefulWidget {
 class _NewsFeedState extends State<NewsFeed> {
   @override
   Widget build(BuildContext context) {
+
     return Card(
       elevation: 8,
       margin: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
       child: Column(
         children: [
-          Text('data'),
+          Row(
+            children: [
+              CircleAvatar(
+                backgroundColor: Theme.of(context).primaryColor,
+                child: Text('A'),
+              ),
+              Text('MARTIN ODEGAARD CONFIRMS ARSENAL EXIT',
+                      style: GoogleFonts.inter(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).primaryColor
+                      ),),
+            ],
+          ),
+          Text('Martin Odegaard penned a heartfelt goodbye message to\nArsenal fans after confirming he would return to Real Madrid.',
+            style: Theme.of(context).textTheme.bodyText1,),
           Container(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

@@ -14,7 +14,7 @@ class _NewsState extends State<News> {
   @override
   Widget build(BuildContext context) {
 
-    
+    Color backgroundColor = Theme.of(context).backgroundColor;
     Color primaryColor = Theme.of(context).primaryColor;
 
     return Scaffold(
@@ -33,17 +33,38 @@ class _NewsState extends State<News> {
             height: 114,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: ListView.builder(
-                itemBuilder: (x, index) => CircleAvatar(
-                  radius: 32,
-                  child: Text('A'),
-                ),
-                scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.symmetric(horizontal: 12),
-                primary: true,
-                // physics: BouncingScrollPhysics(parent: ScrollPhysics),
-                itemCount: 10,
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CircleAvatar(
+                    backgroundColor: backgroundColor,
+                    child: Text('A'),
+                    radius: 32,
+                  ),
+                  CircleAvatar(
+                    backgroundColor: backgroundColor,
+                    child: Text('A'),
+                    radius: 32,
+                  ),
+                  CircleAvatar(
+                    backgroundColor: backgroundColor,
+                    child: Text('A'),
+                    radius: 32,
+                  ),
+                  CircleAvatar(
+                    backgroundColor: backgroundColor,
+                    child: Text('A'),
+                    radius: 32,
+                  ),
+                  CircleAvatar(
+                    backgroundColor: backgroundColor,
+                    child: Text('A'),
+                    radius: 32,
+                  ),
+
+                ],
+              )
             ),
           ),)
         ),
@@ -68,28 +89,34 @@ class _NewsState extends State<News> {
 
 
         // Navigation Bar
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: primaryColor,
-          currentIndex: 0,
-          type: BottomNavigationBarType.shifting,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.comment),
-              label: 'News'),
+      bottomNavigationBar: Theme(
+        data: ThemeData(
+          canvasColor: primaryColor
+        ),
+        child: BottomNavigationBar(
+          backgroundColor: primaryColor,
+            currentIndex: 0,
+            type: BottomNavigationBarType.shifting,
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.comment),
+                label: 'News'),
+      
+              BottomNavigationBarItem(
+                icon: Icon(Icons.sports_basketball),
+                label: 'Live Score'),
 
-            BottomNavigationBarItem(
-              icon: Icon(Icons.sports_basketball),
-              label: 'Live Score'),
-
-            BottomNavigationBarItem(
-              icon: Icon(Icons.leaderboard),
-              label: 'Stats'),
-
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notifications),
-              label: 'Inbox'),
-          ],
-          ),
+      
+              BottomNavigationBarItem(
+                icon: Icon(Icons.leaderboard),
+                label: 'Stats'),
+      
+              BottomNavigationBarItem(
+                icon: Icon(Icons.notifications),
+                label: 'Inbox'),
+            ],
+            ),
+      ),
 
           // feed
       body: ListView.builder(
