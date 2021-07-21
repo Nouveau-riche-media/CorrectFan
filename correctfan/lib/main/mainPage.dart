@@ -1,4 +1,5 @@
 import 'package:correctfan/Screens/LiveScore.dart';
+import 'package:correctfan/Screens/Play.dart';
 import 'package:correctfan/Screens/inbox.dart';
 import 'package:correctfan/Screens/news.dart';
 import 'package:correctfan/Screens/stats.dart';
@@ -17,12 +18,13 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
 
     Color backgroundColor = Theme.of(context).backgroundColor;
-    Color primaryColor = Theme.of(context).primaryColor;
+    // Color primaryColor = Theme.of(context).primaryColor;
 
     int pageIndex = 0;
     List<Widget>pageList = [
       News(),
       LiveScore(),
+      Play(),
       Stats(),
       Inbox()
     ];
