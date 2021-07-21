@@ -1,11 +1,11 @@
-import 'package:correctfan/follow.dart';
-import 'package:correctfan/onboarding1.dart';
-import 'package:correctfan/onboarding2.dart';
-import 'package:correctfan/onboarding3.dart';
-import 'package:correctfan/setFavourites.dart';
-import 'package:correctfan/signIn.dart';
-import 'package:correctfan/signUp.dart';
-import 'package:correctfan/splash.dart';
+import 'package:correctfan/Screens/follow.dart';
+import 'package:correctfan/Onboarding/onboarding1.dart';
+import 'package:correctfan/Onboarding/onboarding2.dart';
+import 'package:correctfan/Onboarding/onboarding3.dart';
+import 'package:correctfan/Onboarding/setFavourites.dart';
+import 'package:correctfan/Onboarding/signIn.dart';
+import 'package:correctfan/Onboarding/signUp.dart';
+import 'package:correctfan/Onboarding/splash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
           ),),
           bodyText1: GoogleFonts.inter(
             textStyle: TextStyle(
-            fontSize: 8,
+            fontSize: 10,
             color: Colors.black,
             height: 1.1
           ),),

@@ -174,8 +174,10 @@ class _NewsFeedState extends State<NewsFeed> {
                 borderRadius: BorderRadius.circular(10),
                 color: Color.fromARGB(50, 229, 229, 229)
               ),
-              child: SvgPicture.asset('assets/images/logo.svg',
-                color: Color.fromARGB(100, 229, 229, 229),)
+              child: Container(
+                child: SvgPicture.asset('assets/images/logo.svg',
+                  color: Color.fromARGB(100, 229, 229, 229),),
+              )
             ),
 
             SizedBox(height: 16,),
@@ -202,7 +204,9 @@ class _NewsFeedState extends State<NewsFeed> {
                   Icon(Icons.message),
                   Text('data')
                 ],),
-                Row(children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
                   Icon(Icons.favorite),
                   Text('data')
                 ],),
