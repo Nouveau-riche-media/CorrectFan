@@ -87,37 +87,6 @@ class _NewsState extends State<News> {
           ],
         ),),
 
-
-        // Navigation Bar
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: backgroundColor,
-          currentIndex: 0,
-          type: BottomNavigationBarType.fixed,
-          iconSize: 16,
-          unselectedLabelStyle: GoogleFonts.inter(
-            fontSize: 12,
-            color: Colors.white,
-
-          ),
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.comment),
-              label: 'News'),
-      
-            BottomNavigationBarItem(
-              icon: Icon(Icons.sports_basketball),
-              label: 'Live Score'),
-      
-            BottomNavigationBarItem(
-              icon: Icon(Icons.leaderboard),
-              label: 'Stats'),
-      
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notifications),
-              label: 'Inbox'),
-          ],
-          ),
-
           // feed
       body: ListView.builder(
         itemBuilder: (x, index) => NewsFeed(),

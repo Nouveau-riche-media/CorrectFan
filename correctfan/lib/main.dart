@@ -9,7 +9,7 @@ import 'package:correctfan/Onboarding/splash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
-import 'news.dart';
+import 'Screens/news.dart';
 
 void main() {
   runApp(MyApp());
