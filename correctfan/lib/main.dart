@@ -1,3 +1,4 @@
+import 'package:correctfan/Screens/Play.dart';
 import 'package:correctfan/Screens/follow.dart';
 import 'package:correctfan/Onboarding/onboarding1.dart';
 import 'package:correctfan/Onboarding/onboarding2.dart';
@@ -30,7 +31,10 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xFF092C4C),
         accentColor: Color(0xFFF2994A),  
 
+        // DrawerTheme
+        canvasColor: Theme.of(context).primaryColor,
 
+        // Font Family
         fontFamily: 'Inter', 
 
 
@@ -92,7 +96,7 @@ class MyApp extends StatelessWidget {
         // primarySwatch: Colors.blue,
         
       
-      home: MainPage(),
+      home: Play(),
       routes :
       {
         'yeyu': (context) => Splash(),

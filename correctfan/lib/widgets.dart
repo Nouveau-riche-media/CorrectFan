@@ -239,19 +239,24 @@ class _CustomDrawerState extends State<CustomDrawer> {
 
     return  Drawer(
       elevation: 8,
+
       child: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 32),
+        padding: EdgeInsets.symmetric(horizontal: 32, vertical: 56),
         primary: true,
         clipBehavior: Clip.antiAlias,
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TextButton(
                 onPressed: () {},
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     CircleAvatar(),
+                    SizedBox(width: 8,),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('Name',
                           style: GoogleFonts.inter(
@@ -270,16 +275,32 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 ),
                 ),
 
-                Icon(Icons.chevron_left_rounded, color: Colors.white,),
+                IconButton( icon: Icon(Icons.chevron_left_rounded), color: Colors.white, onPressed: () => Navigator.pop(context),),
             ],
           ),
 
-          Divider(),
+          Divider(color: Colors.white,),
 
           ListTile(
+            isThreeLine: true,
             leading: Icon(Icons.account_balance_wallet_rounded, color: Colors.white,),
             title: Text('My Wallet',
-              style: tileTheme),
+              style: tileTheme
+              ),
+            subtitle: Row(children: [
+              Text('Reward Bank',
+                style: GoogleFonts.inter(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),),
+              SizedBox(width: 30,),
+              Text('\$\$\$',
+                style: GoogleFonts.inter(
+                  fontSize: 12,
+                  color: Colors.white,
+                ),)
+              ]),
             onTap: (){},
             trailing: Text('\$\$\$',
               style: GoogleFonts.inter(
@@ -290,7 +311,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
           
           ListTile(
             leading: Icon(Icons.lock, color: Colors.white,),
-            title: Text('My Wallet',
+            title: Text('Verify My Account',
               style: tileTheme
             ),
             onTap: (){},
@@ -298,21 +319,21 @@ class _CustomDrawerState extends State<CustomDrawer> {
 
           ListTile(
             leading: Icon(Icons.history, color: Colors.white,),
-            title: Text('My Wallet',
+            title: Text('Transaction History',
               style: tileTheme
             ),
             onTap: (){},),
             
             ListTile(
             leading: Icon(Icons.sports_soccer_rounded, color: Colors.white,),
-            title: Text('My Wallet',
+            title: Text('How to Play',
               style: tileTheme
             ),
             onTap: (){},),
 
             ListTile(
             leading: Icon(Icons.tune_rounded, color: Colors.white,),
-            title: Text('My Wallet',
+            title: Text('Privacy and Settings',
               style: tileTheme
             ),
             onTap: (){},),
