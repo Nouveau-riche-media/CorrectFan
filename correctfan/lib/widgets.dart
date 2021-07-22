@@ -219,3 +219,119 @@ class _NewsFeedState extends State<NewsFeed> {
     );
   }
 }
+
+class CustomDrawer extends StatefulWidget {
+  const CustomDrawer({ Key? key }) : super(key: key);
+
+  @override
+  _CustomDrawerState createState() => _CustomDrawerState();
+}
+
+class _CustomDrawerState extends State<CustomDrawer> {
+  @override
+  Widget build(BuildContext context) {
+
+    TextStyle tileTheme = GoogleFonts.inter(
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      color: Colors.white
+    );
+
+    return  Drawer(
+      elevation: 8,
+      child: ListView(
+        padding: EdgeInsets.symmetric(horizontal: 32),
+        primary: true,
+        clipBehavior: Clip.antiAlias,
+        children: [
+          Row(
+            children: [
+              TextButton(
+                onPressed: () {},
+                child: Row(
+                  children: [
+                    CircleAvatar(),
+                    Column(
+                      children: [
+                        Text('Name',
+                          style: GoogleFonts.inter(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                            color: Colors.white
+                          ),),
+                        Text('@username',
+                          style: GoogleFonts.inter(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 11,
+                            color: Colors.white)
+                        )],
+                    )
+                  ],
+                ),
+                ),
+
+                Icon(Icons.chevron_left_rounded, color: Colors.white,),
+            ],
+          ),
+
+          Divider(),
+
+          ListTile(
+            leading: Icon(Icons.account_balance_wallet_rounded, color: Colors.white,),
+            title: Text('My Wallet',
+              style: tileTheme),
+            onTap: (){},
+            trailing: Text('\$\$\$',
+              style: GoogleFonts.inter(
+                fontSize: 12
+              ),
+            ),
+          ),
+          
+          ListTile(
+            leading: Icon(Icons.lock, color: Colors.white,),
+            title: Text('My Wallet',
+              style: tileTheme
+            ),
+            onTap: (){},
+          ),
+
+          ListTile(
+            leading: Icon(Icons.history, color: Colors.white,),
+            title: Text('My Wallet',
+              style: tileTheme
+            ),
+            onTap: (){},),
+            
+            ListTile(
+            leading: Icon(Icons.sports_soccer_rounded, color: Colors.white,),
+            title: Text('My Wallet',
+              style: tileTheme
+            ),
+            onTap: (){},),
+
+            ListTile(
+            leading: Icon(Icons.tune_rounded, color: Colors.white,),
+            title: Text('My Wallet',
+              style: tileTheme
+            ),
+            onTap: (){},),
+
+            ListTile(
+            leading: Icon(Icons.help, color: Colors.white,),
+            title: Text('Support',
+              style: tileTheme
+            ),
+            onTap: (){},),
+
+            ListTile(
+            leading: ImageIcon(AssetImage('assets/images/correctfanIcon.png')),
+            title: Text('About CorrectFan',
+              style: tileTheme
+            ),
+            onTap: (){},),
+          ],
+        ),
+    );
+  }
+}

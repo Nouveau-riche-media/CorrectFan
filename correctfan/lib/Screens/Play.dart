@@ -1,3 +1,4 @@
+import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
 
 class Play extends StatefulWidget {
@@ -10,8 +11,13 @@ class Play extends StatefulWidget {
 class _PlayState extends State<Play> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Scaffold(
+      drawer: CustomDrawer(),
+      appBar: AppBar(),
+      body: Column(
+        children: [
+
+      ],)
     );
   }
 }
