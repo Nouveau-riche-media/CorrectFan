@@ -6,6 +6,7 @@ import 'package:correctfan/Onboarding/setFavourites.dart';
 import 'package:correctfan/Onboarding/signIn.dart';
 import 'package:correctfan/Onboarding/signUp.dart';
 import 'package:correctfan/Onboarding/splash.dart';
+import 'package:correctfan/main/mainPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
@@ -91,7 +92,7 @@ class MyApp extends StatelessWidget {
         // primarySwatch: Colors.blue,
         
       
-      home: News(),
+      home: MainPage(),
       routes :
       {
         'yeyu': (context) => Splash(),

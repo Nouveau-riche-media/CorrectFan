@@ -69,25 +69,7 @@ class _NewsState extends State<News> {
           ),)
         ),
 
-        // Floating Action Button
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: primaryColor,
-        onPressed: () {},
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            SvgPicture.asset('assets/images/logo.svg'),
-            Text('Play'.toUpperCase(),
-              style: GoogleFonts.inter(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize:12
-              ),)
-          ],
-        ),),
-
-          // feed
+      // feed
       body: ListView.builder(
         itemBuilder: (x, index) => NewsFeed(),
         itemCount: 4,
