@@ -8,106 +8,130 @@ import 'package:correctfan/Onboarding/signIn.dart';
 import 'package:correctfan/Onboarding/signUp.dart';
 import 'package:correctfan/Onboarding/splash.dart';
 import 'package:correctfan/main/mainPage.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
-import 'Screens/news.dart';
+import 'Screens/Error.dart';
+
+// import 'Screens/news.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Correct Fan',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        
-        // Colors
-        backgroundColor: Color(0xFF003E75),
-        primaryColor: Color(0xFF092C4C),
-        accentColor: Color(0xFFF2994A),  
+    return FutureBuilder(
+      future: _initialization,
 
-        // DrawerTheme
-        canvasColor: Theme.of(context).primaryColor,
+      builder: (context, snapshot){
 
-        // Font Family
-        fontFamily: 'Inter', 
+        if (snapshot.hasError) {
+          return SomethingWentWrong();
+        }
 
-
-        // TextTheme
-        textTheme: TextTheme(
-          headline5: GoogleFonts.inter(
+        if (snapshot.connectionState == ConnectionState.done){
+        return MaterialApp(
+        title: 'Correct Fan',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          
+          // Colors
+          backgroundColor: Color(0xFF003E75),
+          primaryColor: Color(0xFF092C4C),
+          accentColor: Color(0xFFF2994A),  
+    
+          // DrawerTheme
+          canvasColor: Theme.of(context).primaryColor,
+    
+          // Font Family
+          fontFamily: 'Inter', 
+    
+    
+          // TextTheme
+          textTheme: TextTheme(
+            headline5: GoogleFonts.inter(
+                textStyle: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  // letterSpacing: ,
+                  letterSpacing: 5,
+                  fontSize: 24,
+                  height: 1.1
+                  
+                ),),
+            headline4: GoogleFonts.inter(
               textStyle: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-                // letterSpacing: ,
-                letterSpacing: 5,
-                fontSize: 24,
-                height: 1.1
-                
-              ),),
-          headline4: GoogleFonts.inter(
-            textStyle: TextStyle(
-            fontSize: 32,
-            height: 1.1
+              fontSize: 32,
+              height: 1.1
+            ),),
+            headline3: GoogleFonts.inter(
+              textStyle: TextStyle(
+              fontSize: 40,
+              height: 1.1
+            ),),
+            headline6: GoogleFonts.inter(
+              textStyle: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+              height: 1.1
+            ),),
+            bodyText1: GoogleFonts.inter(
+              textStyle: TextStyle(
+              fontSize: 10,
+              color: Colors.black,
+              height: 1.1
+            ),),
+            caption: GoogleFonts.inter(
+              fontWeight: FontWeight.w800,
+              fontSize: 12,
+              color: Color(0xFF007BEA),
+              shadows: [
+                BoxShadow(
+                  color: Color.fromARGB(25, 0, 0, 0),
+                  offset: Offset(0, 4),
+                  blurRadius: 4)
+              ]
+            )
+            
           ),),
-          headline3: GoogleFonts.inter(
-            textStyle: TextStyle(
-            fontSize: 40,
-            height: 1.1
-          ),),
-          headline6: GoogleFonts.inter(
-            textStyle: TextStyle(
-            fontSize: 20,
-            color: Colors.white,
-            height: 1.1
-          ),),
-          bodyText1: GoogleFonts.inter(
-            textStyle: TextStyle(
-            fontSize: 10,
-            color: Colors.black,
-            height: 1.1
-          ),),
-          caption: GoogleFonts.inter(
-            fontWeight: FontWeight.w800,
-            fontSize: 12,
-            color: Color(0xFF007BEA),
-            shadows: [
-              BoxShadow(
-                color: Color.fromARGB(25, 0, 0, 0),
-                offset: Offset(0, 4),
-                blurRadius: 4)
-            ]
-          )
-        ),),
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        // primarySwatch: Colors.blue,
+          // This is the theme of your application.
+          //
+          // Try running your application with "flutter run". You'll see the
+          // application has a blue toolbar. Then, without quitting the app, try
+          // changing the primarySwatch below to Colors.green and then invoke
+          // "hot reload" (press "r" in the console where you ran "flutter run",
+          // or simply save your changes to "hot reload" in a Flutter IDE).
+          // Notice that the counter didn't reset back to zero; the application
+          // is not restarted.
+          // primarySwatch: Colors.blue,
+          
         
+        home: Play(),
+        routes :
+        {
+          'yeyu': (context) => Splash(),
+          'on1': (context) => Onboarding1(),
+          'on2': (context) => Onboarding2(),
+          'on3': (context) => Onboarding3(),
+          'signIn': (context) => SignIn(),
+          'signUp': (context) => SignUp(),
+          'favourites': (context) => SetFavourite(),
+          'follow': (context) => Follow()
+        }
+      );
+        }
+
+        return CircularProgressIndicator();
+      },
       
-      home: Play(),
-      routes :
-      {
-        'yeyu': (context) => Splash(),
-        'on1': (context) => Onboarding1(),
-        'on2': (context) => Onboarding2(),
-        'on3': (context) => Onboarding3(),
-        'signIn': (context) => SignIn(),
-        'signUp': (context) => SignUp(),
-        'favourites': (context) => SetFavourite(),
-        'follow': (context) => Follow()
-      }
     );
   }
 }

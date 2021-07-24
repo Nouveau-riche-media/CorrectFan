@@ -356,3 +356,99 @@ class _CustomDrawerState extends State<CustomDrawer> {
     );
   }
 }
+
+class ContestCard extends StatefulWidget {
+  const ContestCard({ Key? key }) : super(key: key);
+
+  @override
+  _ContestCardState createState() => _ContestCardState();
+}
+
+class _ContestCardState extends State<ContestCard> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: Theme.of(context).primaryColor
+      ),
+      height: 70,
+      width: 160,
+      margin: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            margin: EdgeInsets.only(bottom: 8),
+            alignment: Alignment.center,
+            color: Colors.black,
+            height: 18,
+            width: 89,
+            child: Text('1st Place - \$50K',
+              style: GoogleFonts.lato(
+                fontSize: 12,
+                fontWeight: FontWeight.w700,
+                color: Colors.white
+              ))
+          ),
+
+          Text('\$ 100k Sizzle Sunday',
+            style: GoogleFonts.inter(
+              fontSize: 12,
+              fontWeight: FontWeight.w800,
+              color: Colors.white
+            ),),
+
+            SizedBox(height: 16,),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Entry Fee',
+                  style: GoogleFonts.inter(
+                    fontSize: 12,
+                    color: Colors.white
+                ),),
+
+                Text('\$50',
+                  style: GoogleFonts.inter(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white
+            ),),
+              ],
+            ),
+
+            SizedBox(height: 16,),
+
+            Column(
+              children: [
+                LinearProgressIndicator(
+                  value: 50,
+                  color: Theme.of(context).accentColor,
+                ),
+
+                SizedBox(height: 4,),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                  Text('50,000 Teams',
+                    style: GoogleFonts.inter(
+                      fontSize: 8,
+                      color: Colors.white
+                    )),
+                  Text('0 left',
+                    style: GoogleFonts.inter(
+                      fontSize: 8,
+                      color: Colors.white
+                    )),
+                ],)
+              ],
+            )
+        ],
+      )
+    );
+  }
+}
