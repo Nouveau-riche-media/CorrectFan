@@ -2,6 +2,10 @@ import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+
+
 
 class SignIn extends StatefulWidget {
   const SignIn({ Key? key }) : super(key: key);
@@ -42,7 +46,7 @@ class _SignInState extends State<SignIn> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      
+                      ImageIcon(AssetImage('assets/images/google.png')),
                       Text('Connect with Google')
                     ],
                   ),
@@ -59,6 +63,7 @@ class _SignInState extends State<SignIn> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [                  
+                      ImageIcon(AssetImage('assets/images/facebook.png')),
                       Text('Connect with Facebook')
                     ],
                   ),
