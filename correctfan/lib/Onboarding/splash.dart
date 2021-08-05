@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:async';
 
 class Splash extends StatefulWidget {
-  const Splash({ Key? key }) : super(key: key);
+  // const Splash({ Key? key }) : super(key: key);
 
   @override
   _SplashState createState() => _SplashState();

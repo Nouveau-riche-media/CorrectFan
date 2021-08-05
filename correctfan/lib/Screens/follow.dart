@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Follow extends StatefulWidget {
-  const Follow({ Key? key }) : super(key: key);
+  // const Follow({ Key? key }) : super(key: key);
 
   @override
   _FollowState createState() => _FollowState();

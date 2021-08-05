@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SetFavourite extends StatefulWidget {
-  const SetFavourite({ Key? key }) : super(key: key);
+  // const SetFavourite({ Key? key }) : super(key: key);
 
   @override
   _SetFavouriteState createState() => _SetFavouriteState();

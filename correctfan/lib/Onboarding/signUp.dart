@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignUp extends StatefulWidget {
-  const SignUp({ Key? key }) : super(key: key);
+  // const SignUp({ Key? key }) : super(key: key);
 
   @override
   _SignUpState createState() => _SignUpState();

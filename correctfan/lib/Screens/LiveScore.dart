@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LiveScore extends StatefulWidget {
-  const LiveScore({ Key? key }) : super(key: key);
+  // const LiveScore({ Key? key }) : super(key: key);
 
   @override
   _LiveScoreState createState() => _LiveScoreState();

@@ -2,7 +2,7 @@ import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
 
 class Lobby extends StatefulWidget {
-  const Lobby({ Key? key }) : super(key: key);
+  // const Lobby({ Key? key }) : super(key: key);
 
   @override
   _LobbyState createState() => _LobbyState();

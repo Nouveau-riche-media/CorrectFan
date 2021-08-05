@@ -9,7 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 class IlwLogo extends StatelessWidget {
-  const IlwLogo({ Key? key }) : super(key: key);
+  // const IlwLogo({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class IlwLogo extends StatelessWidget {
 }
 
 class IlwoLogo extends StatelessWidget {
-  const IlwoLogo({ Key? key }) : super(key: key);
+  // const IlwoLogo({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -63,10 +63,10 @@ class Button extends StatelessWidget {
   final GestureTapCallback onPressed;
   final String label;
   
-  const Button({ Key? key,
-    required this.onPressed,
-    required this.label
-    }) : super(key: key);
+  const Button({
+    @required this.onPressed,
+    @required this.label
+    });
 
 
   @override
@@ -91,7 +91,7 @@ class Button extends StatelessWidget {
 
 
 class Club extends StatelessWidget {
-  const Club({ Key? key }) : super(key: key);
+  // const Club({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +120,7 @@ class Club extends StatelessWidget {
 }
 
 class NewsFeed extends StatefulWidget {
-  const NewsFeed({ Key? key }) : super(key: key);
+  // const NewsFeed({ Key? key }) : super(key: key);
 
   @override
   _NewsFeedState createState() => _NewsFeedState();
@@ -221,7 +221,7 @@ class _NewsFeedState extends State<NewsFeed> {
 }
 
 class CustomDrawer extends StatefulWidget {
-  const CustomDrawer({ Key? key }) : super(key: key);
+  // const CustomDrawer({ Key? key }) : super(key: key);
 
   @override
   _CustomDrawerState createState() => _CustomDrawerState();
@@ -358,7 +358,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
 }
 
 class ContestCard extends StatefulWidget {
-  const ContestCard({ Key? key }) : super(key: key);
+  // const ContestCard({ Key? key }) : super(key: key);
 
   @override
   _ContestCardState createState() => _ContestCardState();

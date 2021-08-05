@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class News extends StatefulWidget {
-  const News({ Key? key }) : super(key: key);
+  // const News({ Key? key }) : super(key: key);
 
   @override
   _NewsState createState() => _NewsState();
