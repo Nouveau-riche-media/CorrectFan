@@ -44,8 +44,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        packageName "com.nouveaurichemedia.correctfan"
-        applicationId "com.example.correctfan"
+        applicationId "com.nouveau_riche_media.correctfan"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
