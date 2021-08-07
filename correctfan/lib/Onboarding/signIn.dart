@@ -1,3 +1,4 @@
+import 'package:correctfan/services/auth.dart';
 import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,6 +16,12 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+
+  // final AuthService _auth = AuthService();
+
+  String email = '';
+  String password = '';
+
   @override
   Widget build(BuildContext context) {
 
@@ -85,8 +92,12 @@ class _SignInState extends State<SignIn> {
                     child: Column(
                       children: [
                         TextFormField(
+                          onChanged: (val) {
+                            setState(() {
+                              email = val;
+                            });
+                          },
                           decoration: InputDecoration(
-        
                             prefixIcon: Icon(Icons.person),
                             isCollapsed: true,  
                             border: OutlineInputBorder(
@@ -106,7 +117,11 @@ class _SignInState extends State<SignIn> {
                           SizedBox(height: 16),
         
                         TextFormField(
-        
+                          onChanged: (val) {
+                            setState(() {
+                              email = val;
+                            });
+                          },
                           obscureText: true,
                           decoration: InputDecoration(
                             alignLabelWithHint: true,

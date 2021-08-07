@@ -8,11 +8,15 @@ import 'package:correctfan/Onboarding/signIn.dart';
 import 'package:correctfan/Onboarding/signUp.dart';
 import 'package:correctfan/Onboarding/splash.dart';
 import 'package:correctfan/main/mainPage.dart';
+import 'package:correctfan/services/auth.dart';
+import 'package:correctfan/wrapper.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
 import 'Screens/Error.dart';
+import 'models/user.dart';
 
 // import 'Screens/news.dart';
 
@@ -47,14 +51,14 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color(0xFF003E75),
           primaryColor: Color(0xFF092C4C),
           accentColor: Color(0xFFF2994A),  
-    
+          
           // DrawerTheme
           canvasColor: Theme.of(context).primaryColor,
-    
+          
           // Font Family
           fontFamily: 'Inter', 
-    
-    
+          
+          
           // TextTheme
           textTheme: TextTheme(
             headline5: GoogleFonts.inter(
@@ -114,7 +118,7 @@ class MyApp extends StatelessWidget {
           // primarySwatch: Colors.blue,
           
         
-        home: SignIn(),
+        home: SignUp(),
         routes :
         {
           'yeyu': (context) => Splash(),
@@ -126,7 +130,7 @@ class MyApp extends StatelessWidget {
           'favourites': (context) => SetFavourite(),
           'follow': (context) => Follow()
         }
-      );
+            );
         }
 
         return CircularProgressIndicator();

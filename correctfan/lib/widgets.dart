@@ -64,8 +64,8 @@ class Button extends StatelessWidget {
   final String label;
   
   const Button({
-    @required this.onPressed,
-    @required this.label
+    required this.onPressed,
+    required this.label
     });
 
 
