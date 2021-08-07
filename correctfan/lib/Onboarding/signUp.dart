@@ -1,5 +1,5 @@
 import 'package:correctfan/widgets.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -191,7 +191,6 @@ class _SignUpState extends State<SignUp> {
                     child: Row(
                       children: [
                         Checkbox(
-                          
                           activeColor: primaryColor,
                           
                           value: true,
@@ -211,11 +210,10 @@ class _SignUpState extends State<SignUp> {
                   Button(
                     onPressed: () {
                       if (_formkey.currentState!.validate()){
-
                       }
 
 
-                      Navigator.of(context).pushNamed('');
+                      Navigator.of(context).popAndPushNamed('Play');
                       },
                     label: 'Sign up'),
         

@@ -10,8 +10,8 @@ import 'package:correctfan/Onboarding/splash.dart';
 import 'package:correctfan/main/mainPage.dart';
 import 'package:correctfan/services/auth.dart';
 import 'package:correctfan/wrapper.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -27,21 +27,9 @@ void main() {
 
 class MyApp extends StatelessWidget {
 
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
-
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(
-      
-      future: _initialization,
-      builder: (context, snapshot){
-
-        if (snapshot.hasError) {
-          return SomethingWentWrong();
-        }
-
-        if (snapshot.connectionState == ConnectionState.done){
+  Widget build(BuildContext context) {   
         return MaterialApp(
         title: 'Correct Fan',
         debugShowCheckedModeBanner: false,
@@ -128,15 +116,11 @@ class MyApp extends StatelessWidget {
           'signIn': (context) => SignIn(),
           'signUp': (context) => SignUp(),
           'favourites': (context) => SetFavourite(),
-          'follow': (context) => Follow()
+          'follow': (context) => Follow(),
+          'Play': (context) => Play(),
         }
             );
-        }
-
-        return CircularProgressIndicator();
-      },
       
-    );
   }
 }
 
