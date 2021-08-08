@@ -7,6 +7,7 @@ import 'package:correctfan/Onboarding/setFavourites.dart';
 import 'package:correctfan/Onboarding/signIn.dart';
 import 'package:correctfan/Onboarding/signUp.dart';
 import 'package:correctfan/Onboarding/splash.dart';
+import 'package:correctfan/Screens/news.dart';
 import 'package:correctfan/main/mainPage.dart';
 import 'package:correctfan/services/auth.dart';
 import 'package:correctfan/wrapper.dart';
@@ -106,7 +107,7 @@ class MyApp extends StatelessWidget {
           // primarySwatch: Colors.blue,
           
         
-        home: SignUp(),
+        home: MainPage(),
         routes :
         {
           'yeyu': (context) => Splash(),

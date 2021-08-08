@@ -452,3 +452,47 @@ class _ContestCardState extends State<ContestCard> {
     );
   }
 }
+
+class BottomNavBar extends StatefulWidget {
+  const BottomNavBar({ Key? key }) : super(key: key);
+
+  @override
+  _BottomNavBarState createState() => _BottomNavBarState();
+}
+
+class _BottomNavBarState extends State<BottomNavBar> {
+  @override
+  Widget build(BuildContext context) {
+
+    Color backgroundColor = Theme.of(context).backgroundColor;
+
+    return BottomNavigationBar(
+        backgroundColor: backgroundColor,
+          currentIndex: 0,
+          type: BottomNavigationBarType.fixed,
+          iconSize: 16,
+          unselectedLabelStyle: GoogleFonts.inter(
+            fontSize: 12,
+            color: Colors.white,
+
+          ),
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.comment),
+              label: 'News'),
+
+            BottomNavigationBarItem(
+              icon: Icon(Icons.sports_basketball),
+              label: 'Live Score'),
+
+            BottomNavigationBarItem(
+              icon: Icon(Icons.leaderboard),
+              label: 'Stats'),
+
+            BottomNavigationBarItem(
+              icon: Icon(Icons.notifications),
+              label: 'Inbox'),
+          ],
+          );
+  }
+}

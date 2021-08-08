@@ -18,14 +18,14 @@ class _NewsState extends State<News> {
     Color primaryColor = Theme.of(context).primaryColor;
 
     return Scaffold(
-
+      drawer: CustomDrawer(),
+      backgroundColor: Colors.white,
       // App Bar
       appBar: AppBar(
         
         centerTitle: true,
-        toolbarHeight: 136,
+        toolbarHeight: 142,
         title: SvgPicture.asset('assets/images/cflettermark.svg',width: 120,),
-
         
         bottom: PreferredSize(
           preferredSize: Size.fromWidth(120),
@@ -40,27 +40,27 @@ class _NewsState extends State<News> {
                   CircleAvatar(
                     backgroundColor: backgroundColor,
                     child: Text('A'),
-                    radius: 32,
+                    radius: 24,
                   ),
                   CircleAvatar(
                     backgroundColor: backgroundColor,
                     child: Text('A'),
-                    radius: 32,
+                    radius: 24,
                   ),
                   CircleAvatar(
                     backgroundColor: backgroundColor,
                     child: Text('A'),
-                    radius: 32,
+                    radius: 24,
                   ),
                   CircleAvatar(
                     backgroundColor: backgroundColor,
                     child: Text('A'),
-                    radius: 32,
+                    radius: 24,
                   ),
                   CircleAvatar(
                     backgroundColor: backgroundColor,
                     child: Text('A'),
-                    radius: 32,
+                    radius: 24,
                   ),
 
                 ],
@@ -68,6 +68,8 @@ class _NewsState extends State<News> {
             ),
           ),)
         ),
+
+        
 
       // feed
       body: ListView.builder(

@@ -15,14 +15,8 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  @override
-  Widget build(BuildContext context) {
 
-    Color backgroundColor = Theme.of(context).backgroundColor;
-    Color primaryColor = Theme.of(context).primaryColor;
-    Color secondaryColor = Theme.of(context).accentColor;
-
-    int pageIndex = 0;
+  int _pageIndex = 2;
     
     List<Widget> pageList = <Widget>[
       News(),
@@ -32,9 +26,23 @@ class _MainPageState extends State<MainPage> {
       Inbox()
     ];
 
+    
+  void onSelect(int index){
+    setState(() {
+      _pageIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+
+    Color backgroundColor = Theme.of(context).backgroundColor;
+    Color primaryColor = Theme.of(context).primaryColor;
+    Color secondaryColor = Theme.of(context).accentColor;
+
 
     return Scaffold(
-      body: pageList[pageIndex],
+      body: pageList[_pageIndex],
 
       floatingActionButton: FloatingActionButton(
         
@@ -42,7 +50,7 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: primaryColor,
         onPressed: () {
               setState(() {
-                pageIndex = 2;
+                _pageIndex = 2;
               });
         },
         child: Stack(
@@ -59,6 +67,9 @@ class _MainPageState extends State<MainPage> {
         ),),
 
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+
+      // Nav Bar
        bottomNavigationBar: BottomAppBar(
          shape: CircularNotchedRectangle(),
          clipBehavior: Clip.antiAlias,
@@ -77,20 +88,17 @@ class _MainPageState extends State<MainPage> {
           selectedIconTheme: IconThemeData(color: secondaryColor), 
 
           backgroundColor: backgroundColor,
-            currentIndex: pageIndex,
+            currentIndex: _pageIndex,
             type: BottomNavigationBarType.fixed,
             iconSize: 20,
             unselectedFontSize: 12,
             unselectedItemColor: Color.fromARGB(60, 255, 255, 255),
             unselectedLabelStyle: GoogleFonts.inter(),
-            onTap: (value) {
-              setState(() {
-                pageIndex = value;
-              });
-            },
+            
+            onTap: onSelect,
             items: [
               BottomNavigationBarItem(
-                icon: Icon(Icons.comment),
+                icon: Icon(Icons.comment), 
                 label: 'News'),
              
               BottomNavigationBarItem(
