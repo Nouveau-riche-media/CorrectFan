@@ -34,6 +34,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
         title: 'Correct Fan',
         debugShowCheckedModeBanner: false,
+        
         theme: ThemeData(
           
           // Colors
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
           accentColor: Color(0xFFF2994A),  
           
           // DrawerTheme
-          canvasColor: Theme.of(context).primaryColor,
+          // canvasColor: Theme.of(context).primaryColor,
           
           // Font Family
           fontFamily: 'Inter', 

@@ -71,6 +71,7 @@ class _MainPageState extends State<MainPage> {
 
       // Nav Bar
        bottomNavigationBar: BottomAppBar(
+         color: Colors.transparent,
          shape: CircularNotchedRectangle(),
          clipBehavior: Clip.antiAlias,
          notchMargin: 8,
@@ -85,7 +86,7 @@ class _MainPageState extends State<MainPage> {
              fontWeight: FontWeight.bold,
            ),
 
-          selectedIconTheme: IconThemeData(color: secondaryColor), 
+          selectedIconTheme: IconThemeData(color: primaryColor), 
 
           backgroundColor: backgroundColor,
             currentIndex: _pageIndex,
@@ -102,7 +103,7 @@ class _MainPageState extends State<MainPage> {
                 label: 'News'),
              
               BottomNavigationBarItem(
-                icon: Icon(Icons.sports_basketball),
+                icon: Icon(Icons.sports_soccer ),
                 label: 'Live Score'),  
 
               BottomNavigationBarItem(

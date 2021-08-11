@@ -15,17 +15,13 @@ class Play extends StatefulWidget {
 class _PlayState extends State<Play> {
   @override
   Widget build(BuildContext context) {
-    var backgroundColor;
+    
     return DefaultTabController(
   // The number of tabs / content sections to display.
   length: 3,
   child: Scaffold(
     backgroundColor: Colors.white,
-    drawer: CustomDrawer(),
-
-    
-
-
+    drawer: CustomDrawer(), 
     appBar: AppBar(
       title: SvgPicture.asset('assets/images/cflettermark.svg'),
       centerTitle: true,

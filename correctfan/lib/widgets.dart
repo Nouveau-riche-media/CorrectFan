@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+// import 'package:flip_panel/flip_panel.dart';
 
 
 
@@ -240,119 +240,123 @@ class _CustomDrawerState extends State<CustomDrawer> {
     return  Drawer(
       elevation: 8,
 
-      child: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 32, vertical: 56),
-        primary: true,
-        clipBehavior: Clip.antiAlias,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              TextButton(
-                onPressed: () {},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CircleAvatar(),
-                    SizedBox(width: 8,),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Name',
-                          style: GoogleFonts.inter(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.white
-                          ),),
-                        Text('@username',
-                          style: GoogleFonts.inter(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 11,
-                            color: Colors.white)
-                        )],
-                    )
-                  ],
+      child: Container(
+        color: Theme.of(context).primaryColor,
+        child: ListView(
+
+          padding: EdgeInsets.symmetric(horizontal: 32, vertical: 56),
+          primary: true,
+          clipBehavior: Clip.antiAlias,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CircleAvatar(),
+                      SizedBox(width: 8,),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Name',
+                            style: GoogleFonts.inter(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: Colors.white
+                            ),),
+                          Text('@username',
+                            style: GoogleFonts.inter(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 11,
+                              color: Colors.white)
+                          )],
+                      )
+                    ],
+                  ),
+                  ),
+
+                  IconButton( icon: Icon(Icons.chevron_left_rounded), color: Colors.white, onPressed: () => Navigator.pop(context),),
+              ],
+            ),
+
+            Divider(color: Colors.white,),
+
+            ListTile(
+              isThreeLine: true,
+              leading: Icon(Icons.account_balance_wallet_rounded, color: Colors.white,),
+              title: Text('My Wallet',
+                style: tileTheme
                 ),
+              subtitle: Row(children: [
+                Text('Reward Bank',
+                  style: GoogleFonts.inter(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),),
+                SizedBox(width: 30,),
+                Text('\$\$\$',
+                  style: GoogleFonts.inter(
+                    fontSize: 12,
+                    color: Colors.white,
+                  ),)
+                ]),
+              onTap: (){},
+              trailing: Text('\$\$\$',
+                style: GoogleFonts.inter(
+                  fontSize: 12
                 ),
-
-                IconButton( icon: Icon(Icons.chevron_left_rounded), color: Colors.white, onPressed: () => Navigator.pop(context),),
-            ],
-          ),
-
-          Divider(color: Colors.white,),
-
-          ListTile(
-            isThreeLine: true,
-            leading: Icon(Icons.account_balance_wallet_rounded, color: Colors.white,),
-            title: Text('My Wallet',
-              style: tileTheme
-              ),
-            subtitle: Row(children: [
-              Text('Reward Bank',
-                style: GoogleFonts.inter(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),),
-              SizedBox(width: 30,),
-              Text('\$\$\$',
-                style: GoogleFonts.inter(
-                  fontSize: 12,
-                  color: Colors.white,
-                ),)
-              ]),
-            onTap: (){},
-            trailing: Text('\$\$\$',
-              style: GoogleFonts.inter(
-                fontSize: 12
               ),
             ),
-          ),
-          
-          ListTile(
-            leading: Icon(Icons.lock, color: Colors.white,),
-            title: Text('Verify My Account',
-              style: tileTheme
-            ),
-            onTap: (){},
-          ),
-
-          ListTile(
-            leading: Icon(Icons.history, color: Colors.white,),
-            title: Text('Transaction History',
-              style: tileTheme
-            ),
-            onTap: (){},),
             
             ListTile(
-            leading: Icon(Icons.sports_soccer_rounded, color: Colors.white,),
-            title: Text('How to Play',
-              style: tileTheme
+              leading: Icon(Icons.lock, color: Colors.white,),
+              title: Text('Verify My Account',
+                style: tileTheme
+              ),
+              onTap: (){},
             ),
-            onTap: (){},),
 
             ListTile(
-            leading: Icon(Icons.tune_rounded, color: Colors.white,),
-            title: Text('Privacy and Settings',
-              style: tileTheme
-            ),
-            onTap: (){},),
+              leading: Icon(Icons.history, color: Colors.white,),
+              title: Text('Transaction History',
+                style: tileTheme
+              ),
+              onTap: (){},),
+              
+              ListTile(
+              leading: Icon(Icons.sports_soccer_rounded, color: Colors.white,),
+              title: Text('How to Play',
+                style: tileTheme
+              ),
+              onTap: (){},),
 
-            ListTile(
-            leading: Icon(Icons.help, color: Colors.white,),
-            title: Text('Support',
-              style: tileTheme
-            ),
-            onTap: (){},),
+              ListTile(
+              leading: Icon(Icons.tune_rounded, color: Colors.white,),
+              title: Text('Privacy and Settings',
+                style: tileTheme
+              ),
+              onTap: (){},),
 
-            ListTile(
-            leading: ImageIcon(AssetImage('assets/images/correctfanIcon.png')),
-            title: Text('About CorrectFan',
-              style: tileTheme
-            ),
-            onTap: (){},),
-          ],
-        ),
+              ListTile(
+              leading: Icon(Icons.help, color: Colors.white,),
+              title: Text('Support',
+                style: tileTheme
+              ),
+              onTap: (){},),
+
+              ListTile(
+              leading: ImageIcon(AssetImage('assets/images/correctfanIcon.png')),
+              title: Text('About CorrectFan',
+                style: tileTheme
+              ),
+              onTap: (){},),
+            ],
+          ),
+      ),
     );
   }
 }
@@ -446,53 +450,136 @@ class _ContestCardState extends State<ContestCard> {
                     )),
                 ],)
               ],
-            )
+            ),
+
+            // FlipPanel.builder(
+            //   loop: 1,
+            //   itemBuilder: (context, index) => Container(
+            //     color: Colors.white,
+            //     padding: const EdgeInsets.symmetric(horizontal: 6.0),
+            //     child: Text(
+            //       '65878',
+            //       style: GoogleFonts.inter(
+            //         color: Colors.black,
+            //         fontSize: 24,
+            //       ),
+            //     ),
+            //   ),
+            //   itemsCount: 6,
+            //   period: Duration(days: 14)
+            //   ))
         ],
       )
     );
   }
 }
 
-class BottomNavBar extends StatefulWidget {
-  const BottomNavBar({ Key? key }) : super(key: key);
+
+
+// Lobby
+class LobbyContestCard extends StatefulWidget {
+  const LobbyContestCard({ Key? key }) : super(key: key);
 
   @override
-  _BottomNavBarState createState() => _BottomNavBarState();
+  _LobbyContestCardState createState() => _LobbyContestCardState();
 }
 
-class _BottomNavBarState extends State<BottomNavBar> {
+class _LobbyContestCardState extends State<LobbyContestCard> {
   @override
   Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+      color: Colors.grey[300],
+      width: 316,
+      // height: 78,
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Speed 50',
+                    style: GoogleFonts.inter(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.grey[600]
+                    ),),
+                  Text('50/50',
+                    style: GoogleFonts.inter(
+                      fontSize: 10,
+                      color: Colors.grey[600]
+                    ),),
+                ],
+              ),
 
-    Color backgroundColor = Theme.of(context).backgroundColor;
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('250,000',
+                    style: GoogleFonts.inter(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w900,
+                      color: Theme.of(context).primaryColor
+                    ),),
+                  Text('Winners',
+                    style: GoogleFonts.inter(
+                      fontSize: 10,
+                      color: Theme.of(context).primaryColor
+                    ),),
+                ],
+              ),
 
-    return BottomNavigationBar(
-        backgroundColor: backgroundColor,
-          currentIndex: 0,
-          type: BottomNavigationBarType.fixed,
-          iconSize: 16,
-          unselectedLabelStyle: GoogleFonts.inter(
-            fontSize: 12,
-            color: Colors.white,
-
+              TextButton(
+                onPressed: () {},
+                child: Text('JOIN'),
+                style: ButtonStyle(
+                  padding: MaterialStateProperty.all(EdgeInsets.all(16)),
+                  minimumSize: MaterialStateProperty.all(Size(0, 0)),
+                  foregroundColor: MaterialStateProperty.all(Colors.white),
+                  backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+                  elevation: MaterialStateProperty.all(0),
+                  alignment: Alignment.center,
+                  textStyle: MaterialStateProperty.all(
+                    GoogleFonts.inter(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 8
+                    )),
+                ),
+                )
+            ],
           ),
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.comment),
-              label: 'News'),
 
-            BottomNavigationBarItem(
-              icon: Icon(Icons.sports_basketball),
-              label: 'Live Score'),
+          Divider(
+            color: Theme.of(context).primaryColor,
+            thickness: 1,
+            ),
 
-            BottomNavigationBarItem(
-              icon: Icon(Icons.leaderboard),
-              label: 'Stats'),
+            LinearProgressIndicator(
+              value: 100,
+              color: Theme.of(context).accentColor,
+            ),
 
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notifications),
-              label: 'Inbox'),
-          ],
-          );
+            Row(
+              children: [
+                Text('50,000 teams',
+                  style: GoogleFonts.inter(
+                    fontSize: 8,
+                    fontWeight: FontWeight.w600,
+                    color: Theme.of(context).primaryColor
+                  ),),
+                Spacer(flex: 1,),
+                Text('0 slots left',
+                  style: GoogleFonts.inter(
+                    fontSize: 8,
+                    fontWeight: FontWeight.w600,
+                    color: Theme.of(context).primaryColor
+                  ),),
+              ],
+            )
+        ],
+      )
+    );
   }
 }
