@@ -132,13 +132,13 @@ class _NewsFeedState extends State<NewsFeed> {
 
     return Card(
       elevation: 8,
-      margin: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CircleAvatar(
                   backgroundColor: Theme.of(context).primaryColor,
@@ -156,7 +156,7 @@ class _NewsFeedState extends State<NewsFeed> {
                               color: Theme.of(context).primaryColor
                             ),),
 
-                            SizedBox(height: 8,),
+                            SizedBox(height: 4,),
 
             Text('Martin Odegaard penned a heartfelt goodbye message to\nArsenal fans after confirming he would return to Real Madrid.',
               style: Theme.of(context).textTheme.bodyText1,)
@@ -185,21 +185,21 @@ class _NewsFeedState extends State<NewsFeed> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  height: 24,
-                  width: 120,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        borderSide: BorderSide(
-                          style: BorderStyle.solid,
-                          color: Color(0xFFBDBDBD),
-                          width: 1
-                        )
-                        )
-                      )),
-                ),
+                // Container(
+                //   height: 24,
+                //   width: 120,
+                //   child: TextField(
+                //     decoration: InputDecoration(
+                //       border: OutlineInputBorder(
+                //         borderRadius: BorderRadius.circular(8),
+                //         borderSide: BorderSide(
+                //           style: BorderStyle.solid,
+                //           color: Color(0xFFBDBDBD),
+                //           width: 1
+                //         )
+                //         )
+                //       )),
+                // ),
                 Row(children: [
                   Icon(Icons.message),
                   Text('data')
@@ -261,11 +261,13 @@ class _CustomDrawerState extends State<CustomDrawer> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Name',
+                          TextButton(
+                            onPressed: () => Navigator.of(context).popAndPushNamed('Profile'),
+                            child: Text('Name',
                             style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                               fontSize: 12,
-                              color: Colors.white
+                              color: Colors.white)
                             ),),
                           Text('@username',
                             style: GoogleFonts.inter(

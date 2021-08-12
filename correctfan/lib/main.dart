@@ -1,4 +1,6 @@
 import 'package:correctfan/Screens/Play.dart';
+import 'package:correctfan/Screens/Drawer/MyWallet.dart';
+import 'package:correctfan/Screens/Drawer/Profile.dart';
 import 'package:correctfan/Screens/follow.dart';
 import 'package:correctfan/Onboarding/onboarding1.dart';
 import 'package:correctfan/Onboarding/onboarding2.dart';
@@ -79,7 +81,7 @@ class MyApp extends StatelessWidget {
             ),),
             bodyText1: GoogleFonts.inter(
               textStyle: TextStyle(
-              fontSize: 10,
+              fontSize: 12,
               color: Colors.black,
               height: 1.1
             ),),
@@ -93,6 +95,15 @@ class MyApp extends StatelessWidget {
                   offset: Offset(0, 4),
                   blurRadius: 4)
               ]
+            ),
+            subtitle1: GoogleFonts.inter(
+              color: Colors.white,
+              fontSize: 16
+            ),
+            subtitle2: GoogleFonts.inter(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.bold
             )
             
           ),),
@@ -108,7 +119,7 @@ class MyApp extends StatelessWidget {
           // primarySwatch: Colors.blue,
           
         
-        home: MainPage(),
+        home: MyWallet(),
         routes :
         {
           'yeyu': (context) => Splash(),
@@ -120,6 +131,7 @@ class MyApp extends StatelessWidget {
           'favourites': (context) => SetFavourite(),
           'follow': (context) => Follow(),
           'Play': (context) => Play(),
+          'Profile': (context) => Profile()
         }
             );
       

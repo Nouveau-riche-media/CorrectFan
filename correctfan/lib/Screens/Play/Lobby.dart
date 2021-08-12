@@ -13,8 +13,7 @@ class _LobbyState extends State<Lobby> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:
-        Column(
+      body: Column(
           children: [
             Container(
               height: 200,
@@ -27,9 +26,11 @@ class _LobbyState extends State<Lobby> {
             ),
 
             Container(
-              margin: EdgeInsets.all(16),
+              margin: EdgeInsets.fromLTRB(16, 16, 16, 8),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(24)),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(12),
+                  topRight: Radius.circular(12),),),
               clipBehavior: Clip.antiAlias,
               child: Container(
                 height: 40,
@@ -51,6 +52,7 @@ class _LobbyState extends State<Lobby> {
 
                     Row(
                       children: [
+                        Image.asset('assets/images/pl.png'),
                         Text('200 Contests',
                           style: GoogleFonts.inter(
                             fontSize: 8,
@@ -58,7 +60,10 @@ class _LobbyState extends State<Lobby> {
                           ),
                         ),
 
-                          Icon(Icons.filter_list_rounded, color: Colors.white),
+                          Icon(
+                            Icons.filter_list_rounded,
+                            color: Colors.white,
+                            size: 16,),
                       ],
                     ),
                     ]
@@ -67,7 +72,7 @@ class _LobbyState extends State<Lobby> {
             ),
 
             Container(
-              height: MediaQuery.of(context).size.width / 2,
+              height: MediaQuery.of(context).size.width - 42,
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: ListView.separated(
                 separatorBuilder: (x, index) => SizedBox(height: 8,),
