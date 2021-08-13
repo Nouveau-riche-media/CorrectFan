@@ -155,6 +155,7 @@ class _MyWalletState extends State<MyWallet> {
 
 
                     Column(
+                      textDirection: TextDirection.rtl,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('Complete your account\nVerification to make withdrawals',
@@ -179,9 +180,123 @@ class _MyWalletState extends State<MyWallet> {
                       ],
                     )
                   ],),
-                )
+                ),
               ],
-            )
+            ),
+
+            // SizedBox(height: 32,),
+
+            Container(
+              margin: EdgeInsets.only(top: 32,),
+              // padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: Color(0xFF3A5670),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12.0,),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Expanded(
+                          flex: 1,
+                          child: Text('Recent Transactions',
+                            style: GoogleFonts.inter(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.search, color: Colors.white,),
+                        )
+                      ],
+                    ),
+                  ),
+
+                  Container(
+                    color: Theme.of(context).backgroundColor,
+                    // width: 100,
+                    // padding: EdgeInsets.symmetric(vertical: 2, horizontal: 12),
+                    child: Row(
+                      children: [
+                        Row(
+                          children: [
+                            TextButton(onPressed: () {},
+                            style: ButtonStyle(
+                              foregroundColor: MaterialStateProperty.all(Colors.white),
+                              textStyle: MaterialStateProperty.all(
+                                GoogleFonts.inter(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 8
+                                )
+                              )
+                            ),
+                            child: Text('Transaction Ref')),
+
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.expand_more_outlined,
+                              size: 16,
+                              color: Colors.white,),
+                              )
+                          ],
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            TextButton(onPressed: () {},
+                            style: ButtonStyle(
+                              foregroundColor: MaterialStateProperty.all(Colors.white),
+                              textStyle: MaterialStateProperty.all(
+                                GoogleFonts.inter(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 8
+                                )
+                              )
+                            ),
+                            child: Text('Ammount')),
+
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.expand_more_outlined,
+                              size: 16,
+                              color: Colors.white,),
+                              )
+                          ],),
+
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            TextButton(onPressed: () {},
+                            style: ButtonStyle(
+                              foregroundColor: MaterialStateProperty.all(Colors.white),
+                              textStyle: MaterialStateProperty.all(
+                                GoogleFonts.inter(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 8
+                                )
+                              )
+                            ),
+                            child: Text('Description')),
+
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.expand_more_outlined,
+                              size: 16,
+                              color: Colors.white,),
+                              )
+                          ],),
+                      ],
+                    ),
+                  )
+                ],
+              )
+            ),
             ]
         ),
       ),
