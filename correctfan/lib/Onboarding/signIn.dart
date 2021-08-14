@@ -51,12 +51,17 @@ class _SignInState extends State<SignIn> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
                     color: Colors.white),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ImageIcon(AssetImage('assets/images/google.png')),
-                      Text('Connect with Google')
-                    ],
+                  child: TextButton(
+                    onPressed:(){},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset('assets/images/google.png', width: 24,),
+                        SizedBox(width: 12,),
+                        Text('Connect with Google',
+                          style: GoogleFonts.inter(color: Colors.black),),
+                      ],
+                    ),
                   ),
                   ),
         
@@ -68,12 +73,17 @@ class _SignInState extends State<SignIn> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
                     color: Colors.white),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [                  
-                      ImageIcon(AssetImage('assets/images/facebook.png')),
-                      Text('Connect with Facebook')
-                    ],
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [                  
+                        Image.asset('assets/images/facebook.png', width: 24,),
+                        SizedBox(width: 12,),
+                        Text('Connect with Facebook',
+                            style: GoogleFonts.inter(color: Colors.black),),
+                      ],
+                    ),
                   ),
                   ),
         

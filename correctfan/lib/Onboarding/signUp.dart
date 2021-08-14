@@ -1,3 +1,4 @@
+import 'package:correctfan/main/mainPage.dart';
 import 'package:correctfan/services/flutterfire.dart';
 import 'package:correctfan/widgets.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
@@ -16,14 +17,15 @@ class _SignUpState extends State<SignUp> {
 
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
+  TextEditingController _confirmpassword = TextEditingController();
+
+  bool checked = false;
 
   @override
   Widget build(BuildContext context) {
 
     Color backgroundColor = Theme.of(context).backgroundColor;
     Color primaryColor = Theme.of(context).primaryColor;
-
-    final _formkey = GlobalKey<FormState>();
 
 
     return Scaffold(
@@ -47,12 +49,17 @@ class _SignUpState extends State<SignUp> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
                     color: Colors.white),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      
-                      Text('Connect with Google')
-                    ],
+                  child: TextButton(
+                    onPressed:(){},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset('assets/images/google.png', width: 24,),
+                        SizedBox(width: 12,),
+                        Text('Connect with Google',
+                          style: GoogleFonts.inter(color: Colors.black),),
+                      ],
+                    ),
                   ),
                   ),
         
@@ -64,11 +71,17 @@ class _SignUpState extends State<SignUp> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
                     color: Colors.white),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [                  
-                      Text('Connect with Facebook')
-                    ],
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [                  
+                        Image.asset('assets/images/facebook.png', width: 24,),
+                        SizedBox(width: 12,),
+                        Text('Connect with Facebook',
+                            style: GoogleFonts.inter(color: Colors.black),),
+                      ],
+                    ),
                   ),
                   ),
         
@@ -83,84 +96,92 @@ class _SignUpState extends State<SignUp> {
         
                   SizedBox(height: 32),
         
-                  Form(
-                    key: _formkey,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 52.0),
-                      child: Column(
-                        children: [
-                          TextFormField(
-                            controller: _email,
-
-                            validator: (val) => val!.isEmpty ? 'Enter Email' : null,
-                            decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.person),
-                              isCollapsed: true,  
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.white,
-                                  width: 2
-                                  ),
-                                borderRadius: BorderRadius.circular(8),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 52.0),
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          controller: _email,
+                          style: GoogleFonts.inter(
+                            color: Colors.white
+                          ),
+                          // validator: (val) => val!.isEmpty ? 'Enter Email' : null,
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.person, color: Colors.white),
+                            isCollapsed: true,  
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.white,
+                                width: 2
                                 ),
-                              hintText: 'Email',
-                              hintStyle: GoogleFonts.inter(
-                                fontSize: 12,
+                              borderRadius: BorderRadius.circular(8),
                               ),
-                              contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                            ),),
-                          
-                            SizedBox(height: 16),
-                          
-                          TextFormField(
-                            controller: _password,
-
-                            validator: (val) => val!.length < 5 ? 'Password can\'t be less than 5' : null,
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              alignLabelWithHint: true,
-                              prefixIcon: Icon(Icons.lock),
-                              isCollapsed: true,
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  color: Colors.white,
-                                  width: 2
-                                  ),
+                            hintText: 'Email',
+                            
+                            hintStyle: GoogleFonts.inter(
+                              fontSize: 12,
+                              color: Colors.white
+                            ),
+                            contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                          ),),
+                        
+                          SizedBox(height: 16),
+                        
+                        TextFormField(
+                          controller: _password,
+                          style: GoogleFonts.inter(
+                            color: Colors.white
+                          ),
+                          validator: (val) => val!.length < 5 ? 'Password can\'t be less than 5' : null,
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            alignLabelWithHint: true,
+                            prefixIcon: Icon(Icons.lock, color: Colors.white),
+                            isCollapsed: true,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                              borderSide: BorderSide(
+                                color: Colors.white,
+                                width: 2
                                 ),
-                              hintText: 'Password',
-                              hintStyle: GoogleFonts.inter(
-                                fontSize: 12,
                               ),
-                              contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                              
-                            ),),
+                            hintText: 'Password',
+                            hintStyle: GoogleFonts.inter(
+                              fontSize: 12,
+                              color: Colors.white
+                            ),
+                            contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                            
+                          ),),
                   
-                            SizedBox(height: 16),
-                          
-                          TextFormField(
-                            controller: _password,
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              alignLabelWithHint: true,
-                              prefixIcon: Icon(Icons.lock),
-                              isCollapsed: true,
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  color: Colors.white,
-                                  width: 2
-                                  ),
+                          SizedBox(height: 16),
+                        
+                        TextFormField(
+                          controller: _confirmpassword,
+                          style: GoogleFonts.inter(
+                            color: Colors.white
+                          ),
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            alignLabelWithHint: true,
+                            prefixIcon: Icon(Icons.lock, color: Colors.white),
+                            isCollapsed: true,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                              borderSide: BorderSide(
+                                color: Colors.white,
+                                width: 2
                                 ),
-                              hintText: 'Confirm Password',
-                              hintStyle: GoogleFonts.inter(
-                                fontSize: 12,
                               ),
-                              contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                              
-                            ),),
-                        ],
-                      ),
+                            hintText: 'Confirm Password',
+                            hintStyle: GoogleFonts.inter(
+                              fontSize: 12,
+                              color: Colors.white
+                            ),
+                            contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                            
+                          ),),
+                      ],
                     ),
                   ),
         
@@ -202,9 +223,12 @@ class _SignUpState extends State<SignUp> {
                       children: [
                         Checkbox(
                           activeColor: primaryColor,
-                          
-                          value: true,
-                          onChanged: (bool) {},
+                          value: checked,
+                          onChanged: (value) {
+                            setState(() {
+                              checked = value!;
+                            });
+                          },
                           checkColor: Colors.white,
                           
                           ),
@@ -221,7 +245,7 @@ class _SignUpState extends State<SignUp> {
                     onPressed: () async {
                       bool nav = await signUp(_email.text, _password.text);
                       if (nav) {
-                        Navigator.popAndPushNamed(context, 'main');
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
                       }
                     },
                     label: 'Sign up'),
@@ -236,7 +260,7 @@ class _SignUpState extends State<SignUp> {
                     ),),
         
                   TextButton(
-                    onPressed: () => Navigator.of(context).popAndPushNamed('signIn'),
+                    onPressed: () => Navigator.of(context).pushNamed('signIn'),
                     child: Text('sign in to win cash daily'.toUpperCase(),
                       style: Theme.of(context).textTheme.caption,)
                   )
