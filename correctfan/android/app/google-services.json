@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "191191213195",
-    "project_id": "correctfan",
-    "storage_bucket": "correctfan.appspot.com"
+    "project_number": "356805767605",
+    "project_id": "correct-fan",
+    "storage_bucket": "correct-fan.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:191191213195:android:7f9e53700e4a44f18ea08e",
+        "mobilesdk_app_id": "1:356805767605:android:df2f39f8acefa667f2e9fc",
         "android_client_info": {
           "package_name": "com.nouveau_riche_media.correctfan"
         }
       },
       "oauth_client": [
         {
-          "client_id": "191191213195-sa3lv1agq3ucohcsbffos7u83bhm4moa.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.nouveau_riche_media.correctfan",
-            "certificate_hash": "5c87e5e1d62cafe20a33f0aeeb4f2fa815375638"
-          }
-        },
-        {
-          "client_id": "191191213195-onkissuuvc396rqg4e485ksijtk1ua31.apps.googleusercontent.com",
+          "client_id": "356805767605-fbe8nhdg89c02slsnj7on1u0qnful4bo.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBQIZBhcfkJfOkpS4wExc5n5wEPSmwbUYk"
+          "current_key": "AIzaSyBsUE6pWR5D9TMngl8xCJFfUWrwYjsuZiI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "191191213195-onkissuuvc396rqg4e485ksijtk1ua31.apps.googleusercontent.com",
+              "client_id": "356805767605-fbe8nhdg89c02slsnj7on1u0qnful4bo.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

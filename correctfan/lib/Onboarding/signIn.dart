@@ -1,4 +1,6 @@
-import 'package:correctfan/services/auth.dart';
+// ignore: import_of_legacy_library_into_null_safe
+
+import 'package:correctfan/services/flutterfire.dart';
 import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -9,7 +11,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 class SignIn extends StatefulWidget {
-  // const SignIn({ Key? key }) : super(key: key);
+  const SignIn({ Key? key }) : super(key: key);
 
   @override
   _SignInState createState() => _SignInState();
@@ -17,10 +19,9 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
 
-  // final AuthService _auth = AuthService();
+  TextEditingController _email = TextEditingController();
+  TextEditingController _password = TextEditingController();
 
-  String email = '';
-  String password = '';
 
   @override
   Widget build(BuildContext context) {
@@ -92,9 +93,10 @@ class _SignInState extends State<SignIn> {
                     child: Column(
                       children: [
                         TextFormField(
+                          controller: _email,
                           onChanged: (val) {
                             setState(() {
-                              email = val;
+                              // email = val;
                             });
                           },
                           decoration: InputDecoration(
@@ -117,9 +119,10 @@ class _SignInState extends State<SignIn> {
                           SizedBox(height: 16),
         
                         TextFormField(
+                          controller: _password,
                           onChanged: (val) {
                             setState(() {
-                              email = val;
+                              // email = val;
                             });
                           },
                           obscureText: true,
@@ -174,7 +177,12 @@ class _SignInState extends State<SignIn> {
                   SizedBox(height: 32,),
         
                   Button(
-                    onPressed: () => Navigator.of(context).pushNamed('favourites'),
+                    onPressed: () async {
+                      bool nav = await signIn(_email.text, _password.text);
+                      if (nav) {
+                        Navigator.popAndPushNamed(context, 'main');
+                      }
+                    },
                     label: 'Sign in'),
         
                     SizedBox(height: 16,),

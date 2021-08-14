@@ -1,3 +1,4 @@
+import 'package:correctfan/services/flutterfire.dart';
 import 'package:correctfan/widgets.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,10 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+
+  TextEditingController _email = TextEditingController();
+  TextEditingController _password = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
 
@@ -85,6 +90,8 @@ class _SignUpState extends State<SignUp> {
                       child: Column(
                         children: [
                           TextFormField(
+                            controller: _email,
+
                             validator: (val) => val!.isEmpty ? 'Enter Email' : null,
                             decoration: InputDecoration(
                               prefixIcon: Icon(Icons.person),
@@ -106,6 +113,8 @@ class _SignUpState extends State<SignUp> {
                             SizedBox(height: 16),
                           
                           TextFormField(
+                            controller: _password,
+
                             validator: (val) => val!.length < 5 ? 'Password can\'t be less than 5' : null,
                             obscureText: true,
                             decoration: InputDecoration(
@@ -130,6 +139,7 @@ class _SignUpState extends State<SignUp> {
                             SizedBox(height: 16),
                           
                           TextFormField(
+                            controller: _password,
                             obscureText: true,
                             decoration: InputDecoration(
                               alignLabelWithHint: true,
@@ -208,13 +218,12 @@ class _SignUpState extends State<SignUp> {
                   SizedBox(height: 16,),
         
                   Button(
-                    onPressed: () {
-                      if (_formkey.currentState!.validate()){
+                    onPressed: () async {
+                      bool nav = await signUp(_email.text, _password.text);
+                      if (nav) {
+                        Navigator.popAndPushNamed(context, 'main');
                       }
-
-
-                      Navigator.of(context).popAndPushNamed('Play');
-                      },
+                    },
                     label: 'Sign up'),
         
                     SizedBox(height: 16,),
