@@ -276,30 +276,31 @@ class _CustomDrawerState extends State<CustomDrawer> {
               children: [
                 TextButton(
                   onPressed: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CircleAvatar(),
-                      SizedBox(width: 8,),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          TextButton(
-                            onPressed: () => Navigator.of(context).popAndPushNamed('Profile'),
-                            child: Text('Name',
+                  child: GestureDetector(
+                    onTap: () => Navigator.of(context).popAndPushNamed('Profile'),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CircleAvatar(),
+                        SizedBox(width: 8,),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Name',
                             style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                               fontSize: 12,
                               color: Colors.white)
-                            ),),
-                          Text('@username',
-                            style: GoogleFonts.inter(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 11,
-                              color: Colors.white)
-                          )],
-                      )
-                    ],
+                            ),
+                            Text('@username',
+                              style: GoogleFonts.inter(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 11,
+                                color: Colors.white)
+                            )],
+                        )
+                      ],
+                    ),
                   ),
                   ),
 
@@ -670,6 +671,17 @@ class _ScoresState extends State<Scores> {
           ),
         ),
       ],
+    );
+  }
+}
+
+class InboxMessage extends StatelessWidget {
+  const InboxMessage({ Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
     );
   }
 }

@@ -107,7 +107,7 @@ class MyApp extends StatelessWidget {
                           fontWeight: FontWeight.bold)),
                 ),
 
-                home: LiveScore(),
+                home: Onboarding1(),
                 routes: {
                   'yeyu': (context) => Splash(),
                   'on1': (context) => Onboarding1(),

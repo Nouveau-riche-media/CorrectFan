@@ -34,7 +34,7 @@ class _YesterdayState extends State<Yesterday> {
 
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 32),
-                height: MediaQuery.of(context).size.height / 2,
+                height: MediaQuery.of(context).size.height / 2 + 32,
                 child: ListView.separated(
                   itemBuilder: (index, x) => Scores(),
                   separatorBuilder: (index, x) => Divider(

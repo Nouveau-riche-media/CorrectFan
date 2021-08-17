@@ -250,16 +250,8 @@ class _SignUpState extends State<SignUp> {
                   height: 16,
                 ),
                 Button(
-                    onPressed: () async {
-                      bool nav = await signUp(_email.text, _password.text);
-                      if (nav == true) {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => MainPage()));
-                      }
-                    },
-                    label: 'Sign up'),
+                  label: 'Sign up',
+                  onPressed: () => Navigator.popAndPushNamed(context, 'main'),),
                 SizedBox(
                   height: 16,
                 ),

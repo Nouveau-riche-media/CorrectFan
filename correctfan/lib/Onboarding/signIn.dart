@@ -187,13 +187,9 @@ class _SignInState extends State<SignIn> {
                     SizedBox(
                       height: 32,
                     ),
-                    Button(
-                        onPressed: () async {
-                          bool nav = await signIn(_email.text, _password.text);
-                          if (nav) {
+                    Button(onPressed: () {
                             Navigator.popAndPushNamed(context, 'main');
-                          }
-                        },
+                          },
                         label: 'Sign in'),
                     SizedBox(
                       height: 16,
