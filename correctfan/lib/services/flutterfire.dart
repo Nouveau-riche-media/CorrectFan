@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 FirebaseAuth firebase = FirebaseAuth.instance;
 
-Future<bool> signIn(String email, String password) async{
+Future<bool> signIn(String email, String password) async {
   try {
     await firebase.signInWithEmailAndPassword(email: email, password: password);
     return true;
@@ -12,10 +12,13 @@ Future<bool> signIn(String email, String password) async{
   }
 }
 
-
-Future<bool> signUp(String email, String password,) async{
+Future<bool> signUp(
+  String email,
+  String password,
+) async {
   try {
-    await firebase.createUserWithEmailAndPassword(email: email, password: password);
+    await firebase.createUserWithEmailAndPassword(
+        email: email, password: password);
     return true;
   } on FirebaseAuthException catch (e) {
     if (e.code == 'weak-password') {
@@ -24,8 +27,8 @@ Future<bool> signUp(String email, String password,) async{
       print('The account already exists for that email.');
     }
     return false;
-} catch (e) {
-  print(e.toString());
-  return false;
-}
+  } catch (e) {
+    print(e.toString());
+    return false;
+  }
 }

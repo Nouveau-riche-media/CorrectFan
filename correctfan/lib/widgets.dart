@@ -1,4 +1,6 @@
 
+import 'package:correctfan/Livescores/LiveScoreDetail.dart';
+import 'package:correctfan/Screens/News/NewsDetail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -120,7 +122,7 @@ class Club extends StatelessWidget {
 }
 
 class NewsFeed extends StatefulWidget {
-  // const NewsFeed({ Key? key }) : super(key: key);
+  const NewsFeed({ Key? key }) : super(key: key);
 
   @override
   _NewsFeedState createState() => _NewsFeedState();
@@ -130,90 +132,111 @@ class _NewsFeedState extends State<NewsFeed> {
   @override
   Widget build(BuildContext context) {
 
-    return Card(
-      elevation: 8,
-      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CircleAvatar(
-                  backgroundColor: Theme.of(context).primaryColor,
-                  child: Text('A'),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('MARTIN ODEGAARD CONFIRMS\nARSENAL EXIT',
-                    textWidthBasis: TextWidthBasis.parent,
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, 'News Detail'),
+      child: Card(
+        elevation: 8,
+        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Theme.of(context).primaryColor,
+                        child: Text('A'),
+                      ),
+                      SizedBox(width: 4,),
+                      Text(
+                      'MARTIN ODEGAARD CONFIRMS\nARSENAL EXIT',
+                      textWidthBasis: TextWidthBasis.parent,
                       softWrap: true,
-                            style: GoogleFonts.inter(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Theme.of(context).primaryColor
-                            ),),
-
-                            SizedBox(height: 4,),
-
-            Text('Martin Odegaard penned a heartfelt goodbye message to\nArsenal fans after confirming he would return to Real Madrid.',
-              style: Theme.of(context).textTheme.bodyText1,)
-              ],
-                ),
-              ],
+                      style: GoogleFonts.inter(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).primaryColor),
+                    ),
+                    ],
             ),
-
-            SizedBox(height: 16,),
-
-            Container(
-              height: 160,
-              width: 320,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color.fromARGB(50, 229, 229, 229)
+                      SizedBox(height: 8,),
+    
+                  Text('Martin Odegaard penned a heartfelt goodbye message to\nArsenal fans after confirming he would return to Real Madrid.',
+                    style: Theme.of(context).textTheme.bodyText1,),
+    
+                    Row(
+                      children: [
+                        Spacer(
+                          flex: 1,
+                        ),
+                        Text(
+                          '2hrs ago',
+                          style: GoogleFonts.inter(
+                            color: Colors.grey[300],
+                            fontStyle: FontStyle.italic,
+                          ),
+                        )
+                      ],
+                    )
+                ],
               ),
-              child: Container(
-                child: SvgPicture.asset('assets/images/logo.svg',
-                  color: Color.fromARGB(100, 229, 229, 229),),
-              )
-            ),
-
-            SizedBox(height: 16,),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                // Container(
-                //   height: 24,
-                //   width: 120,
-                //   child: TextField(
-                //     decoration: InputDecoration(
-                //       border: OutlineInputBorder(
-                //         borderRadius: BorderRadius.circular(8),
-                //         borderSide: BorderSide(
-                //           style: BorderStyle.solid,
-                //           color: Color(0xFFBDBDBD),
-                //           width: 1
-                //         )
-                //         )
-                //       )),
-                // ),
-                Row(children: [
-                  Icon(Icons.message),
-                  Text('data')
-                ],),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                  Icon(Icons.favorite),
-                  Text('data')
-                ],),
-              ],
-            ),
-
-          ]
+                
+    
+              SizedBox(height: 8,),
+    
+              Container(
+                height: 160,
+                width: 320,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Color.fromARGB(50, 229, 229, 229)
+                ),
+                child: Container(
+                  child: SvgPicture.asset('assets/images/logo.svg',
+                    color: Color.fromARGB(100, 229, 229, 229),),
+                )
+              ),
+    
+              SizedBox(height: 16,),
+    
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  // Container(
+                  //   height: 24,
+                  //   width: 120,
+                  //   child: TextField(
+                  //     decoration: InputDecoration(
+                  //       border: OutlineInputBorder(
+                  //         borderRadius: BorderRadius.circular(8),
+                  //         borderSide: BorderSide(
+                  //           style: BorderStyle.solid,
+                  //           color: Color(0xFFBDBDBD),
+                  //           width: 1
+                  //         )
+                  //         )
+                  //       )),
+                  // ),
+                  Row(children: [
+                    Icon(Icons.message),
+                    Text('data')
+                  ],),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                    Icon(Icons.favorite),
+                    Text('data')
+                  ],),
+                ],
+              ),
+    
+            ]
+          ),
         ),
       ),
     );
@@ -582,6 +605,71 @@ class _LobbyContestCardState extends State<LobbyContestCard> {
             )
         ],
       )
+    );
+  }
+}
+
+class Scores extends StatefulWidget {
+  const Scores({ Key? key }) : super(key: key);
+
+  @override
+  _ScoresState createState() => _ScoresState();
+}
+
+class _ScoresState extends State<Scores> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text('32',
+          style: GoogleFonts.inter(
+            color: Colors.green,
+            fontWeight: FontWeight.w900,
+            fontSize: 10
+          ),),
+        GestureDetector(
+          onTap: () => Navigator.pushNamed(context, 'LiveScoreDetails'),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Club',
+                style: GoogleFonts.inter(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w900,
+                  color: Theme.of(context).primaryColor,
+                )),
+                SizedBox(width: 8,),
+              CircleAvatar(
+                radius: 10,
+              ),
+              SizedBox(
+                width: 16,
+              ),
+              Text('1 : 2',
+                style: GoogleFonts.inter(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).primaryColor,)),
+                  SizedBox(
+                width: 16,
+              ),
+              CircleAvatar(
+                radius: 10,
+              ),
+              SizedBox(
+                width: 8,
+              ),
+              Text('Club',
+                style: GoogleFonts.inter(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w900,
+                  color: Theme.of(context).primaryColor,)),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

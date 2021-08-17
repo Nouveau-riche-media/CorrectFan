@@ -22,19 +22,18 @@ class _NewsState extends State<News> {
       backgroundColor: Colors.white,
       // App Bar
       appBar: AppBar(
-        
         centerTitle: true,
-        toolbarHeight: 142,
+        toolbarHeight: 164,
         title: SvgPicture.asset('assets/images/cflettermark.svg',width: 120,),
-        
         bottom: PreferredSize(
-          preferredSize: Size.fromWidth(120),
+          preferredSize: Size.fromHeight(100)
+          ,
           child: Container(
             height: 114,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CircleAvatar(
@@ -62,6 +61,41 @@ class _NewsState extends State<News> {
                     child: Text('A'),
                     radius: 24,
                   ),
+                  // Container(
+                  //   height: 40,
+                  //   width: 40,
+                  //   decoration: BoxDecoration(
+                  //     color: Colors.blue,
+                  //     borderRadius: BorderRadius.circular(24)),
+                  // ),
+                  // Container(
+                  //         height: 40,
+                  //         width: 40,
+                  //         decoration: BoxDecoration(
+                  //             color: Colors.blue,
+                  //             borderRadius: BorderRadius.circular(24)),
+                  //       ),
+                  //       Container(
+                  //         height: 40,
+                  //         width: 40,
+                  //         decoration: BoxDecoration(
+                  //             color: Colors.blue,
+                  //             borderRadius: BorderRadius.circular(24)),
+                  //       ),
+                  //       Container(
+                  //         height: 40,
+                  //         width: 40,
+                  //         decoration: BoxDecoration(
+                  //             color: Colors.blue,
+                  //             borderRadius: BorderRadius.circular(24)),
+                  //       ),
+                  //       Container(
+                  //         height: 40,
+                  //         width: 40,
+                  //         decoration: BoxDecoration(
+                  //             color: Colors.blue,
+                  //             borderRadius: BorderRadius.circular(24)),
+                  //       ),
 
                 ],
               )
