@@ -181,7 +181,7 @@ class _SignInState extends State<SignIn> {
                     ),
                     Button(
                       onPressed: () {
-                        authService.signInWithEmailAndPassword(_email.text, _password.text);
+                        authService.signInWithEmailAndPassword(_email.text.trim(), _password.text.trim());
                       },
                       label: 'Sign in'),
                     SizedBox(

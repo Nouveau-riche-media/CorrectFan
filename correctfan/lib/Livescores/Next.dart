@@ -47,9 +47,6 @@ class _NextState extends State<Next> {
                   itemCount: 8),
             ),
 
-            Divider(
-              color: Theme.of(context).primaryColor,
-            ),
           ]),
         ),
       ),

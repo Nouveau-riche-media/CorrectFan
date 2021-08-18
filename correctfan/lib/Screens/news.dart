@@ -60,42 +60,7 @@ class _NewsState extends State<News> {
                     backgroundColor: backgroundColor,
                     child: Text('A'),
                     radius: 24,
-                  ),
-                  // Container(
-                  //   height: 40,
-                  //   width: 40,
-                  //   decoration: BoxDecoration(
-                  //     color: Colors.blue,
-                  //     borderRadius: BorderRadius.circular(24)),
-                  // ),
-                  // Container(
-                  //         height: 40,
-                  //         width: 40,
-                  //         decoration: BoxDecoration(
-                  //             color: Colors.blue,
-                  //             borderRadius: BorderRadius.circular(24)),
-                  //       ),
-                  //       Container(
-                  //         height: 40,
-                  //         width: 40,
-                  //         decoration: BoxDecoration(
-                  //             color: Colors.blue,
-                  //             borderRadius: BorderRadius.circular(24)),
-                  //       ),
-                  //       Container(
-                  //         height: 40,
-                  //         width: 40,
-                  //         decoration: BoxDecoration(
-                  //             color: Colors.blue,
-                  //             borderRadius: BorderRadius.circular(24)),
-                  //       ),
-                  //       Container(
-                  //         height: 40,
-                  //         width: 40,
-                  //         decoration: BoxDecoration(
-                  //             color: Colors.blue,
-                  //             borderRadius: BorderRadius.circular(24)),
-                  //       ),
+                  )
 
                 ],
               )

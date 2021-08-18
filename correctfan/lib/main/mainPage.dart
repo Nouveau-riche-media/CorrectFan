@@ -86,9 +86,9 @@ class _MainPageState extends State<MainPage> {
              fontWeight: FontWeight.bold,
            ),
 
-          selectedIconTheme: IconThemeData(color: primaryColor), 
+          selectedIconTheme: IconThemeData(color: backgroundColor), 
 
-          backgroundColor: backgroundColor,
+          backgroundColor: primaryColor,
             currentIndex: _pageIndex,
             type: BottomNavigationBarType.fixed,
             iconSize: 20,

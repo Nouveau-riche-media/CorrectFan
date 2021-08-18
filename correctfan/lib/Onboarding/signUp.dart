@@ -145,9 +145,6 @@ class _SignUpState extends State<SignUp> {
                       TextFormField(
                         controller: _password,
                         style: GoogleFonts.inter(color: Colors.white),
-                        validator: (val) => val!.length < 5
-                            ? 'Password can\'t be less than 5'
-                            : null,
                         obscureText: true,
                         decoration: InputDecoration(
                           alignLabelWithHint: true,
@@ -167,7 +164,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                       SizedBox(height: 16),
                       TextFormField(
-                        // controller: _confirmpassword,
+                        controller: _confirmpassword,
                         style: GoogleFonts.inter(color: Colors.white),
                         obscureText: true,
                         decoration: InputDecoration(
@@ -249,12 +246,11 @@ class _SignUpState extends State<SignUp> {
                 ),
                 Button(
                   label: 'Sign up',
-                  onPressed: () {
-                    if (_password == _confirmpassword) {
-                      Navigator.popAndPushNamed(context, 'main');
+                  onPressed: () async{
+                      await authService.createUserWithEmailAndPassword(
+                        _email.text.trim(), _password.text.trim());
                       }
-                    else return null;
-                    }),
+                    ),
                 SizedBox(
                   height: 16,
                 ),

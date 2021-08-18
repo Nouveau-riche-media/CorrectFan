@@ -12,6 +12,7 @@ import 'package:correctfan/Onboarding/setFavourites.dart';
 import 'package:correctfan/Onboarding/signIn.dart';
 import 'package:correctfan/Onboarding/signUp.dart';
 import 'package:correctfan/Onboarding/splash.dart';
+import 'package:correctfan/Screens/inbox.dart';
 import 'package:correctfan/Screens/news.dart';
 import 'package:correctfan/main/mainPage.dart';
 import 'package:correctfan/services/flutterfire.dart';
@@ -104,7 +105,7 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold)),
         ),
   
-        home: Wrapper(),
+        home: MainPage(),
         routes: {
           'yeyu': (context) => Splash(),
           'on1': (context) => Onboarding1(),

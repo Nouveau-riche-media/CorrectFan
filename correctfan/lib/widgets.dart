@@ -685,8 +685,169 @@ class InboxMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        margin: EdgeInsets.symmetric(vertical: 8),
+        padding: EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Color(0xFFE8E8E8),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Row(
+          children: [
+            CircleAvatar(),
+            SizedBox(width: 16,),
+            Container(
+              width: 200,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text('Welcome Winner!',
+                        style: GoogleFonts.inter(
+                          color: Color(0xFF4F4F4F),
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold
+                        ),),
+                        Spacer(flex: 1,),
+                      Text('Now',
+                        style: GoogleFonts.inter(
+                            color: Color(0xFF4F4F4F),
+                            fontSize: 8,
+                            ),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                  height: 8,
+                ),
+                  Text('Hello Dami, welcome to the winner’s corner! We are very\nexcited to have you join many others to share and enjoy...',
+                    style: GoogleFonts.inter(
+                        color: Color(0xFF4F4F4F),
+                        fontSize: 8,
+                        ),)
+                ]
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Players extends StatefulWidget {
+  const Players({Key? key}) : super(key: key);
+
+  @override
+  _PlayersState createState() => _PlayersState();
+}
+
+class _PlayersState extends State<Players> {
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: EdgeInsets.symmetric(vertical: 32),
+      elevation: 8,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            height: 12,
+          ),
+          SvgPicture.asset('assets/images/pl.svg'),
+          SizedBox(
+            height: 12,
+          ),
+          Text('PLAYER STATS TABLE',
+            style: GoogleFonts.inter(
+              fontSize: 12,
+              color: Color(0xFFB2B2B2),
+              fontWeight: FontWeight.w900
+            )),
+            SizedBox(height: 12,),
+
+          Divider(color: Theme.of(context).primaryColor,),
+
+          SizedBox(
+            height: 12,
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              FilterChip(
+                label: Text('Defender'),
+                onSelected: (bool x) {} ),
+
+                FilterChip(label: Text('Goalkeeper'), onSelected: (bool x) {}),
+
+                FilterChip(
+                label: Text('MidFielder'),
+                onSelected: (bool x) {} ),
+
+                FilterChip(
+                label: Text('Forward'),
+                onSelected: (bool x) {} ),                
+            ],
+          ),
+
+          SizedBox(height: 12,),
+
+          Container(
+            width: MediaQuery.of(context).size.width,
+            padding: EdgeInsets.all(8),
+            color: Theme.of(context).primaryColor,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text('Club',
+                  style: GoogleFonts.inter(
+                    fontSize: 12,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold
+                  ),),
+
+                  Text(
+                  'Players',
+                  style: GoogleFonts.inter(
+                      fontSize: 12,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
+
+                Text(
+                  'Position',
+                  style: GoogleFonts.inter(
+                      fontSize: 12,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
+
+                Text(
+                  'Market Value',
+                  style: GoogleFonts.inter(
+                      fontSize: 12,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
+
+                Text(
+                  'Rating',
+                  style: GoogleFonts.inter(
+                      fontSize: 12,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }

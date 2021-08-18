@@ -14,6 +14,11 @@ class _InboxState extends State<Inbox> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.edit_rounded, color: Colors.white),
+        backgroundColor: Theme.of(context).backgroundColor,
+      ),
       drawer: CustomDrawer(),
       appBar: AppBar(
         title: SvgPicture.asset('assets/images/cflettermark.svg'),
@@ -46,7 +51,7 @@ class _InboxState extends State<Inbox> {
                   )),
                 IconButton(
                   onPressed: () {},
-                  icon: Icon(Icons.list, color: Colors.white))
+                  icon: Icon(Icons.filter_list, color: Colors.white))
               ]
             ),
           ),
@@ -54,7 +59,8 @@ class _InboxState extends State<Inbox> {
       ),
 
       body: Container(
-        height: MediaQuery.of(context).size.height,
+        margin: EdgeInsets.symmetric(horizontal: 32),
+        height: MediaQuery.of(context).size.height - 32,
         child: ListView.builder(
           itemBuilder:
           (context, index) => InboxMessage(),
