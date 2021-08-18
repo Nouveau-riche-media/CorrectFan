@@ -16,7 +16,7 @@ class _Onboarding1State extends State<Onboarding1> {
 
 changeScreen(BuildContext context){
   return Timer(Duration(milliseconds: 5000), () async {
-    await Navigator.pushNamed(context, 'on2');
+    await Navigator.popAndPushNamed(context, 'on2');
   });
 }
 
@@ -27,6 +27,7 @@ changeScreen(BuildContext context){
     super.initState;
     changeScreen(context);    
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +87,9 @@ changeScreen(BuildContext context){
                           bottom: 46,
                           right: 32,
                           child: TextButton(
-                            onPressed:  () => Navigator.of(context).pushNamed('signIn'),
+                            onPressed:  () {
+                              Navigator.of(context).popAndPushNamed('signIn');
+                            },
                             child: Text('Skip>',
                             style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,

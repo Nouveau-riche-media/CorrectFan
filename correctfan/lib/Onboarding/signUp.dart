@@ -5,6 +5,7 @@ import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class SignUp extends StatefulWidget {
   // const SignUp({ Key? key }) : super(key: key);
@@ -16,7 +17,7 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
-  // TextEditingController _confirmpassword = TextEditingController();
+  TextEditingController _confirmpassword = TextEditingController();
 
   bool checked = false;
 
@@ -24,16 +25,13 @@ class _SignUpState extends State<SignUp> {
   void dispose() {
     _email.dispose();
     _password.dispose();
-    // _confirmpassword.dispose();
+    _confirmpassword.dispose();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-
-    // _email.addListener(_signUp());
-    // _password.addListener(_signUp());
   }
 
   @override
@@ -41,6 +39,7 @@ class _SignUpState extends State<SignUp> {
     Color backgroundColor = Theme.of(context).backgroundColor;
     Color primaryColor = Theme.of(context).primaryColor;
 
+    final authService = Provider.of<AuthService>(context);
     return Scaffold(
       backgroundColor: backgroundColor,
       body: Center(
@@ -127,7 +126,6 @@ class _SignUpState extends State<SignUp> {
                       TextFormField(
                         controller: _email,
                         style: GoogleFonts.inter(color: Colors.white),
-                        // validator: (val) => val!.isEmpty ? 'Enter Email' : null,
                         decoration: InputDecoration(
                           prefixIcon: Icon(Icons.person, color: Colors.white),
                           isCollapsed: true,
@@ -251,7 +249,12 @@ class _SignUpState extends State<SignUp> {
                 ),
                 Button(
                   label: 'Sign up',
-                  onPressed: () => Navigator.popAndPushNamed(context, 'main'),),
+                  onPressed: () {
+                    if (_password == _confirmpassword) {
+                      Navigator.popAndPushNamed(context, 'main');
+                      }
+                    else return null;
+                    }),
                 SizedBox(
                   height: 16,
                 ),

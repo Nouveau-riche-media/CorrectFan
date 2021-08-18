@@ -5,6 +5,7 @@ import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 
 class SignIn extends StatefulWidget {
@@ -22,6 +23,7 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     Color backgroundColor = Theme.of(context).backgroundColor;
 
+    final authService = Provider.of<AuthService>(context);
     return Scaffold(
         backgroundColor: backgroundColor,
         body: Center(
@@ -108,11 +110,6 @@ class _SignInState extends State<SignIn> {
                         children: [
                           TextFormField(
                             controller: _email,
-                            onChanged: (val) {
-                              setState(() {
-                                // email = val;
-                              });
-                            },
                             decoration: InputDecoration(
                               prefixIcon: Icon(Icons.person),
                               isCollapsed: true,
@@ -132,11 +129,6 @@ class _SignInState extends State<SignIn> {
                           SizedBox(height: 16),
                           TextFormField(
                             controller: _password,
-                            onChanged: (val) {
-                              setState(() {
-                                // email = val;
-                              });
-                            },
                             obscureText: true,
                             decoration: InputDecoration(
                               alignLabelWithHint: true,
@@ -187,10 +179,11 @@ class _SignInState extends State<SignIn> {
                     SizedBox(
                       height: 32,
                     ),
-                    Button(onPressed: () {
-                            Navigator.popAndPushNamed(context, 'main');
-                          },
-                        label: 'Sign in'),
+                    Button(
+                      onPressed: () {
+                        authService.signInWithEmailAndPassword(_email.text, _password.text);
+                      },
+                      label: 'Sign in'),
                     SizedBox(
                       height: 16,
                     ),

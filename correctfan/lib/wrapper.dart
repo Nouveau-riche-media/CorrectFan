@@ -1,25 +1,34 @@
 import 'package:correctfan/Onboarding/signIn.dart';
 import 'package:correctfan/Screens/Play.dart';
+import 'package:correctfan/main/mainPage.dart';
+import 'package:correctfan/services/flutterfire.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'Onboarding/signUp.dart';
 import 'models/user.dart';
 
 class Wrapper extends StatelessWidget {
-  // const Wrapper({ Key? key }) : super(key: key);
+  const Wrapper({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 
-    final user = Provider.of<User>(context);
+    final authService = Provider.of<AuthService>(context);
 
-    if (user == null ){
-      return SignIn();
+  return StreamBuilder<User?>(
+    stream: authService.user,
+    builder: (_, AsyncSnapshot<User?> snapshot) {
+      if (snapshot.connectionState == ConnectionState.active) {
+        final User? user = snapshot.data;
+        return user == null ? SignIn() : MainPage();
+      }
+      return Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(),),
+      );
     }
-    else {
-      return Play();
-    }
+    );
   }
-
   
 }

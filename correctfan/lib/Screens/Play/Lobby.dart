@@ -1,5 +1,6 @@
 import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Lobby extends StatefulWidget {
@@ -40,6 +41,7 @@ class _LobbyState extends State<Lobby> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
+                    SvgPicture.asset('assets/images/pl.svg'),
                     Text(
                       'Matchday 35 of 38'.toUpperCase(),
                       style: GoogleFonts.inter(
@@ -52,14 +54,13 @@ class _LobbyState extends State<Lobby> {
 
                     Row(
                       children: [
-                        Image.asset('assets/images/pl.png'),
                         Text('200 Contests',
                           style: GoogleFonts.inter(
                             fontSize: 8,
                             color: Colors.white
                           ),
                         ),
-
+                        SizedBox(width: 4,),
                           Icon(
                             Icons.filter_list_rounded,
                             color: Colors.white,

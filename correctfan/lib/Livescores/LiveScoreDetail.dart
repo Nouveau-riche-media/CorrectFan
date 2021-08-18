@@ -101,13 +101,15 @@ class _LiveScoreDetailState extends State<LiveScoreDetail> {
                         ),
                       ],
                     ),
-                    Slider(
+                    Container(
+                      width: 200,
+                      child: Slider(
                       min: 0,
                       max: 100,
                       activeColor: Colors.green,
                       value: 32,
                       onChanged: (double x) {},
-                    )
+                    ))
                   ],
                 ),
               ),

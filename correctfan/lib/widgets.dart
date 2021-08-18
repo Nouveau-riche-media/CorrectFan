@@ -414,7 +414,7 @@ class _ContestCardState extends State<ContestCard> {
             alignment: Alignment.center,
             color: Colors.black,
             height: 18,
-            width: 89,
+            width: 160,
             child: Text('1st Place - \$50K',
               style: GoogleFonts.lato(
                 fontSize: 12,
@@ -557,23 +557,28 @@ class _LobbyContestCardState extends State<LobbyContestCard> {
                 ],
               ),
 
-              TextButton(
-                onPressed: () {},
-                child: Text('JOIN'),
-                style: ButtonStyle(
-                  padding: MaterialStateProperty.all(EdgeInsets.all(16)),
-                  minimumSize: MaterialStateProperty.all(Size(0, 0)),
-                  foregroundColor: MaterialStateProperty.all(Colors.white),
-                  backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
-                  elevation: MaterialStateProperty.all(0),
-                  alignment: Alignment.center,
-                  textStyle: MaterialStateProperty.all(
-                    GoogleFonts.inter(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 8
-                    )),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(500)
                 ),
-                )
+                child: TextButton( 
+                  onPressed: () {},
+                  child: Text('JOIN'),
+                  style: ButtonStyle(
+                    // padding: MaterialStateProperty.all(EdgeInsets.all(16)),
+                    // minimumSize: MaterialStateProperty.all(Size(0, 0)),
+                    foregroundColor: MaterialStateProperty.all(Colors.white),
+                    backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+                    elevation: MaterialStateProperty.all(0),
+                    alignment: Alignment.center,
+                    textStyle: MaterialStateProperty.all(
+                      GoogleFonts.inter(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 8
+                      )),
+                  ),
+                  ),
+              )
             ],
           ),
 
