@@ -46,7 +46,6 @@ class _NextState extends State<Next> {
                       ),
                   itemCount: 8),
             ),
-
           ]),
         ),
       ),

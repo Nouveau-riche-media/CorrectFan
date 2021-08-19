@@ -56,8 +56,23 @@ class MyApp extends StatelessWidget {
           primaryColor: Color(0xFF092C4C),
           accentColor: Color(0xFFF2994A),
   
-          // DrawerTheme
-          // canvasColor: Theme.of(context).primaryColor,
+          // ChipTheme
+          chipTheme: ChipThemeData(
+            backgroundColor: Theme.of(context).primaryColor,
+            selectedColor: Colors.white,
+            labelStyle: GoogleFonts.inter(
+              color: Colors.white,
+              fontSize: 12
+            ),
+            brightness: Brightness.light,
+            disabledColor: Color.fromARGB(30, 196, 196, 196),
+            padding: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+            secondarySelectedColor: Color.fromARGB(100, 196, 196, 196),
+            secondaryLabelStyle: GoogleFonts.inter(
+              fontSize: 12,
+              color: Colors.black
+            ),
+            ),
   
           // Font Family
           fontFamily: 'Inter',
@@ -105,7 +120,7 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold)),
         ),
   
-        home: MainPage(),
+        home: Wrapper(),
         routes: {
           'yeyu': (context) => Splash(),
           'on1': (context) => Onboarding1(),

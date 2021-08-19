@@ -1,9 +1,11 @@
 
 import 'package:correctfan/Livescores/LiveScoreDetail.dart';
 import 'package:correctfan/Screens/News/NewsDetail.dart';
+import 'package:correctfan/services/flutterfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 // import 'package:flip_panel/flip_panel.dart';
 
 
@@ -244,7 +246,7 @@ class _NewsFeedState extends State<NewsFeed> {
 }
 
 class CustomDrawer extends StatefulWidget {
-  // const CustomDrawer({ Key? key }) : super(key: key);
+  const CustomDrawer({ Key? key }) : super(key: key);
 
   @override
   _CustomDrawerState createState() => _CustomDrawerState();
@@ -259,10 +261,10 @@ class _CustomDrawerState extends State<CustomDrawer> {
       fontWeight: FontWeight.bold,
       color: Colors.white
     );
-
+    
+    final authService = Provider.of<AuthService>(context);
     return  Drawer(
       elevation: 8,
-
       child: Container(
         color: Theme.of(context).primaryColor,
         child: ListView(
@@ -380,8 +382,30 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 style: tileTheme
               ),
               onTap: (){},),
-            ],
-          ),
+
+              Container(
+                height: MediaQuery.of(context).size.height / 8,
+              ),
+
+              ListTile(
+              trailing:
+                  Column(
+                    children: [
+                      Icon(Icons.exit_to_app, color: Colors.white),
+                      Text('Sign Out', 
+                        style: GoogleFonts.inter(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 8
+                        ),)
+                      ]),
+              title: Spacer(flex: 1,),
+              onTap: () async{
+                await authService.signOut();
+              },
+            ),
+                    ],
+                  ),
       ),
     );
   }
@@ -749,11 +773,10 @@ class Players extends StatefulWidget {
 class _PlayersState extends State<Players> {
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container(
       margin: EdgeInsets.symmetric(vertical: 32),
-      elevation: 8,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.center,
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
@@ -771,7 +794,7 @@ class _PlayersState extends State<Players> {
             )),
             SizedBox(height: 12,),
 
-          Divider(color: Theme.of(context).primaryColor,),
+          Divider(color: Theme.of(context).primaryColor, indent: 12, endIndent: 12,),
 
           SizedBox(
             height: 12,
@@ -845,6 +868,71 @@ class _PlayersState extends State<Players> {
                 ),
               ],
             ),
+          ),
+
+          Container(
+            height: MediaQuery.of(context).size.height / 2 - 132,
+            child: ListView.builder(
+              itemCount: 9,
+              itemBuilder: (x, index) {
+                return Container(
+                  padding: EdgeInsets.fromLTRB(4, 8, 4, 8),
+                  margin: EdgeInsets.fromLTRB(8, 8, 8, 0),
+                  color: Color(0xFFC4C4C4),
+                  child: (
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 12,
+                        ),
+
+                        CircleAvatar( radius: 9,),
+
+                        SizedBox(
+                          width: 24,
+                        ),
+
+                        Text('Player',
+                          style: GoogleFonts.inter(
+                            fontSize: 12,
+                            color: Color(0xFF4F4F4F)
+                          ),),
+
+                          SizedBox(
+                          width: 24,
+                        ),
+
+                          Text('Position',
+                          style: GoogleFonts.inter(
+                            fontSize: 12,
+                            color: Color(0xFF4F4F4F)
+                          ),),
+
+                          SizedBox(
+                          width: 24,
+                        ),
+
+                          Text('\$\$\$',
+                          style: GoogleFonts.inter(
+                            fontSize: 12,
+                            color: Color(0xFF4F4F4F)
+                          ),),
+
+                          SizedBox(
+                          width: 64,
+                        ),
+
+                          Text('20',
+                          style: GoogleFonts.inter(
+                            fontSize: 12,
+                            color: Color(0xFF4F4F4F)
+                          ),),
+                      ],
+                    )
+                  ),
+                );
+              }),
           )
         ],
       ),

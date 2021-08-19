@@ -23,7 +23,7 @@ class _StatsState extends State<Stats> {
         toolbarHeight: 164,
         title: SvgPicture.asset('assets/images/cflettermark.svg',width: 120,),
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(100)
+          preferredSize: Size.fromHeight(64)
           ,
           child: Container(
             height: 114,
@@ -63,9 +63,8 @@ class _StatsState extends State<Stats> {
             ),
           ),)
         ),
-        body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 32),
-          height: MediaQuery.of(context).size.height / 2 + 32,
+        body: Card(
+          margin: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
           child: Players()
         ),
           
