@@ -1,4 +1,5 @@
 import 'package:correctfan/Livescores/LiveScoreDetail.dart';
+import 'package:correctfan/Screens/Inbox/InboxDetails.dart';
 import 'package:correctfan/Screens/LiveScore.dart';
 import 'package:correctfan/Screens/News/NewsDetail.dart';
 import 'package:correctfan/Screens/Play.dart';
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
           create: (_) => AuthService())
       ],
       child: MaterialApp(
+
         // title: 'Correct Fan',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
@@ -120,7 +122,7 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold)),
         ),
   
-        home: Wrapper(),
+        home: MainPage(),
         routes: {
           'yeyu': (context) => Splash(),
           'on1': (context) => Onboarding1(),
@@ -134,7 +136,8 @@ class MyApp extends StatelessWidget {
           'Profile': (context) => Profile(),
           'main': (context) => MainPage(),
           'News Detail': (context) => NewsDetail(),
-          'LiveScoreDetails': (context) => LiveScoreDetail()
+          'LiveScoreDetails': (context) => LiveScoreDetail(),
+          'InboxDetails': (context) => InboxDetails()
         }),
           );
           
