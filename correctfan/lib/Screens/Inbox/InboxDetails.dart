@@ -16,46 +16,69 @@ class _InboxDetailsState extends State<InboxDetails> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(icon: Icon(Icons.chevron_left_outlined), onPressed: () => Navigator.pop(context), color: Theme.of(context).primaryColor,),
+        centerTitle: true,
         title: Text('Welcome Winner!',
           style: GoogleFonts.inter(
               color: Color(0xFF4F4F4F),
-              fontSize: 12,
+              fontSize: 16,
               fontWeight: FontWeight.bold),
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        color: Theme.of(context).primaryColor,
-        child: Row(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.attachment),
-              color: Colors.white,),
-            
-            Container(
-              color: Color.fromARGB(30, 196, 196, 196),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: null,
-                  hintText: 'Type in your message here',
-                  hintStyle: GoogleFonts.inter(
-                    fontSize: 12,
-                    color: Colors.white,
-                    fontStyle: FontStyle.italic
-                  )
-                  ),
+
+
+      body: Column(
+        children: [
+          Divider(color: Color(0xFFE5E5E5),),
+          Flexible(
+            flex: 1,
+            child: Container(
+              height: MediaQuery.of(context).size.width - 120,
+              child: ListView.builder(
+                itemBuilder: (x, index) {
+                  return Container();
+                }),
+            ),
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.attachment),
+                color: Colors.white,
               ),
-            )
-          ],
-        ),
-        
-      ),
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: 16, horizontal: 32),
-        child: ListView.builder(
-          itemBuilder: (x, index) {
-            return Container();
-          })
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16)
+                ),
+                // color: Color.fromARGB(30, 196, 196, 196),
+                width: MediaQuery.of(context).size.width - 120,
+                padding: EdgeInsets.only(
+                  left: 8,
+                ),
+                margin: EdgeInsets.symmetric(
+                  vertical: 8,
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color.fromARGB(30, 196, 196, 196),
+                      border: null,
+                      hintText: 'Type in your message here',
+                      hintStyle: GoogleFonts.inter(
+                          fontSize: 12,
+                          color: Colors.white,
+                          fontStyle: FontStyle.italic)),
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.send, color: Colors.white),
+              )
+            ],
+          ),
+        ],
       )
     );
   }

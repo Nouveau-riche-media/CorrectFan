@@ -249,6 +249,7 @@ class _SignUpState extends State<SignUp> {
                   onPressed: () async{
                       await authService.createUserWithEmailAndPassword(
                         _email.text.trim(), _password.text.trim());
+                        // if () {}
                       }
                     ),
                 SizedBox(

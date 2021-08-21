@@ -5,6 +5,7 @@ import 'package:correctfan/Screens/News/NewsDetail.dart';
 import 'package:correctfan/Screens/Play.dart';
 import 'package:correctfan/Screens/Drawer/MyWallet.dart';
 import 'package:correctfan/Screens/Drawer/Profile.dart';
+import 'package:correctfan/Screens/Verification/AccountVerification.dart';
 import 'package:correctfan/Screens/follow.dart';
 import 'package:correctfan/Onboarding/onboarding1.dart';
 import 'package:correctfan/Onboarding/onboarding2.dart';
@@ -23,6 +24,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'Screens/Error.dart';
+import 'Screens/Verification/BankVerification.dart';
 import 'models/user.dart';
 
 // import 'Screens/news.dart';
@@ -122,7 +124,7 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold)),
         ),
   
-        home: MainPage(),
+        home: BankVerification(),
         routes: {
           'yeyu': (context) => Splash(),
           'on1': (context) => Onboarding1(),

@@ -399,7 +399,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                           fontSize: 8
                         ),)
                       ]),
-              title: Spacer(flex: 1,),
+              // title: Spacer(flex: 1, ),
               onTap: () async{
                 await authService.signOut();
               },
@@ -870,8 +870,8 @@ class _PlayersState extends State<Players> {
             ),
           ),
 
-          Container(
-            height: MediaQuery.of(context).size.height / 2 - 132,
+          Flexible(
+            flex: 1,
             child: ListView.builder(
               itemCount: 9,
               itemBuilder: (x, index) {
@@ -935,6 +935,53 @@ class _PlayersState extends State<Players> {
               }),
           )
         ],
+      ),
+    );
+  }
+}
+
+
+class TransactionInfo extends StatefulWidget {
+  const TransactionInfo({ Key? key }) : super(key: key);
+
+  @override
+  _TransactionInfoState createState() => _TransactionInfoState();
+}
+
+class _TransactionInfoState extends State<TransactionInfo> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 4, horizontal: 16),
+      color: Colors.white,
+      alignment: Alignment.center,
+      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text('0011',
+            style: GoogleFonts.inter(
+              fontSize: 12,
+              color: Color(0xFF4F4F4F),
+            ),),
+
+          SizedBox(width: 4,),
+
+          Text(
+          '10',
+          style: GoogleFonts.inter(
+            fontSize: 12,
+            color: Color(0xFF4F4F4F),
+          ),
+        ),
+        Text(
+          'Entry Fee - ZChamp',
+          style: GoogleFonts.inter(
+            fontSize: 12,
+            color: Color(0xFF4F4F4F),
+          ),
+        ),
+        ]
       ),
     );
   }

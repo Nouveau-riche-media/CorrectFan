@@ -1,3 +1,4 @@
+import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -155,7 +156,7 @@ class _MyWalletState extends State<MyWallet> {
 
 
                     Column(
-                      textDirection: TextDirection.rtl,
+                      // textDirection: TextDirection.ltr,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('Complete your account\nVerification to make withdrawals',
@@ -188,7 +189,7 @@ class _MyWalletState extends State<MyWallet> {
 
             Container(
               margin: EdgeInsets.only(top: 32,),
-              // padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+              height: MediaQuery.of(context).size.height / 2,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
                 color: Color(0xFF3A5670),
@@ -210,6 +211,7 @@ class _MyWalletState extends State<MyWallet> {
                               color: Colors.white,
                             ),),
                         ),
+
                         IconButton(
                           onPressed: () {},
                           icon: Icon(Icons.search, color: Colors.white,),
@@ -220,80 +222,79 @@ class _MyWalletState extends State<MyWallet> {
 
                   Container(
                     color: Theme.of(context).backgroundColor,
-                    // width: 100,
-                    // padding: EdgeInsets.symmetric(vertical: 2, horizontal: 12),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Row(
-                          children: [
-                            TextButton(onPressed: () {},
-                            style: ButtonStyle(
-                              foregroundColor: MaterialStateProperty.all(Colors.white),
-                              textStyle: MaterialStateProperty.all(
-                                GoogleFonts.inter(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 8
-                                )
-                              )
-                            ),
-                            child: Text('Transaction Ref')),
-
-                            IconButton(
-                              onPressed: () {},
-                              icon: Icon(Icons.expand_more_outlined,
-                              size: 16,
-                              color: Colors.white,),
-                              )
-                          ],
+                        TextButton(onPressed: () {},
+                        style: ButtonStyle(
+                          foregroundColor: MaterialStateProperty.all(Colors.white),
+                          textStyle: MaterialStateProperty.all(
+                            GoogleFonts.inter(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 8
+                            )
+                          )
                         ),
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            TextButton(onPressed: () {},
-                            style: ButtonStyle(
-                              foregroundColor: MaterialStateProperty.all(Colors.white),
-                              textStyle: MaterialStateProperty.all(
-                                GoogleFonts.inter(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 8
+                        child: Row(
+                              children: [
+                                Text('Transaction Ref'),
+                                Icon(
+                                  Icons.keyboard_arrow_down_rounded,
+                                  size: 16,
                                 )
-                              )
-                            ),
-                            child: Text('Ammount')),
+                              ],
+                            )),
 
-                            IconButton(
-                              onPressed: () {},
-                              icon: Icon(Icons.expand_more_outlined,
-                              size: 16,
-                              color: Colors.white,),
-                              )
-                          ],),
 
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            TextButton(onPressed: () {},
-                            style: ButtonStyle(
-                              foregroundColor: MaterialStateProperty.all(Colors.white),
-                              textStyle: MaterialStateProperty.all(
-                                GoogleFonts.inter(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 8
+                        TextButton(onPressed: () {},
+                        style: ButtonStyle(
+                          foregroundColor: MaterialStateProperty.all(Colors.white),
+                          textStyle: MaterialStateProperty.all(
+                            GoogleFonts.inter(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 8
+                            )
+                          )
+                        ),
+                        child: Row(
+                              children: [
+                                Text('Amount'),
+                                Icon(
+                                  Icons.keyboard_arrow_down_rounded,
+                                  size: 16,
                                 )
-                              )
-                            ),
-                            child: Text('Description')),
+                              ],
+                            )),
 
-                            IconButton(
-                              onPressed: () {},
-                              icon: Icon(Icons.expand_more_outlined,
-                              size: 16,
-                              color: Colors.white,),
-                              )
-                          ],),
+                        TextButton(onPressed: () {},
+                        style: ButtonStyle(
+                          foregroundColor: MaterialStateProperty.all(Colors.white),
+                          textStyle: MaterialStateProperty.all(
+                            GoogleFonts.inter(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 8
+                            )
+                          )
+                        ),
+                        child: Row(
+                          children: [
+                            Text('Description'),
+                            Icon(Icons.keyboard_arrow_down_rounded,size: 16,)
+                          ],
+                        )),
                       ],
                     ),
-                  )
+                  ),
+
+                  Flexible(
+                      flex: 1,
+                      child: Container(
+                        // height: MediaQuery.of(context).size.height / 2 ,
+                        child: ListView.builder(
+                          itemCount: 24,
+                          itemBuilder: (x, index) => TransactionInfo(),
+                        ),
+                      ))
                 ],
               )
             ),

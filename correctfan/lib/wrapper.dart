@@ -1,5 +1,4 @@
-import 'package:correctfan/Onboarding/signIn.dart';
-import 'package:correctfan/Screens/Play.dart';
+import 'package:correctfan/Screens/Error.dart';
 import 'package:correctfan/main/mainPage.dart';
 import 'package:correctfan/services/flutterfire.dart';
 import 'package:flutter/material.dart';
@@ -24,8 +23,7 @@ class Wrapper extends StatelessWidget {
         return user == null ? SignUp() : MainPage();
       }
       return Scaffold(
-        body: Center(
-          child: CircularProgressIndicator(),),
+        body: SomethingWentWrong(),
       );
     }
     );
