@@ -30,7 +30,7 @@ class _AccountVerificationState extends State<AccountVerification> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 32.0),
             child: GestureDetector(
-              onTap: () => Navigator.of(context).popAndPushNamed('Profile'),
+              onTap: () => Navigator.of(context).pushNamed('Profile'),
               child: CircleAvatar(
                 backgroundImage: AssetImage('assets/images/correctfanIcon.png'),
                 
