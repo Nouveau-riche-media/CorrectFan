@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+
+import 'Screens/Drawer/TransactionHistory.dart';
+import 'Screens/Drawer/Verification/AccountVerification.dart';
 // import 'package:flip_panel/flip_panel.dart';
 
 
@@ -345,7 +348,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               title: Text('Verify My Account',
                 style: tileTheme
               ),
-              onTap: (){},
+              onTap: () => AccountVerification(), 
             ),
 
             ListTile(
@@ -353,7 +356,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               title: Text('Transaction History',
                 style: tileTheme
               ),
-              onTap: (){},),
+              onTap: () => TransactionHistory(),),
               
               ListTile(
               leading: Icon(Icons.sports_soccer_rounded, color: Colors.white,),

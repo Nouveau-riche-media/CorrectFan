@@ -47,7 +47,7 @@ class _TransactionHistoryState extends State<TransactionHistory> {
 
       body: Column(
         children: [
-          Divider(color: Color(0xFFE5E5E5),),
+          Divider(color: Color(0xFFE5E5E5), endIndent: 16, indent: 16,),
 
           Container(
             clipBehavior: Clip.antiAlias,
