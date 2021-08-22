@@ -125,7 +125,7 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold)),
         ),
   
-        home: TransactionHistory(),
+        home:Wrapper(),
         routes: {
           'yeyu': (context) => Splash(),
           'on1': (context) => Onboarding1(),
