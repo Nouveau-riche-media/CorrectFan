@@ -1,10 +1,7 @@
 import 'package:correctfan/Controllers/authControllers.dart';
-import 'package:correctfan/Screens/Drawer/TransactionHistory.dart';
 import 'package:correctfan/Screens/Inbox/InboxDetails.dart';
-import 'package:correctfan/Screens/LiveScore.dart';
 import 'package:correctfan/Screens/News/NewsDetail.dart';
 import 'package:correctfan/Screens/Play.dart';
-import 'package:correctfan/Screens/Drawer/MyWallet.dart';
 import 'package:correctfan/Screens/Drawer/Profile.dart';
 import 'package:correctfan/Screens/follow.dart';
 import 'package:correctfan/Screens/Onboarding/onboarding1.dart';
@@ -14,22 +11,13 @@ import 'package:correctfan/Screens/Onboarding/setFavourites.dart';
 import 'package:correctfan/Screens/Onboarding/signIn.dart';
 import 'package:correctfan/Screens/Onboarding/signUp.dart';
 import 'package:correctfan/Screens/Onboarding/splash.dart';
-import 'package:correctfan/Screens/inbox.dart';
-import 'package:correctfan/Screens/news.dart';
 import 'package:correctfan/constants/firebase.dart';
 import 'package:correctfan/main/mainPage.dart';
-import 'package:correctfan/services/flutterfire.dart';
-import 'package:correctfan/wrapper.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'Screens/Drawer/Verification/BankVerification.dart';
-import 'Screens/Error.dart';
 
 import 'Screens/Livescores/LiveScoreDetail.dart';
-import 'models/user.dart';
 
 // import 'Screens/news.dart';
 
@@ -124,7 +112,7 @@ class MyApp extends StatelessWidget {
                 fontWeight: FontWeight.bold)),
       ),
   
-      home: SignIn(),
+      home: Onboarding1(),
       routes: {
         'yeyu': (context) => Splash(),
         'on1': (context) => Onboarding1(),
