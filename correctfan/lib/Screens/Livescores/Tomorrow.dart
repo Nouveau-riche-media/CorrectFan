@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../widgets.dart';
+import '../../widgets.dart';
 
 class Tomorrow extends StatefulWidget {
   const Tomorrow({ Key? key }) : super(key: key);

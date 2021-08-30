@@ -1,11 +1,12 @@
-import 'package:correctfan/Livescores/Next.dart';
-import 'package:correctfan/Livescores/Today.dart';
-import 'package:correctfan/Livescores/Tomorrow.dart';
-import 'package:correctfan/Livescores/Yesterday.dart';
 import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'Livescores/Next.dart';
+import 'Livescores/Today.dart';
+import 'Livescores/Tomorrow.dart';
+import 'Livescores/Yesterday.dart';
 
 class LiveScore extends StatefulWidget {
   // const LiveScore({ Key? key }) : super(key: key);

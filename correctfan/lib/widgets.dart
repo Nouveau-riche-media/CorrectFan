@@ -1,5 +1,3 @@
-
-import 'package:correctfan/Livescores/LiveScoreDetail.dart';
 import 'package:correctfan/Screens/News/NewsDetail.dart';
 import 'package:correctfan/services/flutterfire.dart';
 import 'package:flutter/material.dart';

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../widgets.dart';
+import '../../widgets.dart';
+
 
 class Next extends StatefulWidget {
   const Next({ Key? key }) : super(key: key);

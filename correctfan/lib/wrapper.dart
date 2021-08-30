@@ -4,7 +4,7 @@ import 'package:correctfan/services/flutterfire.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'Onboarding/signUp.dart';
+import 'Screens/Onboarding/signUp.dart';
 import 'models/user.dart';
 
 class Wrapper extends StatelessWidget {
