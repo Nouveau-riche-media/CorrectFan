@@ -124,7 +124,7 @@ class MyApp extends StatelessWidget {
                 fontWeight: FontWeight.bold)),
       ),
   
-      home:Wrapper(),
+      home: SignIn(),
       routes: {
         'yeyu': (context) => Splash(),
         'on1': (context) => Onboarding1(),

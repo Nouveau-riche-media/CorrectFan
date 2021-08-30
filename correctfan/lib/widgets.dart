@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 
 import 'Screens/Drawer/TransactionHistory.dart';
 import 'Screens/Drawer/Verification/AccountVerification.dart';
+import 'constants/controllers.dart';
 // import 'package:flip_panel/flip_panel.dart';
 
 
@@ -401,8 +402,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
                         ),)
                       ]),
               // title: Spacer(flex: 1, ),
-              onTap: () async{
-                await authService.signOut();
+              onTap: () {
+                authController.signOut();
               },
             ),
                     ],

@@ -1,3 +1,4 @@
+import 'package:correctfan/constants/controllers.dart';
 import 'package:correctfan/main/mainPage.dart';
 import 'package:correctfan/services/flutterfire.dart';
 import 'package:correctfan/widgets.dart';
@@ -5,7 +6,7 @@ import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 
 class SignUp extends StatefulWidget {
   // const SignUp({ Key? key }) : super(key: key);
@@ -39,7 +40,7 @@ class _SignUpState extends State<SignUp> {
     Color backgroundColor = Theme.of(context).backgroundColor;
     Color primaryColor = Theme.of(context).primaryColor;
 
-    final authService = Provider.of<AuthService>(context);
+    // final authService = Provider.of<AuthService>(context);
     return Scaffold(
       backgroundColor: backgroundColor,
       body: Center(
@@ -124,7 +125,7 @@ class _SignUpState extends State<SignUp> {
                   child: Column(
                     children: [
                       TextFormField(
-                        controller: _email,
+                        controller: authController.email,
                         style: GoogleFonts.inter(color: Colors.white),
                         decoration: InputDecoration(
                           prefixIcon: Icon(Icons.person, color: Colors.white),
@@ -143,7 +144,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                       SizedBox(height: 16),
                       TextFormField(
-                        controller: _password,
+                        controller: authController.password,
                         style: GoogleFonts.inter(color: Colors.white),
                         obscureText: true,
                         decoration: InputDecoration(
@@ -246,10 +247,8 @@ class _SignUpState extends State<SignUp> {
                 ),
                 Button(
                   label: 'Sign up',
-                  onPressed: () async{
-                      await authService.createUserWithEmailAndPassword(
-                        _email.text.trim(), _password.text.trim());
-                        // if () {}
+                  onPressed: () {
+                      authController.signUp();
                       }
                     ),
                 SizedBox(

@@ -1,11 +1,12 @@
 // ignore: import_of_legacy_library_into_null_safe
 
+import 'package:correctfan/constants/controllers.dart';
 import 'package:correctfan/services/flutterfire.dart';
 import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 
 class SignIn extends StatefulWidget {
@@ -23,7 +24,7 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     Color backgroundColor = Theme.of(context).backgroundColor;
 
-    final authService = Provider.of<AuthService>(context);
+    // final authService = Provider.of<AuthService>(context);
     return Scaffold(
         backgroundColor: backgroundColor,
         body: Center(
@@ -99,17 +100,20 @@ class _SignInState extends State<SignIn> {
                         ),
                       ),
                     ),
+
                     SizedBox(height: 32),
+
                     Text('-or-',
                         style: GoogleFonts.inter(
                             color: Colors.white, fontSize: 12)),
                     SizedBox(height: 32),
+                    
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 52.0),
                       child: Column(
                         children: [
                           TextFormField(
-                            controller: _email,
+                            controller: authController.email,
                             decoration: InputDecoration(
                               prefixIcon: Icon(Icons.person),
                               isCollapsed: true,
@@ -128,7 +132,7 @@ class _SignInState extends State<SignIn> {
                           ),
                           SizedBox(height: 16),
                           TextFormField(
-                            controller: _password,
+                            controller: authController.password,
                             obscureText: true,
                             decoration: InputDecoration(
                               alignLabelWithHint: true,
@@ -181,7 +185,7 @@ class _SignInState extends State<SignIn> {
                     ),
                     Button(
                       onPressed: () {
-                        authService.signInWithEmailAndPassword(_email.text.trim(), _password.text.trim());
+                        authController.signIn();
                       },
                       label: 'Sign in'),
                     SizedBox(

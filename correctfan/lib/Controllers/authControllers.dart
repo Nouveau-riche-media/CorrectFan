@@ -1,6 +1,6 @@
 import 'package:correctfan/Screens/Onboarding/signUp.dart';
-import 'package:correctfan/Screens/Play.dart';
 import 'package:correctfan/constants/firebase.dart';
+import 'package:correctfan/main/mainPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -27,7 +27,7 @@ class AuthController extends GetxController {
       Get.offAll(() => SignUp());
     }
     else{
-      Get.offAll(() => Play());
+      Get.offAll(() => MainPage());
     }
   }
 
