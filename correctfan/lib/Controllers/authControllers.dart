@@ -1,5 +1,6 @@
 import 'package:correctfan/Screens/Onboarding/signUp.dart';
 import 'package:correctfan/constants/firebase.dart';
+import 'package:correctfan/helpers/showLoading.dart';
 import 'package:correctfan/main/mainPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -32,21 +33,32 @@ class AuthController extends GetxController {
   }
 
   void signUp() async {
+    showLoading();
     try {
       await auth.createUserWithEmailAndPassword(email: email.text.trim(), password: password.text.trim());
+      _clearControllers();
     } catch (e) {
       Get.snackbar('Sign Up failed', 'Please try again');
     }
+    _clearControllers();
   }
 
   void signIn() async {
+    showLoading();
     try {
       await auth.signInWithEmailAndPassword(email: email.text.trim(), password: password.text.trim());
+      _clearControllers();
     } catch (e) {
       Get.snackbar('Sign Up failed', 'Please try again');
     }
+    _clearControllers();
   }
   void signOut() async {
     await auth.signOut();
+  }
+
+  _clearControllers (){
+    email.clear();
+    password.clear();
   }
   }
