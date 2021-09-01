@@ -16,24 +16,11 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  TextEditingController _email = TextEditingController();
-  TextEditingController _password = TextEditingController();
-  TextEditingController _confirmpassword = TextEditingController();
+
+  final _formkey = GlobalKey<FormState>();
 
   bool checked = false;
 
-  @override
-  void dispose() {
-    _email.dispose();
-    _password.dispose();
-    _confirmpassword.dispose();
-    super.dispose();
-  }
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -122,69 +109,87 @@ class _SignUpState extends State<SignUp> {
                 SizedBox(height: 32),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 52.0),
-                  child: Column(
-                    children: [
-                      TextFormField(
-                        controller: authController.email,
-                        style: GoogleFonts.inter(color: Colors.white),
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.person, color: Colors.white),
-                          isCollapsed: true,
-                          border: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.white, width: 2),
-                            borderRadius: BorderRadius.circular(8),
+                  child: Form(
+                    key: _formkey,
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          controller: authController.email,
+                          style: GoogleFonts.inter(color: Colors.white),
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.person, color: Colors.white),
+                            isCollapsed: true,
+                            border: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.white, width: 2),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            hintText: 'Email',
+                            hintStyle: GoogleFonts.inter(
+                                fontSize: 12, color: Colors.white),
+                            contentPadding: EdgeInsets.symmetric(
+                                horizontal: 24, vertical: 12),
                           ),
-                          hintText: 'Email',
-                          hintStyle: GoogleFonts.inter(
-                              fontSize: 12, color: Colors.white),
-                          contentPadding: EdgeInsets.symmetric(
-                              horizontal: 24, vertical: 12),
                         ),
-                      ),
-                      SizedBox(height: 16),
-                      TextFormField(
-                        controller: authController.password,
-                        style: GoogleFonts.inter(color: Colors.white),
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          alignLabelWithHint: true,
-                          prefixIcon: Icon(Icons.lock, color: Colors.white),
-                          isCollapsed: true,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8),
-                            borderSide:
-                                BorderSide(color: Colors.white, width: 2),
+
+                        SizedBox(height: 16),
+
+                        // Password
+                        TextFormField(
+                          controller: authController.password,
+                          validator: (password) {
+                            if (password!.length <= 5) {
+                              return 'your password cannot be less than 5 letters';
+                            }
+                          },
+                          style: GoogleFonts.inter(color: Colors.white),
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            alignLabelWithHint: true,
+                            prefixIcon: Icon(Icons.lock, color: Colors.white),
+                            isCollapsed: true,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                              borderSide:
+                                  BorderSide(color: Colors.white, width: 2),
+                            ),
+                            hintText: 'Password',
+                            hintStyle: GoogleFonts.inter(
+                                fontSize: 12, color: Colors.white),
+                            contentPadding: EdgeInsets.symmetric(
+                                horizontal: 24, vertical: 12),
                           ),
-                          hintText: 'Password',
-                          hintStyle: GoogleFonts.inter(
-                              fontSize: 12, color: Colors.white),
-                          contentPadding: EdgeInsets.symmetric(
-                              horizontal: 24, vertical: 12),
                         ),
-                      ),
-                      SizedBox(height: 16),
-                      TextFormField(
-                        controller: _confirmpassword,
-                        style: GoogleFonts.inter(color: Colors.white),
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          alignLabelWithHint: true,
-                          prefixIcon: Icon(Icons.lock, color: Colors.white),
-                          isCollapsed: true,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8),
-                            borderSide:
-                                BorderSide(color: Colors.white, width: 2),
+
+                        SizedBox(height: 16),
+
+                        TextFormField(
+                          controller: authController.confirmPassword,
+                          validator: (confirmPassword) {
+                            if (confirmPassword != authController.password.text) {
+                              return 'your password doesn\'t match';
+                            }
+                          },
+                          style: GoogleFonts.inter(color: Colors.white),
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            alignLabelWithHint: true,
+                            prefixIcon: Icon(Icons.lock, color: Colors.white),
+                            isCollapsed: true,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                              borderSide:
+                                  BorderSide(color: Colors.white, width: 2),
+                            ),
+                            hintText: 'Confirm Password',
+                            hintStyle: GoogleFonts.inter(
+                                fontSize: 12, color: Colors.white),
+                            contentPadding: EdgeInsets.symmetric(
+                                horizontal: 24, vertical: 12),
                           ),
-                          hintText: 'Confirm Password',
-                          hintStyle: GoogleFonts.inter(
-                              fontSize: 12, color: Colors.white),
-                          contentPadding: EdgeInsets.symmetric(
-                              horizontal: 24, vertical: 12),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 Padding(
@@ -248,7 +253,9 @@ class _SignUpState extends State<SignUp> {
                 Button(
                   label: 'Sign up',
                   onPressed: () {
-                      authController.signUp();
+                        if (_formkey.currentState!.validate()) {
+                          authController.signUp();
+                          }
                       }
                     ),
                 SizedBox(

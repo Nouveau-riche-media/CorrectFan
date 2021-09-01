@@ -13,6 +13,7 @@ import 'package:correctfan/Screens/Onboarding/signUp.dart';
 import 'package:correctfan/Screens/Onboarding/splash.dart';
 import 'package:correctfan/constants/firebase.dart';
 import 'package:correctfan/main/mainPage.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
@@ -32,13 +33,17 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-
-  // final Future<FirebaseApp> _initialization = Firebase.initializeApp();
-
   @override
   Widget build(BuildContext context) {
+    // SystemChrome.latestStyle;
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+
+      ),
+    );
     return GetMaterialApp(
-      // title: 'Correct Fan',
+      
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -112,7 +117,7 @@ class MyApp extends StatelessWidget {
                 fontWeight: FontWeight.bold)),
       ),
   
-      home: Onboarding1(),
+      home: SignUp(),
       routes: {
         'yeyu': (context) => Splash(),
         'on1': (context) => Onboarding1(),

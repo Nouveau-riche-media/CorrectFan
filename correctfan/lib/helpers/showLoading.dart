@@ -8,6 +8,7 @@ showLoading() {
     content: CircularProgressIndicator(),
     title: 'Loading', titleStyle: GoogleFonts.inter(
     fontSize: 12,
+    fontWeight: FontWeight.bold,
     color: Color(0xFF092C4C)
   ));
 }

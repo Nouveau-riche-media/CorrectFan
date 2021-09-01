@@ -14,6 +14,7 @@ class AuthController extends GetxController {
 
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
+  TextEditingController confirmPassword = TextEditingController();
 
   @override
   void onReady() {
@@ -27,32 +28,39 @@ class AuthController extends GetxController {
     if(user == null){
       Get.offAll(() => SignUp());
     }
-    else{
+    else {
       Get.offAll(() => MainPage());
     }
   }
 
   void signUp() async {
-    showLoading();
+    // showLoading();
     try {
       await auth.createUserWithEmailAndPassword(email: email.text.trim(), password: password.text.trim());
-      _clearControllers();
+      // _clearControllers();
     } catch (e) {
-      Get.snackbar('Sign Up failed', 'Please try again');
+      Get.snackbar('Sign Up failed', 'Please try again',
+      snackPosition: SnackPosition.BOTTOM
+      );
     }
+    // dismissLoadingWidget();
     _clearControllers();
   }
 
   void signIn() async {
-    showLoading();
+    // showLoading();
     try {
       await auth.signInWithEmailAndPassword(email: email.text.trim(), password: password.text.trim());
-      _clearControllers();
+      // _clearControllers();
     } catch (e) {
-      Get.snackbar('Sign Up failed', 'Please try again');
+      Get.snackbar(
+        'Sign In failed', 'Please try again',
+        snackPosition: SnackPosition.BOTTOM
+        );
     }
+    // dismissLoadingWidget();
     _clearControllers();
-  }
+  } 
   void signOut() async {
     await auth.signOut();
   }

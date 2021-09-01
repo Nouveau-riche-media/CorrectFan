@@ -1,5 +1,6 @@
 import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -23,46 +24,30 @@ class _NewsState extends State<News> {
       // App Bar
       appBar: AppBar(
         centerTitle: true,
-        toolbarHeight: 164,
+        // toolbarHeight: 164,
         title: SvgPicture.asset('assets/images/cflettermark.svg',width: 120,),
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(100)
-          ,
-          child: Container(
-            height: 114,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    backgroundColor: backgroundColor,
+          preferredSize: Size.fromHeight(42),
+          child: Center(
+            child: Container(
+              alignment: Alignment.center,
+              height: 52,
+              padding: EdgeInsets.all(8),
+              child: Center(
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 5,
+                  itemBuilder: (x, index) => Container(
+                    padding: EdgeInsets.symmetric(horizontal: 12),
+                    width: 24,
+                    height: 24,
                     child: Text('A'),
-                    radius: 24,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: backgroundColor,
-                    child: Text('A'),
-                    radius: 24,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: backgroundColor,
-                    child: Text('A'),
-                    radius: 24,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: backgroundColor,
-                    child: Text('A'),
-                    radius: 24,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: backgroundColor,
-                    child: Text('A'),
-                    radius: 24,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).backgroundColor,
+                      borderRadius: BorderRadius.circular(32)
+                    ),
                   )
-
-                ],
+                  ),
               )
             ),
           ),)

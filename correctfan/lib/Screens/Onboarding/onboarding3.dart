@@ -18,9 +18,7 @@ class _Onboarding3State extends State<Onboarding3> {
 
     Color backgroundColor = Theme.of(context).backgroundColor;
     dynamic headline5 = Theme.of(context).textTheme.headline5;
-    // dynamic headline6 = Theme.of(context).textTheme.headline6;
-    // Color primaryColor = Theme.of(context).primaryColor;
-    // Color backgroundColor = Theme.of(context).backgroundColor;
+    
 
     return Scaffold(
       backgroundColor: backgroundColor,
@@ -71,7 +69,7 @@ class _Onboarding3State extends State<Onboarding3> {
                 left: 32,
                 
                       child: Button(
-                      onPressed: () => Navigator.of(context).pushNamed('signIn'),
+                      onPressed: () => Navigator.of(context).pushNamed('signUp'),
                       label: 'Get Started',
                       ),),
         ]),

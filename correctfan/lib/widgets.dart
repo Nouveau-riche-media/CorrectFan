@@ -264,7 +264,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
       color: Colors.white
     );
     
-    final authService = Provider.of<AuthService>(context);
+    // final authService = Provider.of<AuthService>(context);
     return  Drawer(
       elevation: 8,
       child: Container(

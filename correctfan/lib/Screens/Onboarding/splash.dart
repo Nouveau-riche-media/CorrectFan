@@ -9,6 +9,7 @@ class Splash extends StatefulWidget {
   _SplashState createState() => _SplashState();
 }
 
+
 class _SplashState extends State<Splash> {
   
   changeScreen(BuildContext context){
@@ -17,13 +18,7 @@ class _SplashState extends State<Splash> {
   });
 }
 
-  @override
-  // ignore: must_call_super
-  void initState() {
-    // ignore: unnecessary_statements
-    super.initState;
-    changeScreen(context);    
-  }
+
 
   @override
   Widget build(BuildContext context) {
