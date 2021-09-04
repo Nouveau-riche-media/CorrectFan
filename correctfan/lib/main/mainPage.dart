@@ -92,7 +92,8 @@ class _MainPageState extends State<MainPage> {
             currentIndex: _pageIndex,
             type: BottomNavigationBarType.fixed,
             iconSize: 20,
-            unselectedFontSize: 12,
+            unselectedFontSize: MediaQuery.of(context).size.width / 30,
+            selectedFontSize: MediaQuery.of(context).size.width / 30,
             unselectedItemColor: Color.fromARGB(60, 255, 255, 255),
             unselectedLabelStyle: GoogleFonts.inter(),
             
