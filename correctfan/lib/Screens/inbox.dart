@@ -21,7 +21,10 @@ class _InboxState extends State<Inbox> {
       ),
       drawer: CustomDrawer(),
       appBar: AppBar(
-        title: SvgPicture.asset('assets/images/cflettermark.svg'),
+        title: SvgPicture.asset(
+            'assets/images/cflettermark.svg',
+            width: 120,
+          ),
         centerTitle: true,
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(42),

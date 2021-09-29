@@ -27,7 +27,10 @@ class _LiveScoreState extends State<LiveScore> {
       child: Scaffold(
         drawer: CustomDrawer(),
         appBar: AppBar(
-          title: SvgPicture.asset('assets/images/cflettermark.svg'),
+          title: SvgPicture.asset(
+                'assets/images/cflettermark.svg',
+                width: 120,
+              ),
           centerTitle: true,
           bottom: TabBar(
             tabs: [

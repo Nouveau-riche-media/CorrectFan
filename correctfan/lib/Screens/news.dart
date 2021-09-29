@@ -25,6 +25,7 @@ class _NewsState extends State<News> {
       appBar: AppBar(
         centerTitle: true,
         // toolbarHeight: 164,
+        
         title: SvgPicture.asset('assets/images/cflettermark.svg',width: 120,),
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(42),
@@ -35,12 +36,16 @@ class _NewsState extends State<News> {
               padding: EdgeInsets.all(8),
               child: Center(
                 child: ListView.builder(
+
+                  // padding: EdgeInsets.symmetric(horizontal: 16),
                   scrollDirection: Axis.horizontal,
                   itemCount: 5,
                   itemBuilder: (x, index) => Container(
-                    padding: EdgeInsets.symmetric(horizontal: 12),
-                    width: 24,
-                    height: 24,
+                    alignment: Alignment.center,
+                    margin: EdgeInsets.symmetric(horizontal: 12),
+                    // padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                    width: 32,
+                    height: 32,
                     child: Text('A'),
                     decoration: BoxDecoration(
                       color: Theme.of(context).backgroundColor,

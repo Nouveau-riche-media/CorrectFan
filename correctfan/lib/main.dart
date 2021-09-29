@@ -52,6 +52,11 @@ class MyApp extends StatelessWidget {
         backgroundColor: Color(0xFF003E75),
         primaryColor: Color(0xFF092C4C),
         accentColor: Color(0xFFF2994A),
+        appBarTheme: AppBarTheme(
+          backgroundColor:  Color(0xFF092C4C),
+          centerTitle: true,
+          
+        ),
   
         // ChipTheme
         chipTheme: ChipThemeData(

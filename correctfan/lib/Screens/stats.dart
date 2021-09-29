@@ -19,52 +19,38 @@ class _StatsState extends State<Stats> {
     return Scaffold(
         drawer: CustomDrawer(),
         appBar: AppBar(
-        centerTitle: true,
-        toolbarHeight: 164,
-        title: SvgPicture.asset('assets/images/cflettermark.svg',width: 120,),
-        bottom: PreferredSize(
-          preferredSize: Size.fromHeight(64)
-          ,
-          child: Container(
-            height: 114,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    backgroundColor: backgroundColor,
-                    child: Text('A'),
-                    radius: 24,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: backgroundColor,
-                    child: Text('A'),
-                    radius: 24,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: backgroundColor,
-                    child: Text('A'),
-                    radius: 24,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: backgroundColor,
-                    child: Text('A'),
-                    radius: 24,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: backgroundColor,
-                    child: Text('A'),
-                    radius: 24,
-                  )
-                ],
-              )
+          centerTitle: true,
+          // toolbarHeight: 164,
+          title: SvgPicture.asset(
+            'assets/images/cflettermark.svg',
+            width: 120,
+          ),
+          bottom: PreferredSize(
+            preferredSize: Size.fromHeight(42),
+            child: Center(
+              child: Container(
+                  alignment: Alignment.center,
+                  height: 52,
+                  padding: EdgeInsets.all(8),
+                  child: Center(
+                    child: ListView.builder(
+                      
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 5,
+                        itemBuilder: (x, index) => Container(
+                              padding: EdgeInsets.symmetric(horizontal: 12),
+                              width: 24,
+                              height: 24,
+                              child: Text('A'),
+                              decoration: BoxDecoration(
+                                  color: Theme.of(context).backgroundColor,
+                                  borderRadius: BorderRadius.circular(32)),
+                            )),
+                  )),
             ),
-          ),)
-        ),
+          )),
         body: Card(
-          margin: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+          margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           child: Players()
         ),
           

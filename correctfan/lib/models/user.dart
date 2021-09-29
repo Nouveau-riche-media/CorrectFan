@@ -1,14 +1,14 @@
 import 'package:correctfan/models/clubs.dart';
 
-class CorrectFanUser {
-  final String uid;
-  final String email;
-  var username;
-  List<Clubs> favoriteTeams;
+class User {
+  String? uid;
+  String? email;
+  String? username;
+  List<Clubs>? favoriteTeams;
 
-  CorrectFanUser({
-      this.uid,
-      this.email,
+  User({
+      required this.uid,
+      required this.email,
       this.username,
       this.favoriteTeams
     });
