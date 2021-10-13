@@ -19,6 +19,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
 import 'Screens/Livescores/LiveScoreDetail.dart';
+import 'constants/ui.dart';
 
 // import 'Screens/news.dart';
 
@@ -51,9 +52,9 @@ class MyApp extends StatelessWidget {
         // Colors
         backgroundColor: Color(0xFF003E75),
         primaryColor: Color(0xFF092C4C),
-        accentColor: Color(0xFFF2994A),
+        // accentColor: Color(0xFFF2994A),
         appBarTheme: AppBarTheme(
-          backgroundColor:  Color(0xFF092C4C),
+          backgroundColor:  primary,
           centerTitle: true,
           
         ),
@@ -64,14 +65,14 @@ class MyApp extends StatelessWidget {
           selectedColor: Colors.white,
           labelStyle: GoogleFonts.inter(
             color: Colors.white,
-            fontSize: 12
+            fontSize: text(45, context)
           ),
           brightness: Brightness.light,
           disabledColor: Color.fromARGB(30, 196, 196, 196),
           padding: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
           secondarySelectedColor: Color.fromARGB(100, 196, 196, 196),
           secondaryLabelStyle: GoogleFonts.inter(
-            fontSize: 12,
+            fontSize: text(45, context),
             color: Colors.black
           ),
           ),
@@ -80,46 +81,8 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Inter',
   
         // TextTheme
-        textTheme: TextTheme(
-            headline5: GoogleFonts.inter(
-              textStyle: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  // letterSpacing: ,
-                  letterSpacing: 5,
-                  fontSize: 24,
-                  height: 1.1),
-            ),
-            headline4: GoogleFonts.inter(
-              textStyle: TextStyle(fontSize: 32, height: 1.1),
-            ),
-            headline3: GoogleFonts.inter(
-              textStyle: TextStyle(fontSize: 40, height: 1.1),
-            ),
-            headline6: GoogleFonts.inter(
-              textStyle: TextStyle(
-                  fontSize: 20, color: Colors.white, height: 1.1),
-            ),
-            bodyText1: GoogleFonts.inter(
-              textStyle: TextStyle(
-                  fontSize: 12, color: Colors.black, height: 1.1),
-            ),
-            caption: GoogleFonts.inter(
-                fontWeight: FontWeight.w800,
-                fontSize: 12,
-                color: Color(0xFF007BEA),
-                shadows: [
-                  BoxShadow(
-                      color: Color.fromARGB(25, 0, 0, 0),
-                      offset: Offset(0, 4),
-                      blurRadius: 4)
-                ]),
-            subtitle1:
-                GoogleFonts.inter(color: Colors.white, fontSize: 16),
-            subtitle2: GoogleFonts.inter(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.bold)),
+      //   textTheme: TextTheme(
+            
       ),
   
       home: SignUp(),

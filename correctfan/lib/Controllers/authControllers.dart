@@ -5,6 +5,7 @@ import 'package:correctfan/main/mainPage.dart';
 import 'package:correctfan/models/user.dart' as cf;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // import 'package:firebase_core/firebase_core.dart';
 
@@ -43,6 +44,8 @@ class AuthController extends GetxController {
       // _clearControllers();
     } catch (e) {
       Get.snackbar('Sign Up failed', 'Please try again',
+      barBlur: 0,
+      backgroundColor: Colors.black87,
       snackPosition: SnackPosition.BOTTOM
       );
     }
@@ -58,6 +61,8 @@ class AuthController extends GetxController {
     } catch (e) {
       Get.snackbar(
         'Sign In failed', 'Please try again',
+        barBlur: 0,
+        backgroundColor: Colors.black87,
         snackPosition: SnackPosition.BOTTOM
         );
     }

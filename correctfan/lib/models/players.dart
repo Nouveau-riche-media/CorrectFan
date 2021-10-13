@@ -18,4 +18,11 @@ class PlayerModel {
     this.matchesPlayed,
     this.saves,
   }); 
+
+  // static List<PlayerModel> stats = [
+  //   PlayerModel(
+  //     club: '',
+  //     name: ''
+  //   )
+  // ];
 }

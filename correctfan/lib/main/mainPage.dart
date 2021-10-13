@@ -3,6 +3,7 @@ import 'package:correctfan/Screens/Play.dart';
 import 'package:correctfan/Screens/inbox.dart';
 import 'package:correctfan/Screens/news.dart';
 import 'package:correctfan/Screens/stats.dart';
+import 'package:correctfan/constants/ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -61,7 +62,7 @@ class _MainPageState extends State<MainPage> {
               style: GoogleFonts.inter(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
-                fontSize:12
+                fontSize: text(40, context),
               ),)
           ],
         ),),
@@ -92,7 +93,7 @@ class _MainPageState extends State<MainPage> {
             currentIndex: _pageIndex,
             type: BottomNavigationBarType.fixed,
             iconSize: 20,
-            unselectedFontSize: 12,
+            unselectedFontSize: text(40, context),
             unselectedItemColor: Color.fromARGB(60, 255, 255, 255),
             unselectedLabelStyle: GoogleFonts.inter(),
             

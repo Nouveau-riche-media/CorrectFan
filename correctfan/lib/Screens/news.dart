@@ -36,7 +36,7 @@ class _NewsState extends State<News> {
               padding: EdgeInsets.all(8),
               child: Center(
                 child: ListView.builder(
-
+                  
                   // padding: EdgeInsets.symmetric(horizontal: 16),
                   scrollDirection: Axis.horizontal,
                   itemCount: 5,
