@@ -1,3 +1,4 @@
+import 'package:correctfan/Screens/Onboarding/setFavourites.dart';
 import 'package:correctfan/constants/controllers.dart';
 import 'package:correctfan/main/mainPage.dart';
 import 'package:correctfan/services/flutterfire.dart';
@@ -5,6 +6,7 @@ import 'package:correctfan/widgets.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 // import 'package:provider/provider.dart';
 
@@ -255,6 +257,7 @@ class _SignUpState extends State<SignUp> {
                   onPressed: () {
                         if (_formkey.currentState!.validate()) {
                           authController.signUp();
+                          Get.to(SetFavourite());
                           }
                       }
                     ),

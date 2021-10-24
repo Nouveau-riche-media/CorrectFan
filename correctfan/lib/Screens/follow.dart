@@ -1,7 +1,10 @@
+import 'package:correctfan/constants/controllers.dart';
 import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'Onboarding/setFavourites.dart';
+
 
 class Follow extends StatefulWidget {
   // const Follow({ Key? key }) : super(key: key);
@@ -56,14 +59,14 @@ class _FollowState extends State<Follow> {
                     children: [
                       Expanded(
                         flex: 1,
-                        child: Club()),
+                        child: Club(favouriteteams.clubList[index])),
                       Checkbox(
                         value: false,
                         onChanged: (bool) {},
                         checkColor: Colors.black, ),
                     ],
                   ),
-                  itemCount: 24,
+                  itemCount: favouriteteams.clubList.length,
                   separatorBuilder: (x, index) => Divider(
                     thickness: 1,
                     color: Color(0xFFBDBDBD),

@@ -1,5 +1,6 @@
 import 'package:correctfan/Controllers/authControllers.dart';
 import 'package:correctfan/Screens/Inbox/InboxDetails.dart';
+import 'package:correctfan/Screens/Livescores/Today.dart';
 import 'package:correctfan/Screens/News/NewsDetail.dart';
 import 'package:correctfan/Screens/Play.dart';
 import 'package:correctfan/Screens/Drawer/Profile.dart';
@@ -13,6 +14,7 @@ import 'package:correctfan/Screens/Onboarding/signUp.dart';
 import 'package:correctfan/Screens/Onboarding/splash.dart';
 import 'package:correctfan/constants/firebase.dart';
 import 'package:correctfan/main/mainPage.dart';
+import 'package:correctfan/wrapper.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -65,14 +67,14 @@ class MyApp extends StatelessWidget {
           selectedColor: Colors.white,
           labelStyle: GoogleFonts.inter(
             color: Colors.white,
-            fontSize: text(45, context)
+            // fontSize: text(45, context)
           ),
           brightness: Brightness.light,
           disabledColor: Color.fromARGB(30, 196, 196, 196),
           padding: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
           secondarySelectedColor: Color.fromARGB(100, 196, 196, 196),
           secondaryLabelStyle: GoogleFonts.inter(
-            fontSize: text(45, context),
+            // fontSize: text(45, context),
             color: Colors.black
           ),
           ),
@@ -85,7 +87,7 @@ class MyApp extends StatelessWidget {
             
       ),
   
-      home: SignUp(),
+      home: SetFavourite(),
       routes: {
         'yeyu': (context) => Splash(),
         'on1': (context) => Onboarding1(),

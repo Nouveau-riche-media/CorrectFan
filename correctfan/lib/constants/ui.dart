@@ -9,63 +9,72 @@ double height(double n, BuildContext context) {
   return MediaQuery.of(context).size.height / n;
 }
 
+double width(double n, BuildContext context) {
+  return MediaQuery.of(context).size.width / n;
+}
+
 
 Color primary = Color(0xFF003E75);
 Color secondary = Color(0xFF092C4C);
+Color white = Colors.white;
+Color black = Colors.black;
+Color grey = Color(0xFFB1B2B6);
 // Color acccent = Color(0xFF348951);
 
 
 class AppTheme {
-  
-  TextStyle headline5(BuildContext context){
+
+  static TextStyle headline6(BuildContext context, Color color){
     return GoogleFonts.inter(
       fontWeight: FontWeight.bold,
-        color: Colors.white,
-        // letterSpacing: ,
-        letterSpacing: 5,
-        fontSize: text(35, context),
-        height: 1.1
-    );
-  }
-
-  TextStyle headline4(BuildContext context) {
-    return GoogleFonts.inter(
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
-        // letterSpacing: ,
-        // letterSpacing: 5,
+        color: color,
         fontSize: text(40, context),
-        height: 1.1);
+        height: 1.1
+    );
   }
-
-  TextStyle headline3(BuildContext context) {
-    return GoogleFonts.inter(
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
-        // letterSpacing: ,
-        // letterSpacing: 5,
-        fontSize: text(50, context),
-        height: 1.1);
-  }
-
-  TextStyle headline2(BuildContext context){
+  
+  static TextStyle headline5(BuildContext context, Color color){
     return GoogleFonts.inter(
       fontWeight: FontWeight.bold,
-        color: Colors.white,
-        // letterSpacing: ,
-        // letterSpacing: 5,
-        fontSize: text(60, context),
+        color: color,
+        fontSize: text(32, context),
         height: 1.1
     );
   }
 
-  TextStyle headline1(BuildContext context, Color color) {
+  static TextStyle headline4(BuildContext context, Color color) {
     return GoogleFonts.inter(
         fontWeight: FontWeight.bold,
         color: color,
-        // letterSpacing: ,
-        letterSpacing: 5,
-        fontSize: text(35, context),
+        
+        fontSize: text(24, context),
+        height: 1.1);
+  }
+
+  static TextStyle headline3(BuildContext context, Color color) {
+    return GoogleFonts.inter(
+        fontWeight: FontWeight.bold,
+        color: color,
+        fontSize: text(16, context),
+        height: 1.1);
+  }
+
+  static TextStyle headline2(BuildContext context, Color color){
+    return GoogleFonts.inter(
+      fontWeight: FontWeight.bold,
+        color: color,
+        
+        fontSize: text(12, context),
+        height: 1.1
+    );
+  }
+
+  static TextStyle headline1(BuildContext context, Color color) {
+    return GoogleFonts.inter(
+        fontWeight: FontWeight.bold,
+        color: color,
+        
+        fontSize: text(8, context),
         height: 1.1);
   }
 
@@ -78,6 +87,7 @@ class AppTheme {
   //                 // letterSpacing: ,
   //                 letterSpacing: 5,
   //                 fontSize: text(35, context),
+
   //                 height: 1.1),
   //           ),
   //           headline4: GoogleFonts.inter(

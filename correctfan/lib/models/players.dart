@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
 class PlayerModel {
   String? position;
   int? minutesPlayed;
@@ -19,10 +22,7 @@ class PlayerModel {
     this.saves,
   }); 
 
-  // static List<PlayerModel> stats = [
-  //   PlayerModel(
-  //     club: '',
-  //     name: ''
-  //   )
-  // ];
+  Future<http.Response> fetchPlayer() {
+    return http.get(Uri.parse('uri'));
+  }
 }

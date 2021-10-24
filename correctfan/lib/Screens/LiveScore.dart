@@ -17,7 +17,12 @@ class LiveScore extends StatefulWidget {
 
 class _LiveScoreState extends State<LiveScore> {
 
-  // DateTime month = DateTime.parse.day
+  
+  final current = DateTime(DateTime.now().day + 2).toString();
+  // final month = DateTime(DateTime.now().month);
+  // final dayAfter = DateTime(current.day + 2); 
+  
+  
   
   
   @override
@@ -50,7 +55,7 @@ class _LiveScoreState extends State<LiveScore> {
                   fontSize: 12,
                   fontWeight: FontWeight.w800),)),
 
-              Tab(child: Text('19 August',
+              Tab(child: Text(current,
                 style: GoogleFonts.lato(
                   fontSize: 12,
                   fontWeight: FontWeight.w800),))

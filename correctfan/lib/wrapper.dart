@@ -1,4 +1,5 @@
 import 'package:correctfan/Screens/Error.dart';
+import 'package:correctfan/Screens/Onboarding/setFavourites.dart';
 import 'package:correctfan/main/mainPage.dart';
 import 'package:correctfan/services/flutterfire.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
@@ -21,7 +22,7 @@ class Wrapper extends StatelessWidget {
     builder: (_, AsyncSnapshot<User?> snapshot) {
       if (snapshot.connectionState == ConnectionState.active) {
         final User? user = snapshot.data;
-        return user == null ? SignUp() : MainPage();
+        return user == null ? SignUp() : SetFavourite();
       }
       return Scaffold(
         body: SomethingWentWrong(),
