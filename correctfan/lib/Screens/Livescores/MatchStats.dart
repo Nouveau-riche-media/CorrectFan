@@ -14,7 +14,7 @@ class _MatchStatsState extends State<MatchStatsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: transparentAppBar(BuildContext, context),
+      appBar: transparentAppBar(context),
       body: SingleChildScrollView(
         child: Container(
           color: Colors.transparent,

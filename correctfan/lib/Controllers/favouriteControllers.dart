@@ -13,11 +13,11 @@ class FavouriteTeamController extends GetxController{
   }
 
   final favourites = [].obs;
-  List<Clubs> clubList = <Clubs>[].obs;
+  var clubList = List<Clubs>.empty().obs;
 
   void getClubs() async{
     var clubs = await RemoteServices.fetchClubs();
-    clubList = clubs;
+    clubList.value = clubs;
   }
 
 }

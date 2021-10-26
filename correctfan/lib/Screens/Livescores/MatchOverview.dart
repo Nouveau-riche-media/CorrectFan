@@ -15,7 +15,7 @@ class _MatchOverviewState extends State<MatchOverviewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: transparentAppBar(BuildContext, context),
+      appBar: transparentAppBar(context),
       body: SingleChildScrollView(
         child: Container(
           color: Color(0xFFF3F3F3),

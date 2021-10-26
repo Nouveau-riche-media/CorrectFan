@@ -1,5 +1,4 @@
-import 'dart:convert';
-
+import 'package:correctfan/Controllers/favouriteControllers.dart';
 import 'package:correctfan/constants/controllers.dart';
 import 'package:correctfan/constants/ui.dart';
 import 'package:correctfan/models/clubs.dart';
@@ -17,7 +16,7 @@ class SetFavourite extends StatefulWidget {
   _SetFavouriteState createState() => _SetFavouriteState();
 }
 
-
+final FavouriteTeamController favouriteTeamController = Get.find();
 
 class _SetFavouriteState extends State<SetFavourite> {
   @override
@@ -84,7 +83,7 @@ class _SetFavouriteState extends State<SetFavourite> {
                 height: 406,
                 child: Obx(() => ListView.separated(
                       itemBuilder: (context, index) {
-                        return Club(favouriteteams.clubList[index]);
+                        return Club(favouriteTeamController.clubList[index]);
                       },
                       itemCount: favouriteteams.clubList.length,
                       separatorBuilder: (context, index) => Divider(
@@ -115,14 +114,14 @@ class Club extends StatelessWidget {
       child: Row(
         // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(
-            height: 32,
-            width: 32,
-            decoration: BoxDecoration(
-              image: DecorationImage(image: NetworkImage(club.wikipediaLogoUrl)),
-                borderRadius: BorderRadius.circular(400),
-                color: Colors.cyanAccent[200]),
-          ),
+          // Container(
+          //   height: 32,
+          //   width: 32,
+          //   decoration: BoxDecoration(
+          //     image: DecorationImage(image: NetworkImage(club.wikipediaLogoUrl)),
+          //       borderRadius: BorderRadius.circular(400),
+          //       color: Colors.cyanAccent[200]),
+          // ),
           SizedBox(
             width: 16,
           ),

@@ -2,7 +2,7 @@ import 'package:correctfan/Screens/Onboarding/signUp.dart';
 import 'package:correctfan/constants/firebase.dart';
 // import 'package:correctfan/helpers/showLoading.dart';
 import 'package:correctfan/main/mainPage.dart';
-import 'package:correctfan/models/user.dart' as cf;
+// import 'package:correctfan/models/user.dart' as cf;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

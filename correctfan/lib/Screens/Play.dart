@@ -34,7 +34,7 @@ class _PlayState extends State<Play> {
       children: [
         Lobby(),
         Lobby(),
-        Lobby(),
+        Lobby()
       ],)
       ),
     );

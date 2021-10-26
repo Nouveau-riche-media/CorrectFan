@@ -1,9 +1,10 @@
-import 'package:correctfan/Screens/News/NewsDetail.dart';
-import 'package:correctfan/services/flutterfire.dart';
+// import 'package:correctfan/Screens/News/NewsDetail.dart';
+// import 'package:correctfan/services/flutterfire.dart';
+import 'package:correctfan/constants/ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 
 import 'Screens/Drawer/TransactionHistory.dart';
 import 'Screens/Drawer/Verification/AccountVerification.dart';
@@ -400,7 +401,7 @@ class _ContestCardState extends State<ContestCard> {
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: Theme.of(context).primaryColor
+        color: secondary
       ),
       height: 70,
       width: 160,
@@ -455,7 +456,7 @@ class _ContestCardState extends State<ContestCard> {
               children: [
                 LinearProgressIndicator(
                   value: 50,
-                  color: Theme.of(context).accentColor,
+                  // color: Theme.of(context).accentColor,
                 ),
 
                 SizedBox(height: 4,),
@@ -546,12 +547,12 @@ class _LobbyContestCardState extends State<LobbyContestCard> {
                     style: GoogleFonts.inter(
                       fontSize: 10,
                       fontWeight: FontWeight.w900,
-                      color: Theme.of(context).primaryColor
+                      color: primary
                     ),),
                   Text('Winners',
                     style: GoogleFonts.inter(
                       fontSize: 10,
-                      color: Theme.of(context).primaryColor
+                      color: primary
                     ),),
                 ],
               ),
@@ -567,7 +568,7 @@ class _LobbyContestCardState extends State<LobbyContestCard> {
                     // padding: MaterialStateProperty.all(EdgeInsets.all(16)),
                     // minimumSize: MaterialStateProperty.all(Size(0, 0)),
                     foregroundColor: MaterialStateProperty.all(Colors.white),
-                    backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+                    backgroundColor: MaterialStateProperty.all(secondary),
                     elevation: MaterialStateProperty.all(0),
                     alignment: Alignment.center,
                     textStyle: MaterialStateProperty.all(
@@ -588,7 +589,7 @@ class _LobbyContestCardState extends State<LobbyContestCard> {
 
             LinearProgressIndicator(
               value: 100,
-              color: Theme.of(context).accentColor,
+              // color: Theme.of(context).accentColor,
             ),
 
             Row(
@@ -614,70 +615,6 @@ class _LobbyContestCardState extends State<LobbyContestCard> {
   }
 }
 
-class Scores extends StatefulWidget {
-  const Scores({ Key? key }) : super(key: key);
-
-  @override
-  _ScoresState createState() => _ScoresState();
-}
-
-class _ScoresState extends State<Scores> {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text('32',
-          style: GoogleFonts.inter(
-            color: Colors.green,
-            fontWeight: FontWeight.w900,
-            fontSize: 10
-          ),),
-        GestureDetector(
-          onTap: () => Navigator.pushNamed(context, 'LiveScoreDetails'),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Club',
-                style: GoogleFonts.inter(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w900,
-                  color: Theme.of(context).primaryColor,
-                )),
-                SizedBox(width: 8,),
-              CircleAvatar(
-                radius: 10,
-              ),
-              SizedBox(
-                width: 16,
-              ),
-              Text('1 : 2',
-                style: GoogleFonts.inter(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).primaryColor,)),
-                  SizedBox(
-                width: 16,
-              ),
-              CircleAvatar(
-                radius: 10,
-              ),
-              SizedBox(
-                width: 8,
-              ),
-              Text('Club',
-                style: GoogleFonts.inter(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w900,
-                  color: Theme.of(context).primaryColor,)),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-}
 
 class InboxMessage extends StatelessWidget {
   const InboxMessage({ Key? key }) : super(key: key);
@@ -799,7 +736,7 @@ class _PlayersState extends State<Players> {
           Container(
             width: MediaQuery.of(context).size.width,
             padding: EdgeInsets.all(8),
-            color: Theme.of(context).primaryColor,
+            color: secondary,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

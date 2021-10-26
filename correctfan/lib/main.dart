@@ -1,6 +1,6 @@
 import 'package:correctfan/Controllers/authControllers.dart';
 import 'package:correctfan/Screens/Inbox/InboxDetails.dart';
-import 'package:correctfan/Screens/Livescores/Today.dart';
+// import 'package:correctfan/Screens/Livescores/Today.dart';
 import 'package:correctfan/Screens/News/NewsDetail.dart';
 import 'package:correctfan/Screens/Play.dart';
 import 'package:correctfan/Screens/Drawer/Profile.dart';
@@ -14,7 +14,7 @@ import 'package:correctfan/Screens/Onboarding/signUp.dart';
 import 'package:correctfan/Screens/Onboarding/splash.dart';
 import 'package:correctfan/constants/firebase.dart';
 import 'package:correctfan/main/mainPage.dart';
-import 'package:correctfan/wrapper.dart';
+// import 'package:correctfan/wrapper.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -51,10 +51,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
         
-        // Colors
-        backgroundColor: Color(0xFF003E75),
-        primaryColor: Color(0xFF092C4C),
-        // accentColor: Color(0xFFF2994A),
+        
         appBarTheme: AppBarTheme(
           backgroundColor:  primary,
           centerTitle: true,

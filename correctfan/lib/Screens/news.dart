@@ -1,8 +1,9 @@
+// import 'package:correctfan/constants/ui.dart';
 import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 
 class News extends StatefulWidget {
   // const News({ Key? key }) : super(key: key);
@@ -15,8 +16,8 @@ class _NewsState extends State<News> {
   @override
   Widget build(BuildContext context) {
 
-    Color backgroundColor = Theme.of(context).backgroundColor;
-    Color primaryColor = Theme.of(context).primaryColor;
+    // Color backgroundColor = secondary;
+    // Color primaryColor = primary;
 
     return Scaffold(
       drawer: CustomDrawer(),
@@ -40,7 +41,7 @@ class _NewsState extends State<News> {
                   // padding: EdgeInsets.symmetric(horizontal: 16),
                   scrollDirection: Axis.horizontal,
                   itemCount: 5,
-                  itemBuilder: (x, index) => Container(
+                  itemBuilder: (context, index) => Container(
                     alignment: Alignment.center,
                     margin: EdgeInsets.symmetric(horizontal: 12),
                     // padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),

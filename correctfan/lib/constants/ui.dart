@@ -42,11 +42,10 @@ class AppTheme {
     );
   }
 
-  static TextStyle headline4(BuildContext context, Color color) {
+  static TextStyle headline4(BuildContext context, Color color, [FontWeight? fontWeight]) {
     return GoogleFonts.inter(
-        fontWeight: FontWeight.bold,
+        fontWeight: fontWeight,
         color: color,
-        
         fontSize: text(24, context),
         height: 1.1);
   }

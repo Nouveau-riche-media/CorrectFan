@@ -1,7 +1,7 @@
 // ignore: import_of_legacy_library_into_null_safe
 
 import 'package:correctfan/constants/controllers.dart';
-import 'package:correctfan/services/flutterfire.dart';
+// import 'package:correctfan/services/flutterfire.dart';
 import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -17,8 +17,8 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  TextEditingController _email = TextEditingController();
-  TextEditingController _password = TextEditingController();
+  // TextEditingController _email = TextEditingController();
+  // TextEditingController _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

@@ -31,13 +31,13 @@ class Clubs {
     this.website,
     this.email,
     this.founded,
-    this.clubColor1,
-    this.clubColor2,
-    this.clubColor3,
+    // this.clubColor1,
+    // this.clubColor2,
+    // this.clubColor3,
     this.nickname1,
     this.nickname2,
     this.nickname3,
-    required this.wikipediaLogoUrl,
+    // this.wikipediaLogoUrl,
     this.wikipediaWordMarkUrl,
     this.globalTeamId,
   });
@@ -61,13 +61,13 @@ class Clubs {
   String? website;
   String? email;
   int? founded;
-  ClubColor? clubColor1;
-  ClubColor? clubColor2;
-  ClubColor? clubColor3;
+  // ClubColor? clubColor1;
+  // ClubColor? clubColor2;
+  // ClubColor? clubColor3;
   String? nickname1;
   String? nickname2;
   String? nickname3;
-  String wikipediaLogoUrl;
+  // String? wikipediaLogoUrl;
   String? wikipediaWordMarkUrl;
   int? globalTeamId;
 
@@ -103,7 +103,7 @@ class Clubs {
         nickname1: json["Nickname1"] == null ? null : json["Nickname1"],
         nickname2: json["Nickname2"] == null ? null : json["Nickname2"],
         nickname3: json["Nickname3"] == null ? null : json["Nickname3"],
-        wikipediaLogoUrl: json["WikipediaLogoUrl"],
+        // wikipediaLogoUrl: json["WikipediaLogoUrl"],
         wikipediaWordMarkUrl: json["WikipediaWordMarkUrl"] == null
             ? null
             : json["WikipediaWordMarkUrl"],
@@ -139,91 +139,91 @@ class Clubs {
         "Nickname1": nickname1 == null ? null : nickname1,
         "Nickname2": nickname2 == null ? null : nickname2,
         "Nickname3": nickname3 == null ? null : nickname3,
-        "WikipediaLogoUrl": wikipediaLogoUrl == null ? null : wikipediaLogoUrl,
+        // "WikipediaLogoUrl": wikipediaLogoUrl,
         "WikipediaWordMarkUrl":
             wikipediaWordMarkUrl == null ? null : wikipediaWordMarkUrl,
         "GlobalTeamId": globalTeamId,
       };
 }
 
-enum ClubColor {
-  RED,
-  CLARET,
-  ROYAL_BLUE,
-  BLUE,
-  SKY_BLUE,
-  BLACK,
-  YELLOW,
-  WHITE,
-  NAVY_BLUE,
-  GREEN,
-  MAROON,
-  ORANGE,
-  LIGHT_BLUE,
-  VIOLET,
-  CRIMSON,
-  DARK_BLUE,
-  PURPLE,
-  BROWN,
-  PINK,
-  BURGUNDY,
-  GOLD,
-  COPPER,
-  EMERALD,
-  GREY,
-  LIME_GREEN,
-  SILVER,
-  CYAN
-}
+// enum ClubColor {
+//   RED,
+//   CLARET,
+//   ROYAL_BLUE,
+//   BLUE,
+//   SKY_BLUE,
+//   BLACK,
+//   YELLOW,
+//   WHITE,
+//   NAVY_BLUE,
+//   GREEN,
+//   MAROON,
+//   ORANGE,
+//   LIGHT_BLUE,
+//   VIOLET,
+//   CRIMSON,
+//   DARK_BLUE,
+//   PURPLE,
+//   BROWN,
+//   PINK,
+//   BURGUNDY,
+//   GOLD,
+//   COPPER,
+//   EMERALD,
+//   GREY,
+//   LIME_GREEN,
+//   SILVER,
+//   CYAN
+// }
 
-// final clubColorValues = EnumValues({
-//   "Black": ClubColor.BLACK,
-//   "Blue": ClubColor.BLUE,
-//   "Brown": ClubColor.BROWN,
-//   "Burgundy": ClubColor.BURGUNDY,
-//   "Claret": ClubColor.CLARET,
-//   "Copper": ClubColor.COPPER,
-//   "Crimson": ClubColor.CRIMSON,
-//   "Cyan": ClubColor.CYAN,
-//   "Dark Blue": ClubColor.DARK_BLUE,
-//   "Emerald": ClubColor.EMERALD,
-//   "Gold": ClubColor.GOLD,
-//   "Green": ClubColor.GREEN,
-//   "Grey": ClubColor.GREY,
-//   "Light Blue": ClubColor.LIGHT_BLUE,
-//   "Lime Green": ClubColor.LIME_GREEN,
-//   "Maroon": ClubColor.MAROON,
-//   "Navy Blue": ClubColor.NAVY_BLUE,
-//   "Orange": ClubColor.ORANGE,
-//   "Pink": ClubColor.PINK,
-//   "Purple": ClubColor.PURPLE,
-//   "Red": ClubColor.RED,
-//   "Royal Blue": ClubColor.ROYAL_BLUE,
-//   "Silver": ClubColor.SILVER,
-//   "Sky Blue": ClubColor.SKY_BLUE,
-//   "Violet": ClubColor.VIOLET,
-//   "White": ClubColor.WHITE,
-//   "Yellow": ClubColor.YELLOW
-// });
+// // final clubColorValues = EnumValues({
+// //   "Black": ClubColor.BLACK,
+// //   "Blue": ClubColor.BLUE,
+// //   "Brown": ClubColor.BROWN,
+// //   "Burgundy": ClubColor.BURGUNDY,
+// //   "Claret": ClubColor.CLARET,
+// //   "Copper": ClubColor.COPPER,
+// //   "Crimson": ClubColor.CRIMSON,
+// //   "Cyan": ClubColor.CYAN,
+// //   "Dark Blue": ClubColor.DARK_BLUE,
+// //   "Emerald": ClubColor.EMERALD,
+// //   "Gold": ClubColor.GOLD,
+// //   "Green": ClubColor.GREEN,
+// //   "Grey": ClubColor.GREY,
+// //   "Light Blue": ClubColor.LIGHT_BLUE,
+// //   "Lime Green": ClubColor.LIME_GREEN,
+// //   "Maroon": ClubColor.MAROON,
+// //   "Navy Blue": ClubColor.NAVY_BLUE,
+// //   "Orange": ClubColor.ORANGE,
+// //   "Pink": ClubColor.PINK,
+// //   "Purple": ClubColor.PURPLE,
+// //   "Red": ClubColor.RED,
+// //   "Royal Blue": ClubColor.ROYAL_BLUE,
+// //   "Silver": ClubColor.SILVER,
+// //   "Sky Blue": ClubColor.SKY_BLUE,
+// //   "Violet": ClubColor.VIOLET,
+// //   "White": ClubColor.WHITE,
+// //   "Yellow": ClubColor.YELLOW
+// // });
 
-// enum Gender { MALE, MALE_YOUTH }
+// // enum Gender { MALE, MALE_YOUTH }
 
-// final genderValues =
-//     EnumValues({"Male": Gender.MALE, "Male Youth": Gender.MALE_YOUTH});
+// // final genderValues =
+// //     EnumValues({"Male": Gender.MALE, "Male Youth": Gender.MALE_YOUTH});
 
-// enum Type { CLUB, NATIONAL }
+// // enum Type { CLUB, NATIONAL }
 
-// final typeValues = EnumValues({"Club": Type.CLUB, "National": Type.NATIONAL});
+// // final typeValues = EnumValues({"Club": Type.CLUB, "National": Type.NATIONAL});
 
-// class EnumValues<T> {
-//   Map<String, T> map;
-//   Map<T, String> reverseMap;
+// // class EnumValues<T> {
+// //   Map<String, T> map;
+// //   Map<T, String> reverseMap;
 
-//   EnumValues(this.map);
+// //   EnumValues(this.map);
 
-//   Map<T, String> get reverse {
-//     if (reverseMap == null) {
-//       reverseMap = map.map((k, v) => new MapEntry(v, k));
-//     }
-//     return reverseMap;
-  // }
+// //   Map<T, String> get reverse {
+// //     if (reverseMap == null) {
+// //       reverseMap = map.map((k, v) => new MapEntry(v, k));
+// //     }
+// //     return reverseMap;
+//   // }

@@ -37,10 +37,6 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
 
-    Color backgroundColor = Theme.of(context).backgroundColor;
-    Color primaryColor = Theme.of(context).primaryColor;
-    Color secondaryColor = Theme.of(context).accentColor;
-
 
     return Scaffold(
       body: pageList[_pageIndex],
@@ -48,7 +44,7 @@ class _MainPageState extends State<MainPage> {
       floatingActionButton: FloatingActionButton(
         
         clipBehavior: Clip.antiAlias,
-        backgroundColor: primaryColor,
+        backgroundColor: primary,
         onPressed: () {
               setState(() {
                 _pageIndex = 2;
@@ -87,9 +83,9 @@ class _MainPageState extends State<MainPage> {
              fontWeight: FontWeight.bold,
            ),
 
-          selectedIconTheme: IconThemeData(color: backgroundColor), 
+          selectedIconTheme: IconThemeData(color: secondary), 
 
-          backgroundColor: primaryColor,
+          backgroundColor: primary,
             currentIndex: _pageIndex,
             type: BottomNavigationBarType.fixed,
             iconSize: 20,

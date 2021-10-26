@@ -1,7 +1,7 @@
 import 'package:correctfan/Screens/Onboarding/setFavourites.dart';
 import 'package:correctfan/constants/controllers.dart';
-import 'package:correctfan/main/mainPage.dart';
-import 'package:correctfan/services/flutterfire.dart';
+// import 'package:correctfan/main/mainPage.dart';
+// import 'package:correctfan/services/flutterfire.dart';
 import 'package:correctfan/widgets.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

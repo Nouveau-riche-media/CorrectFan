@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-AppBar transparentAppBar(BuildContext, context){
+AppBar transparentAppBar(context){
   return AppBar(
           leading: IconButton(
               onPressed: () => Navigator.pop(context),
