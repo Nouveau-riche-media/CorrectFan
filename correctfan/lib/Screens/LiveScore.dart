@@ -1,4 +1,5 @@
-import 'package:correctfan/widgets.dart';
+
+import 'package:correctfan/widgets/Drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,12 +17,33 @@ class LiveScore extends StatefulWidget {
 }
 
 class _LiveScoreState extends State<LiveScore> {
+  String dayAfter() {
 
+    Map<int, String> monthMap = {
+    1 : 'January',
+    2: 'February',
+    3: 'March',
+    4: 'April',
+    5: 'May',
+    6: 'June',
+    7: 'July',
+    8: 'August',
+    9: 'September',
+    10: 'October',
+    11: 'November',
+    12: 'December',
+  };
+
+  var month = DateTime.now().month;
+  var day = monthMap[month];
+  var next = DateTime(DateTime.now().day + 2,).toString().substring(2, 4) + ' $day';
+
+    return next;
+  }
   
-  final current = DateTime(DateTime.now().day + 2).toString();
-  // final month = DateTime(DateTime.now().month);
-  // final dayAfter = DateTime(current.day + 2); 
   
+  var month = DateTime.now().month;
+  var day = DateTime.now().day;
   
   
   
@@ -55,7 +77,7 @@ class _LiveScoreState extends State<LiveScore> {
                   fontSize: 12,
                   fontWeight: FontWeight.w800),)),
 
-              Tab(child: Text(current,
+              Tab(child: Text(dayAfter(),
                 style: GoogleFonts.lato(
                   fontSize: 12,
                   fontWeight: FontWeight.w800),))

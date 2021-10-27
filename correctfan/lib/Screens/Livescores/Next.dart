@@ -53,7 +53,7 @@ class _NextState extends State<Next> {
                         separatorBuilder: (index, x) => Divider(
                               color: Theme.of(context).primaryColor,
                             ),
-                        itemCount: yesterdayController.fixtures.length)),
+                        itemCount: nextController.fixtures.length)),
                   )
                 ]),
           ),

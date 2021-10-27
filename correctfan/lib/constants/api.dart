@@ -18,3 +18,6 @@ final yesterdayUri =
 
 final nextUri =
     'https://api.sportsdata.io/v3/soccer/scores/json/GamesByDate/$next?key=7788832784ab47388f3326603d86427f';
+
+
+final pLNews = 'http://api.espn.com/v1/sports/soccer/eng.1/news/headlines';

@@ -1,5 +1,5 @@
 import 'package:correctfan/Controllers/matchesController.dart';
-
+import 'package:correctfan/main.dart';
 import 'package:correctfan/constants/controllers.dart';
 import 'package:correctfan/constants/ui.dart';
 import 'package:correctfan/widgets/LiveScores.dart';

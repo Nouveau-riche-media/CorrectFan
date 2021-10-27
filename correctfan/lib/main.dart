@@ -20,6 +20,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
+import 'Controllers/matchesController.dart';
 import 'Screens/Livescores/LiveScoreDetail.dart';
 import 'constants/ui.dart';
 
@@ -30,6 +31,10 @@ void main() async {
 
   await initialization.then((value) {
     Get.put(AuthController());
+    Get.put(TodaysMatchesController());
+    Get.put(TomorrowMatchesController());
+    Get.put(YesterdayMatchesController());
+    Get.put(NextMatchesController());
   });
   runApp(MyApp());
 }
@@ -84,7 +89,7 @@ class MyApp extends StatelessWidget {
             
       ),
   
-      home: SetFavourite(),
+      home: MainPage(),
       routes: {
         'yeyu': (context) => Splash(),
         'on1': (context) => Onboarding1(),
