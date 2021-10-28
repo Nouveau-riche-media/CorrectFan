@@ -86,6 +86,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   width: 30,
                 ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
                       '\$\$\$',

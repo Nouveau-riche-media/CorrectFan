@@ -1,9 +1,7 @@
 import 'package:correctfan/Screens/Onboarding/setFavourites.dart';
 import 'package:correctfan/constants/controllers.dart';
-// import 'package:correctfan/main/mainPage.dart';
-// import 'package:correctfan/services/flutterfire.dart';
+import 'package:correctfan/constants/ui.dart';
 import 'package:correctfan/widgets.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -26,8 +24,8 @@ class _SignUpState extends State<SignUp> {
 
   @override
   Widget build(BuildContext context) {
-    Color backgroundColor = Theme.of(context).backgroundColor;
-    Color primaryColor = Theme.of(context).primaryColor;
+    Color backgroundColor = secondary;
+    Color primaryColor = primary;
 
     // final authService = Provider.of<AuthService>(context);
     return Scaffold(

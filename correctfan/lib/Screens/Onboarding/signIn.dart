@@ -1,6 +1,7 @@
 // ignore: import_of_legacy_library_into_null_safe
 
 import 'package:correctfan/constants/controllers.dart';
+import 'package:correctfan/constants/ui.dart';
 // import 'package:correctfan/services/flutterfire.dart';
 import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
-    Color backgroundColor = Theme.of(context).backgroundColor;
+    Color backgroundColor = secondary;
 
     // final authService = Provider.of<AuthService>(context);
     return Scaffold(
