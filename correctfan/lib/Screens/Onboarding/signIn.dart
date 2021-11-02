@@ -116,7 +116,11 @@ class _SignInState extends State<SignIn> {
                           TextFormField(
                             controller: authController.email,
                             decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.person),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: white)),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: primary)),
+                              prefixIcon: Icon(Icons.person, color: white),
                               isCollapsed: true,
                               border: OutlineInputBorder(
                                 borderSide:
@@ -124,9 +128,7 @@ class _SignInState extends State<SignIn> {
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               hintText: 'Username',
-                              hintStyle: GoogleFonts.inter(
-                                fontSize: 12,
-                              ),
+                              hintStyle: AppTheme.headline5(context, white),
                               contentPadding: EdgeInsets.symmetric(
                                   horizontal: 24, vertical: 12),
                             ),
@@ -136,18 +138,15 @@ class _SignInState extends State<SignIn> {
                             controller: authController.password,
                             obscureText: true,
                             decoration: InputDecoration(
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: white)),
+                              enabledBorder: OutlineInputBorder(borderSide:   BorderSide(color: primary)),
                               alignLabelWithHint: true,
-                              prefixIcon: Icon(Icons.lock),
+                              prefixIcon: Icon(Icons.lock, color: white,),
                               isCollapsed: true,
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide:
-                                    BorderSide(color: Colors.white, width: 2),
-                              ),
+                              border: OutlineInputBorder(),
                               hintText: 'Password',
-                              hintStyle: GoogleFonts.inter(
-                                fontSize: 12,
-                              ),
+                              hintStyle: AppTheme.headline5(context, white),
                               contentPadding: EdgeInsets.symmetric(
                                   horizontal: 24, vertical: 12),
                             ),
@@ -164,8 +163,7 @@ class _SignInState extends State<SignIn> {
                             children: [
                               Text(
                                 'Remember Me',
-                                style: GoogleFonts.inter(
-                                    color: Colors.white, fontSize: 8),
+                                style: AppTheme.headline7(context, white),
                               ),
                             ],
                           ),
@@ -173,10 +171,7 @@ class _SignInState extends State<SignIn> {
                               onPressed: () {},
                               child: Text(
                                 'Forgot Your Password?',
-                                style: GoogleFonts.inter(
-                                  fontSize: 8,
-                                  color: Colors.white,
-                                ),
+                                style:AppTheme.headline7(context, white),
                               ))
                         ],
                       ),
@@ -202,7 +197,8 @@ class _SignInState extends State<SignIn> {
                             Navigator.of(context).pushNamed('signUp'),
                         child: Text(
                           'sign up to win cash daily'.toUpperCase(),
-                          style: Theme.of(context).textTheme.caption,
+                          style: AppTheme.headline5(
+                              context, blue!, FontWeight.bold),
                         ))
                   ]),
             ),

@@ -1,6 +1,7 @@
 import 'package:correctfan/constants/api.dart';
 import 'package:correctfan/models/clubs.dart';
 import 'package:correctfan/models/matches.dart';
+import 'package:correctfan/models/players.dart';
 import 'package:http/http.dart' as http;
 
 class RemoteServices {
@@ -61,6 +62,14 @@ static Future<List<Fixtures>> fetchTodaysMatches() async {
     }
   }
 
+  static Future<List<Players>> fetchPlayers() async {
+    final response = await client.get(Uri.parse(playerURI));
 
+    if (response.statusCode == 200){
+      return playersFromJson(response.body);
+    } else {
+      throw Exception('Failed to load');
+    }
+  }
 
 }

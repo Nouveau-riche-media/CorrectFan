@@ -21,6 +21,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
 import 'Controllers/matchesController.dart';
+import 'Controllers/playerController.dart';
 import 'Screens/Livescores/LiveScoreDetail.dart';
 import 'constants/ui.dart';
 
@@ -35,6 +36,7 @@ void main() async {
     Get.put(TomorrowMatchesController());
     Get.put(YesterdayMatchesController());
     Get.put(NextMatchesController());
+    Get.put(PlayerController());
   });
   runApp(MyApp());
 }
@@ -89,7 +91,7 @@ class MyApp extends StatelessWidget {
             
       ),
   
-      home: MainPage(),
+      home: Splash(),
       routes: {
         'yeyu': (context) => Splash(),
         'on1': (context) => Onboarding1(),

@@ -1,6 +1,9 @@
+import 'package:correctfan/constants/ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:async';
+
+import 'package:get/get.dart';
 
 class Splash extends StatefulWidget {
   // const Splash({ Key? key }) : super(key: key);
@@ -14,7 +17,7 @@ class _SplashState extends State<Splash> {
   
   changeScreen(BuildContext context){
   return Timer(Duration(milliseconds: 2500), () async {
-    await Navigator.pushNamed(context, 'on1');
+    await Get.toNamed('on1');
   });
 }
 
@@ -23,7 +26,7 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
 
-    Color backgroundColor = Theme.of(context).backgroundColor;
+    Color backgroundColor = secondary;
 
     return Scaffold(
       backgroundColor: backgroundColor,

@@ -35,15 +35,22 @@ class _LiveScoreState extends State<LiveScore> {
   };
 
   var month = DateTime.now().month;
-  var day = monthMap[month];
-  var next = DateTime(DateTime.now().day + 2,).toString().substring(2, 4) + ' $day';
+  var thisMonth = monthMap[month];
+  var day2 = DateTime(DateTime.now().day + 2);
+  var i = day2.toString().substring(2, 4);
+
+  if (int.parse(i) > 31 ) {
+    
+  }
+
+  var next = i + ' $thisMonth';
 
     return next;
   }
   
   
-  var month = DateTime.now().month;
-  var day = DateTime.now().day;
+  // var month = DateTime.now().month;
+  // var day = DateTime.now().day;
   
   
   

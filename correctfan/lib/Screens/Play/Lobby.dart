@@ -76,7 +76,7 @@ class _LobbyState extends State<Lobby> {
               height: MediaQuery.of(context).size.width - 42,
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: ListView.separated(
-                separatorBuilder: (x, index) => SizedBox(height: 8,),
+                separatorBuilder: (context, index) => SizedBox(height: 8,),
                 itemCount: 6,
                 itemBuilder: (x, index) => LobbyContestCard(),
                 scrollDirection: Axis.vertical,

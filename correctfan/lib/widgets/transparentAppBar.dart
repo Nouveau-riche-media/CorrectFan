@@ -1,3 +1,4 @@
+import 'package:correctfan/constants/ui.dart';
 import 'package:flutter/material.dart';
 
 AppBar transparentAppBar(context){
@@ -8,7 +9,7 @@ AppBar transparentAppBar(context){
           backgroundColor: Color(0xFFF3F3F3),
           elevation: 0,
           iconTheme: IconThemeData(
-            color: Theme.of(context).primaryColor,
+            color: secondary,
           ),
           title: Image.asset('assets/images/Group 39.png'),
           centerTitle: true);

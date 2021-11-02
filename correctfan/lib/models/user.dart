@@ -1,4 +1,5 @@
 import 'package:correctfan/models/clubs.dart';
+import 'package:correctfan/models/players.dart';
 
 class User {
   String? uid;
@@ -9,16 +10,20 @@ class User {
   String? address;
   String? password;
   List<Clubs>? favoriteTeams;
+  // int? walletId;
   String? wallet;
   int? points;
+  List<Players>? myTeam;
 
   User({
       required this.uid,
       required this.email,
       this.username,
+      // this.walletId,
       this.favoriteTeams,
       this.wallet,
-      this.points
+      this.points,
+      this.myTeam,
     });
 
 }

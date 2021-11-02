@@ -1,7 +1,9 @@
 import 'dart:async';
 
+import 'package:correctfan/constants/ui.dart';
 import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 // import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,7 +23,7 @@ changeScreen(BuildContext context){
 }
 
   @override
-  // ignore: must_call_super
+  
   void initState() {
     // ignore: unnecessary_statements
     super.initState;
@@ -32,11 +34,9 @@ changeScreen(BuildContext context){
   @override
   Widget build(BuildContext context) {
 
-    Color backgroundColor = Theme.of(context).backgroundColor;
-    dynamic headline5 = Theme.of(context).textTheme.headline5;
-    // dynamic headline6 = Theme.of(context).textTheme.headline6;
-    // Color primaryColor = Theme.of(context).primaryColor;
-    // Color backgroundColor = Theme.of(context).backgroundColor;
+    Color backgroundColor = secondary;
+    dynamic headline5 = AppTheme.headline3(context, white, FontWeight.bold);
+    
 
     return GestureDetector(
       onTap: () => Navigator.pushNamed(context, 'on2'),
@@ -74,12 +74,12 @@ changeScreen(BuildContext context){
                     Text(
                       'WIN CASH DAILY',
                       style: GoogleFonts.inter(
-                          textStyle: TextStyle(
-                          fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                          fontSize: text(32, context),
                           letterSpacing: 10,
-                          color: Colors.white,
+                          color: white,
                           height: 1.1
-                        ),),
+                        ),
                     )
                   ],
                 )),
@@ -88,16 +88,16 @@ changeScreen(BuildContext context){
                           right: 32,
                           child: TextButton(
                             onPressed:  () {
-                              Navigator.of(context).popAndPushNamed('signIn');
+                              Get.toNamed('signUp');
                             },
                             child: Text('Skip>',
                             style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color: white,
                               decoration: TextDecoration.underline,
                               decorationThickness: 3,
                               decorationStyle: TextDecorationStyle.solid,
-                              fontSize: 12),)))
+                              fontSize: text(40, context)),)))
           ]),
       ),
     );

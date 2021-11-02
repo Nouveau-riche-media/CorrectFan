@@ -19,23 +19,33 @@ Color secondary = Color(0xFF092C4C);
 Color white = Colors.white;
 Color black = Colors.black;
 Color grey = Color(0xFFB1B2B6);
-// Color acccent = Color(0xFF348951);
+Color? lightGrey = Colors.grey[300];
+Color? blue = Colors.lightBlue;
 
 
 class AppTheme {
 
-  static TextStyle headline6(BuildContext context, Color color){
+  static TextStyle headline7(BuildContext context, Color color,
+      [FontWeight? fontWeight]) {
     return GoogleFonts.inter(
-      fontWeight: FontWeight.bold,
+        fontWeight: fontWeight,
+        color: color,
+        fontSize: text(48, context),
+        height: 1.1);
+  }
+
+  static TextStyle headline6(BuildContext context, Color color,  [FontWeight? fontWeight]){
+    return GoogleFonts.inter(
+      fontWeight: fontWeight,
         color: color,
         fontSize: text(40, context),
         height: 1.1
     );
   }
   
-  static TextStyle headline5(BuildContext context, Color color){
+  static TextStyle headline5(BuildContext context, Color color,  [FontWeight? fontWeight]){
     return GoogleFonts.inter(
-      fontWeight: FontWeight.bold,
+      fontWeight: fontWeight,
         color: color,
         fontSize: text(32, context),
         height: 1.1
@@ -50,29 +60,27 @@ class AppTheme {
         height: 1.1);
   }
 
-  static TextStyle headline3(BuildContext context, Color color) {
+  static TextStyle headline3(BuildContext context, Color color, [FontWeight? fontWeight]) {
     return GoogleFonts.inter(
-        fontWeight: FontWeight.bold,
+        fontWeight: fontWeight,
         color: color,
         fontSize: text(16, context),
         height: 1.1);
   }
 
-  static TextStyle headline2(BuildContext context, Color color){
+  static TextStyle headline2(BuildContext context, Color color, [FontWeight? fontWeight]){
     return GoogleFonts.inter(
-      fontWeight: FontWeight.bold,
+      fontWeight: fontWeight,
         color: color,
-        
         fontSize: text(12, context),
         height: 1.1
     );
   }
 
-  static TextStyle headline1(BuildContext context, Color color) {
+  static TextStyle headline1(BuildContext context, Color color, [FontWeight? fontWeight]) {
     return GoogleFonts.inter(
-        fontWeight: FontWeight.bold,
+        fontWeight: fontWeight,
         color: color,
-        
         fontSize: text(8, context),
         height: 1.1);
   }

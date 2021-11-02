@@ -25,7 +25,6 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     Color backgroundColor = secondary;
-    Color primaryColor = primary;
 
     // final authService = Provider.of<AuthService>(context);
     return Scaffold(
@@ -49,7 +48,7 @@ class _SignUpState extends State<SignUp> {
                 ),
                 Container(
                   height: 36,
-                  width: MediaQuery.of(context).size.width - 112,
+                  width: width(1, context) - 112,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       color: Colors.white),
@@ -67,7 +66,7 @@ class _SignUpState extends State<SignUp> {
                         ),
                         Text(
                           'Connect with Google',
-                          style: GoogleFonts.inter(color: Colors.black),
+                          style: GoogleFonts.inter(color: black),
                         ),
                       ],
                     ),
@@ -77,11 +76,11 @@ class _SignUpState extends State<SignUp> {
                   height: 16,
                 ),
                 Container(
-                  width: MediaQuery.of(context).size.width - 112,
+                  width: width(1, context) - 112,
                   height: 36,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      color: Colors.white),
+                      color: white),
                   child: TextButton(
                     onPressed: () {},
                     child: Row(
@@ -96,7 +95,7 @@ class _SignUpState extends State<SignUp> {
                         ),
                         Text(
                           'Connect with Facebook',
-                          style: GoogleFonts.inter(color: Colors.black),
+                          style: GoogleFonts.inter(color: black),
                         ),
                       ],
                     ),
@@ -105,7 +104,7 @@ class _SignUpState extends State<SignUp> {
                 SizedBox(height: 32),
                 Text('-or-',
                     style:
-                        GoogleFonts.inter(color: Colors.white, fontSize: 12)),
+                        AppTheme.headline5(context, white)),
                 SizedBox(height: 32),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 52.0),
@@ -115,18 +114,21 @@ class _SignUpState extends State<SignUp> {
                       children: [
                         TextFormField(
                           controller: authController.email,
-                          style: GoogleFonts.inter(color: Colors.white),
+                          style: GoogleFonts.inter(color: white),
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.person, color: Colors.white),
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: white)),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: primary)),
+                            prefixIcon: Icon(Icons.person, color: white),
                             isCollapsed: true,
                             border: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(color: Colors.white, width: 2),
+                                  BorderSide(color: white, width: 2),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             hintText: 'Email',
-                            hintStyle: GoogleFonts.inter(
-                                fontSize: 12, color: Colors.white),
+                            hintStyle: AppTheme.headline5(context, white),
                             contentPadding: EdgeInsets.symmetric(
                                 horizontal: 24, vertical: 12),
                           ),
@@ -139,14 +141,18 @@ class _SignUpState extends State<SignUp> {
                           controller: authController.password,
                           validator: (password) {
                             if (password!.length <= 5) {
-                              return 'your password cannot be less than 5 letters';
+                              return 'your password cannot be less than 5 characters';
                             }
                           },
-                          style: GoogleFonts.inter(color: Colors.white),
+                          style: GoogleFonts.inter(color: white),
                           obscureText: true,
                           decoration: InputDecoration(
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: white)),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: primary)),
                             alignLabelWithHint: true,
-                            prefixIcon: Icon(Icons.lock, color: Colors.white),
+                            prefixIcon: Icon(Icons.lock, color: white),
                             isCollapsed: true,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
@@ -154,8 +160,7 @@ class _SignUpState extends State<SignUp> {
                                   BorderSide(color: Colors.white, width: 2),
                             ),
                             hintText: 'Password',
-                            hintStyle: GoogleFonts.inter(
-                                fontSize: 12, color: Colors.white),
+                            hintStyle: AppTheme.headline5(context, white),
                             contentPadding: EdgeInsets.symmetric(
                                 horizontal: 24, vertical: 12),
                           ),
@@ -170,20 +175,23 @@ class _SignUpState extends State<SignUp> {
                               return 'your password doesn\'t match';
                             }
                           },
-                          style: GoogleFonts.inter(color: Colors.white),
+                          style: GoogleFonts.inter(color: white),
                           obscureText: true,
                           decoration: InputDecoration(
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: white)),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: primary)),
                             alignLabelWithHint: true,
-                            prefixIcon: Icon(Icons.lock, color: Colors.white),
+                            prefixIcon: Icon(Icons.lock, color: white),
                             isCollapsed: true,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                               borderSide:
-                                  BorderSide(color: Colors.white, width: 2),
+                                  BorderSide(color: white, width: 2),
                             ),
                             hintText: 'Confirm Password',
-                            hintStyle: GoogleFonts.inter(
-                                fontSize: 12, color: Colors.white),
+                            hintStyle: AppTheme.headline5(context, white),
                             contentPadding: EdgeInsets.symmetric(
                                 horizontal: 24, vertical: 12),
                           ),
@@ -201,11 +209,10 @@ class _SignUpState extends State<SignUp> {
                         children: [
                           Text(
                             'Remember Me',
-                            style: GoogleFonts.inter(
-                                color: Colors.white, fontSize: 8),
+                            style: AppTheme.headline7(context, white),
                           ),
                           Switch(
-                              activeColor: Color(0xFF092C4C),
+                              activeColor: secondary,
                               value: false,
                               onChanged: (bool newv) {})
                         ],
@@ -214,10 +221,7 @@ class _SignUpState extends State<SignUp> {
                           onPressed: () {},
                           child: Text(
                             'Forgot Your Password?',
-                            style: GoogleFonts.inter(
-                              fontSize: 8,
-                              color: Colors.white,
-                            ),
+                            style: AppTheme.headline7(context, white)
                           ))
                     ],
                   ),
@@ -230,7 +234,7 @@ class _SignUpState extends State<SignUp> {
                   child: Row(
                     children: [
                       Checkbox(
-                        activeColor: primaryColor,
+                        activeColor: primary,
                         value: checked,
                         onChanged: (value) {
                           setState(() {
@@ -253,7 +257,7 @@ class _SignUpState extends State<SignUp> {
                 Button(
                   label: 'Sign up',
                   onPressed: () {
-                        if (_formkey.currentState!.validate()) {
+                        if (_formkey.currentState!.validate() ) {
                           authController.signUp();
                           Get.to(SetFavourite());
                           }
@@ -263,14 +267,14 @@ class _SignUpState extends State<SignUp> {
                   height: 16,
                 ),
                 Text(
-                  'Dont have an account yet?',
+                  'Already have an Account?',
                   style: GoogleFonts.inter(fontSize: 12, color: Colors.white),
                 ),
                 TextButton(
-                    onPressed: () => Navigator.of(context).pushNamed('signIn'),
+                    onPressed: () => Get.toNamed('signIn'),
                     child: Text(
                       'sign in to win cash daily'.toUpperCase(),
-                      style: Theme.of(context).textTheme.caption,
+                      style: AppTheme.headline5(context, blue!, FontWeight.bold),
                     ))
               ]),
         ),

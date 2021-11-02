@@ -1,5 +1,9 @@
+import 'package:correctfan/Screens/Competetions/Speed50_leaderBoard.dart';
+import 'package:correctfan/Screens/Onboarding/onboarding1.dart';
 import 'package:correctfan/Screens/Onboarding/signUp.dart';
+import 'package:correctfan/Screens/Onboarding/splash.dart';
 import 'package:correctfan/constants/firebase.dart';
+import 'package:correctfan/constants/ui.dart';
 // import 'package:correctfan/helpers/showLoading.dart';
 import 'package:correctfan/main/mainPage.dart';
 // import 'package:correctfan/models/user.dart' as cf;
@@ -30,7 +34,7 @@ class AuthController extends GetxController {
 
   _setInitialScreen(User? user){
     if(user == null){
-      Get.offAll(() => SignUp());
+      Get.offAll(() => Onboarding1());
     }
     else {
       Get.offAll(() => MainPage());
@@ -42,11 +46,11 @@ class AuthController extends GetxController {
     try {
       await auth.createUserWithEmailAndPassword(email: email.text.trim(), password: password.text.trim());
       // _clearControllers();
-    } catch (e) {
-      Get.snackbar('Sign Up failed', 'Please try again',
+    } on FirebaseAuthException catch (e) {
+      Get.snackbar('Sign Up failed', 'Please try again\n\n$e',
       barBlur: 0,
-      backgroundColor: Colors.black87,
-      snackPosition: SnackPosition.BOTTOM
+      backgroundColor: lightGrey,
+      snackPosition: SnackPosition.TOP
       );
     }
     // dismissLoadingWidget();
@@ -62,8 +66,8 @@ class AuthController extends GetxController {
       Get.snackbar(
         'Sign In failed', 'Please try again',
         barBlur: 0,
-        backgroundColor: Colors.black87,
-        snackPosition: SnackPosition.BOTTOM
+        backgroundColor: lightGrey,
+        snackPosition: SnackPosition.TOP
         );
     }
     // dismissLoadingWidget();

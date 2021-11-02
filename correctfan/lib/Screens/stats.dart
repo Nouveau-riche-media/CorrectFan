@@ -1,9 +1,10 @@
+import 'package:correctfan/Controllers/playerController.dart';
 import 'package:correctfan/constants/ui.dart';
 import 'package:correctfan/widgets/Drawer.dart';
+import 'package:correctfan/widgets/PlayersInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../widgets.dart';
+import 'package:get/get.dart';
 
 class Stats extends StatefulWidget {
   // const Stats({ Key? key }) : super(key: key);
@@ -12,7 +13,7 @@ class Stats extends StatefulWidget {
   _StatsState createState() => _StatsState();
 }
 
-
+final PlayerController playerController = Get.find();
 
 class _StatsState extends State<Stats> {
   @override
@@ -49,11 +50,39 @@ class _StatsState extends State<Stats> {
             )
           ),
         ),
-        body: Card(
-          margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-          child: Players()
+      body: Center(
+        child: Card(
+          margin: EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+          elevation: 4,
+          child: Container(
+            padding: EdgeInsets.symmetric(vertical: 16),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SvgPicture.asset('assets/images/pl.svg'),
+                  SizedBox(height: 8),
+                  Text('player Stats Table'.toUpperCase(),
+                      style: AppTheme.headline5(context, grey, FontWeight.bold)),
+                  SizedBox(height: 8),
+                  Divider(
+                    color: Theme.of(context).backgroundColor,
+                    indent: 8,
+                    endIndent: 8,
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 12),
+                    // padding: EdgeInsets.symmetric(horizontal: 32),
+                    height: height(2, context) + 32,
+                    child: Obx(() => ListView.separated(
+                      padding: EdgeInsets.only(bottom: 24),
+                        itemBuilder: (context, index) => PlayersInfo(playerController.players[index]),
+                        separatorBuilder: (context, index) => SizedBox(height: 12,),
+                        itemCount: playerController.players.length)),
+                  )
+                ]),
+          ),
         ),
-          
+      ),  
     );
   }
 }

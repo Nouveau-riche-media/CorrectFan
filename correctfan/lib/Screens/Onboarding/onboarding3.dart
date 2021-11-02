@@ -1,5 +1,8 @@
+import 'package:correctfan/Screens/Onboarding/signUp.dart';
+import 'package:correctfan/constants/ui.dart';
 import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 // import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,12 +15,13 @@ class Onboarding3 extends StatefulWidget {
 
 class _Onboarding3State extends State<Onboarding3> {
 
-  
+    
+
   @override
   Widget build(BuildContext context) {
 
-    Color backgroundColor = Theme.of(context).backgroundColor;
-    dynamic headline5 = Theme.of(context).textTheme.headline5;
+    Color backgroundColor = secondary;
+    dynamic headline5 = AppTheme.headline3(context, white, FontWeight.bold);
     
 
     return Scaffold(
@@ -35,7 +39,7 @@ class _Onboarding3State extends State<Onboarding3> {
             Positioned(
               left: 0,
               bottom: 0,
-              child: Image.asset('assets/images/happyguy 1-2.png', )),
+              child: Image.asset('assets/images/happyguy 1-2.png')),
             Positioned(
               left: 32,
               top: 207,
@@ -49,18 +53,6 @@ class _Onboarding3State extends State<Onboarding3> {
                     style: headline5,
                   ),
 
-                  SizedBox(height: 12,),
-
-                  Text(
-                    'WIN CASH DAILY',
-                    style: GoogleFonts.inter(
-                        textStyle: TextStyle(
-                        fontSize: 16,
-                        letterSpacing: 10,
-                        color: Colors.white,
-                        height: 1.1
-                      ),),
-                  )
                 ],
               )),
               Positioned(
@@ -68,10 +60,10 @@ class _Onboarding3State extends State<Onboarding3> {
                 right: 32,
                 left: 32,
                 
-                      child: Button(
-                      onPressed: () => Navigator.of(context).pushNamed('signUp'),
-                      label: 'Get Started',
-                      ),),
+                child: Button(
+                  onPressed: () => Get.offAll(SignUp()),
+                  label: 'Get Started',
+                  ),),
         ]),
     );
   }

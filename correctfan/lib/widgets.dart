@@ -1,6 +1,8 @@
 // import 'package:correctfan/Screens/News/NewsDetail.dart';
 // import 'package:correctfan/services/flutterfire.dart';
 import 'package:correctfan/constants/ui.dart';
+import 'package:correctfan/models/players.dart';
+import 'package:correctfan/widgets/RulesDialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -349,8 +351,8 @@ class _LobbyContestCardState extends State<LobbyContestCard> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-      color: Colors.grey[300],
-      width: 316,
+      color: lightGrey,
+      width: width(1, context) - 24,
       // height: 78,
       child: Column(
         children: [
@@ -397,6 +399,7 @@ class _LobbyContestCardState extends State<LobbyContestCard> {
                 ),
                 child: TextButton( 
                   onPressed: () {},
+                  // speed50Rules(context),
                   child: Text('JOIN'),
                   style: ButtonStyle(
                     // padding: MaterialStateProperty.all(EdgeInsets.all(16)),
@@ -509,182 +512,7 @@ class InboxMessage extends StatelessWidget {
   }
 }
 
-class Players extends StatefulWidget {
-  const Players({Key? key}) : super(key: key);
 
-  @override
-  _PlayersState createState() => _PlayersState();
-}
-
-class _PlayersState extends State<Players> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 32),
-      child: Column(
-        // crossAxisAlignment: CrossAxisAlignment.center,
-        // mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(
-            height: 12,
-          ),
-          SvgPicture.asset('assets/images/pl.svg'),
-          SizedBox(
-            height: 12,
-          ),
-          Text('PLAYER STATS TABLE',
-            style: GoogleFonts.inter(
-              fontSize: 12,
-              color: Color(0xFFB2B2B2),
-              fontWeight: FontWeight.w900
-            )),
-            SizedBox(height: 12,),
-
-          Divider(color: Theme.of(context).primaryColor, indent: 12, endIndent: 12,),
-
-          SizedBox(
-            height: 12,
-          ),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              FilterChip(
-                label: Text('Defender'),
-                onSelected: (bool x) {} ),
-
-                FilterChip(label: Text('Goalkeeper'), onSelected: (bool x) {}),
-
-                FilterChip(
-                label: Text('MidFielder'),
-                onSelected: (bool x) {} ),
-
-                FilterChip(
-                label: Text('Forward'),
-                onSelected: (bool x) {} ),                
-            ],
-          ),
-
-          SizedBox(height: 12,),
-
-          Container(
-            width: MediaQuery.of(context).size.width,
-            padding: EdgeInsets.all(8),
-            color: secondary,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text('Club',
-                  style: GoogleFonts.inter(
-                    fontSize: 12,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold
-                  ),),
-
-                  Text(
-                  'Players',
-                  style: GoogleFonts.inter(
-                      fontSize: 12,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                ),
-
-                Text(
-                  'Position',
-                  style: GoogleFonts.inter(
-                      fontSize: 12,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                ),
-
-                Text(
-                  'Market Value',
-                  style: GoogleFonts.inter(
-                      fontSize: 12,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                ),
-
-                Text(
-                  'Rating',
-                  style: GoogleFonts.inter(
-                      fontSize: 12,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-          ),
-
-          Flexible(
-            flex: 1,
-            child: ListView.builder(
-              itemCount: 9,
-              itemBuilder: (x, index) {
-                return Container(
-                  padding: EdgeInsets.fromLTRB(4, 8, 4, 8),
-                  margin: EdgeInsets.fromLTRB(8, 8, 8, 0),
-                  color: Color(0xFFC4C4C4),
-                  child: (
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          width: 12,
-                        ),
-
-                        CircleAvatar( radius: 9,),
-
-                        SizedBox(
-                          width: 24,
-                        ),
-
-                        Text('Player',
-                          style: GoogleFonts.inter(
-                            fontSize: 12,
-                            color: Color(0xFF4F4F4F)
-                          ),),
-
-                          SizedBox(
-                          width: 24,
-                        ),
-
-                          Text('Position',
-                          style: GoogleFonts.inter(
-                            fontSize: 12,
-                            color: Color(0xFF4F4F4F)
-                          ),),
-
-                          SizedBox(
-                          width: 24,
-                        ),
-
-                          Text('\$\$\$',
-                          style: GoogleFonts.inter(
-                            fontSize: 12,
-                            color: Color(0xFF4F4F4F)
-                          ),),
-
-                          SizedBox(
-                          width: 64,
-                        ),
-
-                          Text('20',
-                          style: GoogleFonts.inter(
-                            fontSize: 12,
-                            color: Color(0xFF4F4F4F)
-                          ),),
-                      ],
-                    )
-                  ),
-                );
-              }),
-          )
-        ],
-      ),
-    );
-  }
-}
 
 
 class TransactionInfo extends StatefulWidget {

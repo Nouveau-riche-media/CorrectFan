@@ -15,8 +15,8 @@ class Players {
     this.playerId,
     required this.firstName,
     required this.lastName,
-    this.commonName,
-    this.shortName,
+    required this.commonName,
+    required this.shortName,
     // required this.position,
     // this.positionCategory,
     this.jersey,
@@ -46,8 +46,8 @@ class Players {
   int? playerId;
   String firstName;
   String lastName;
-  String? commonName;
-  String? shortName;
+  String commonName;
+  String shortName;
   // DraftKingsPosition position;
   // DraftKingsPosition? positionCategory;
   int? jersey;

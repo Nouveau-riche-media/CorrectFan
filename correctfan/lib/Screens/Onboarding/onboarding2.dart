@@ -1,7 +1,10 @@
+
 import 'dart:async';
 
+import 'package:correctfan/constants/ui.dart';
 import 'package:correctfan/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 // import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -30,8 +33,8 @@ class _Onboarding2State extends State<Onboarding2> {
   @override
   Widget build(BuildContext context) {
 
-    Color backgroundColor = Theme.of(context).backgroundColor;
-    dynamic headline5 = Theme.of(context).textTheme.headline5;
+    Color backgroundColor = secondary;
+    dynamic headline5 = AppTheme.headline3(context, white, FontWeight.bold);
     // dynamic headline6 = Theme.of(context).textTheme.headline6;
     // Color primaryColor = Theme.of(context).primaryColor;
     // Color backgroundColor = Theme.of(context).backgroundColor;
@@ -87,13 +90,13 @@ class _Onboarding2State extends State<Onboarding2> {
                           child: Row(
                           children: [
                             TextButton(
-                              onPressed:  () => Navigator.of(context).pushNamed('signIn'),
-                              child: Text('Skip',
+                              onPressed:  () => Get.toNamed('signUp'),
+                              child: Text('Skip>',
                               style: GoogleFonts.inter(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                                 decorationStyle: TextDecorationStyle.solid,
-                                fontSize: 12),)),
+                                fontSize: text(40, context)),)),
                           ]))
           ]),
       ),

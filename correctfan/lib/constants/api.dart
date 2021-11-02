@@ -1,3 +1,6 @@
+import 'package:correctfan/Screens/Onboarding/setFavourites.dart';
+import 'package:correctfan/models/clubs.dart';
+
 var year = DateTime.now().year;
 var month = DateTime.now().month;
 var day = DateTime.now().day;
@@ -21,3 +24,6 @@ final nextUri =
 
 
 final pLNews = 'http://api.espn.com/v1/sports/soccer/eng.1/news/headlines';
+
+
+final playerURI = 'https://api.sportsdata.io/v3/soccer/scores/json/PlayersByTeam/516?key=7788832784ab47388f3326603d86427f';
