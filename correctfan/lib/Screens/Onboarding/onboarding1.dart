@@ -84,22 +84,22 @@ changeScreen(BuildContext context){
                         ),
                     )
                   ],
-                )),
-                        Positioned(
-                          bottom: 46,
-                          right: 32,
-                          child: TextButton(
-                            onPressed:  () {
-                              Get.offAll(SignUp());
-                            },
-                            child: Text('Skip>',
-                            style: GoogleFonts.inter(
-                              fontWeight: FontWeight.bold,
-                              color: white,
-                              decoration: TextDecoration.underline,
-                              decorationThickness: 3,
-                              decorationStyle: TextDecorationStyle.solid,
-                              fontSize: text(40, context)),)))
+                )),    
+                  Positioned(
+                    bottom: 46,
+                    right: 32,
+                    child: TextButton(
+                      onPressed:  () {
+                        Get.offAll(SignUp());
+                      },
+                      child: Text('Skip>',
+                      style: GoogleFonts.inter(
+                        fontWeight: FontWeight.bold,
+                        color: white,
+                        decoration: TextDecoration.underline,
+                        decorationThickness: 3,
+                        decorationStyle: TextDecorationStyle.solid,
+                        fontSize: text(40, context)),)))
           ]),
       ),
     );

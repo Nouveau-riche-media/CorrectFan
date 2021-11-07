@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:correctfan/Controllers/playerController.dart';
 import 'package:correctfan/Screens/Competetions/Speed50_leaderBoard.dart';
 import 'package:correctfan/Screens/Onboarding/onboarding1.dart';
@@ -53,13 +55,23 @@ class AuthController extends GetxController {
     // showLoading();
     try {
       await auth.createUserWithEmailAndPassword(email: email.text.trim(), password: password.text.trim());
-      Get.put(TodaysMatchesController());
-      Get.put(YesterdayMatchesController());
-      Get.put(NextMatchesController());
-      Get.put(TomorrowMatchesController());
-      Get.put(PlayerController());
+
+      final result = await InternetAddress.lookup('google.com');
+      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty){
+        Get.put(TodaysMatchesController());
+        Get.put(YesterdayMatchesController());
+        Get.put(NextMatchesController());
+        Get.put(TomorrowMatchesController());
+        Get.put(PlayerController());
+      }
       // _clearControllers();
-    } on FirebaseAuthException catch (e) {
+    } on SocketException catch (_){
+      Get.snackbar(
+        'you\'re not connected to the Internet', 'Please Connect and try again',
+          barBlur: 0,
+          backgroundColor: lightGrey,
+          snackPosition: SnackPosition.TOP);
+    } catch (e) {
       Get.snackbar('Sign Up failed', 'Please try again\n\n$e',
       barBlur: 0,
       backgroundColor: lightGrey,
@@ -74,13 +86,23 @@ class AuthController extends GetxController {
     // showLoading();
     try {
       await auth.signInWithEmailAndPassword(email: email.text.trim(), password: password.text.trim());
-      Get.put(TodaysMatchesController());
-      Get.put(YesterdayMatchesController());
-      Get.put(NextMatchesController());
-      Get.put(TomorrowMatchesController());
-      Get.put(PlayerController());
+      final result = await InternetAddress.lookup('google.com');
+      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty){
+        Get.put(TodaysMatchesController());
+        Get.put(YesterdayMatchesController());
+        Get.put(NextMatchesController());
+        Get.put(TomorrowMatchesController());
+        Get.put(PlayerController());
+      }
       // _clearControllers();
-    } catch (e) {
+    } on SocketException catch (_){
+      Get.snackbar(
+        'you\'re not connected to the Internet', 'Please Connect and try again',
+          barBlur: 0,
+          backgroundColor: lightGrey,
+          snackPosition: SnackPosition.TOP);
+    }
+    catch (e) {
       Get.snackbar(
         'Sign In failed', 'Please try again',
         barBlur: 0,
