@@ -66,7 +66,7 @@ class _SignInState extends State<SignIn> {
                             ),
                             Text(
                               'Connect with Google',
-                              style: GoogleFonts.inter(color: Colors.black),
+                              style: AppTheme.headline4(context, black),
                             ),
                           ],
                         ),
@@ -80,7 +80,7 @@ class _SignInState extends State<SignIn> {
                       height: 36,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: Colors.white),
+                          color: white),
                       child: TextButton(
                         onPressed: () {},
                         child: Row(
@@ -95,7 +95,7 @@ class _SignInState extends State<SignIn> {
                             ),
                             Text(
                               'Connect with Facebook',
-                              style: GoogleFonts.inter(color: Colors.black),
+                              style: AppTheme.headline4(context, black),
                             ),
                           ],
                         ),
@@ -114,6 +114,7 @@ class _SignInState extends State<SignIn> {
                       child: Column(
                         children: [
                           TextFormField(
+                            style: AppTheme.headline4(context, white),
                             controller: authController.email,
                             decoration: InputDecoration(
                               focusedBorder: OutlineInputBorder(
@@ -127,6 +128,7 @@ class _SignInState extends State<SignIn> {
                                     BorderSide(color: Colors.white, width: 2),
                                 borderRadius: BorderRadius.circular(8),
                               ),
+
                               hintText: 'Username',
                               hintStyle: AppTheme.headline5(context, white),
                               contentPadding: EdgeInsets.symmetric(
@@ -135,6 +137,7 @@ class _SignInState extends State<SignIn> {
                           ),
                           SizedBox(height: 16),
                           TextFormField(
+                            style: AppTheme.headline4(context, white),
                             controller: authController.password,
                             obscureText: true,
                             decoration: InputDecoration(
@@ -147,6 +150,7 @@ class _SignInState extends State<SignIn> {
                               border: OutlineInputBorder(),
                               hintText: 'Password',
                               hintStyle: AppTheme.headline5(context, white),
+                              
                               contentPadding: EdgeInsets.symmetric(
                                   horizontal: 24, vertical: 12),
                             ),

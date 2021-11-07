@@ -114,7 +114,7 @@ class _SignUpState extends State<SignUp> {
                       children: [
                         TextFormField(
                           controller: authController.email,
-                          style: GoogleFonts.inter(color: white),
+                          style: AppTheme.headline4(context, white),
                           decoration: InputDecoration(
                             focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: white)),
@@ -144,7 +144,7 @@ class _SignUpState extends State<SignUp> {
                               return 'your password cannot be less than 5 characters';
                             }
                           },
-                          style: GoogleFonts.inter(color: white),
+                          style: AppTheme.headline4(context, white),
                           obscureText: true,
                           decoration: InputDecoration(
                             focusedBorder: OutlineInputBorder(
@@ -175,7 +175,7 @@ class _SignUpState extends State<SignUp> {
                               return 'your password doesn\'t match';
                             }
                           },
-                          style: GoogleFonts.inter(color: white),
+                          style: AppTheme.headline4(context, white),
                           obscureText: true,
                           decoration: InputDecoration(
                             focusedBorder: OutlineInputBorder(
