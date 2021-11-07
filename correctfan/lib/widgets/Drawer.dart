@@ -4,6 +4,7 @@ import 'package:correctfan/Screens/Drawer/Verification/AccountVerification.dart'
 import 'package:correctfan/constants/controllers.dart';
 import 'package:correctfan/constants/ui.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomDrawer extends StatefulWidget {
@@ -16,7 +17,7 @@ class CustomDrawer extends StatefulWidget {
 class _CustomDrawerState extends State<CustomDrawer> {
   @override
   Widget build(BuildContext context) {
-    TextStyle tileTheme = AppTheme.headline4(context, white);
+    TextStyle tileTheme = AppTheme.headline5(context, white);
 
     // final authService = Provider.of<AuthService>(context);
     return Drawer(
@@ -35,7 +36,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   onPressed: () {},
                   child: GestureDetector(
                     onTap: () =>
-                        Navigator.of(context).popAndPushNamed('Profile'),
+                        Get.toNamed('Profile'),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -76,11 +77,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               subtitle: Row(children: [
                 Text(
                   'Reward Bank',
-                  style: GoogleFonts.inter(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+                  style: AppTheme.headline6(context, white)
                 ),
                 SizedBox(
                   width: 30,
@@ -107,7 +104,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 color: Colors.white,
               ),
               title: Text('Verify My Account', style: tileTheme),
-              onTap: () => AccountVerification(),
+              onTap: () => Get.to(AccountVerification()),
             ),
             ListTile(
               leading: Icon(
@@ -115,7 +112,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 color: Colors.white,
               ),
               title: Text('Transaction History', style: tileTheme),
-              onTap: () => TransactionHistory(),
+              onTap: () => Get.to(TransactionHistory()),
             ),
             ListTile(
               leading: Icon(

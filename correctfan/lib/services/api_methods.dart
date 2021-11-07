@@ -2,6 +2,7 @@ import 'package:correctfan/constants/api.dart';
 import 'package:correctfan/models/clubs.dart';
 import 'package:correctfan/models/matches.dart';
 import 'package:correctfan/models/players.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class RemoteServices {
@@ -22,54 +23,75 @@ static Future<List<Clubs>> fetchClubs() async {
 
 // Fetch Live Scores from API
 static Future<List<Fixtures>> fetchTodaysMatches() async {
-  final response = await client.get(Uri.parse(todayUri));
-    if (response.statusCode == 200){
-    return fixturesFromJson(response.body);
-    }  
-  else {
+  try {
+    final response = await client.get(Uri.parse(todayUri));
+      if (response.statusCode == 200){
+      return fixturesFromJson(response.body);
+      }  
+    else {
+      throw Exception('Failed to Load Feed');
+    }}
+  catch (e) {
     throw Exception('Failed to Load Feed');
-  }}
+    }
+  } 
 
 
 // Fetch YesterdaysMatches
   static Future<List<Fixtures>> fetchYesterdaysMatches() async {
-    final response = await client.get(Uri.parse(yesterdayUri));
+    try {
+      final response = await client.get(Uri.parse(yesterdayUri));
 
-    if (response.statusCode == 200) {
-      return fixturesFromJson(response.body);
-    } else {
-      throw Exception('Failed to Load Feed');
+      if (response.statusCode == 200) {
+        return fixturesFromJson(response.body);
+      } else{
+        throw Exception('Failed to Load Feed');
+      }
+      } catch (e) {
+        throw Exception('Failed to Load Feed');
     }
   }
 
   static Future<List<Fixtures>> fetchTomorrowsMatches() async {
+    try {
     final response = await client.get(Uri.parse(tomorrowUri));
 
     if (response.statusCode == 200) {
       return fixturesFromJson(response.body);
     } else {
       throw Exception('Failed to Load Feed');
+    } } catch (e) {
+      throw Exception('Failed to Load Feed');
     }
   }
 
   static Future<List<Fixtures>> fetchNextMatches() async {
-    final response = await client.get(Uri.parse(nextUri));
+    try {
+      final response = await client.get(Uri.parse(nextUri));
 
-    if (response.statusCode == 200) {
-      return fixturesFromJson(response.body);
-    } else {
+      if (response.statusCode == 200) {
+        return fixturesFromJson(response.body);
+      } else {
+        throw Exception('Failed to Load Feed');
+      } 
+
+    } 
+    catch (e) {
       throw Exception('Failed to Load Feed');
     }
   }
 
   static Future<List<Players>> fetchPlayers() async {
+    try{
     final response = await client.get(Uri.parse(playerURI));
 
-    if (response.statusCode == 200){
+    if (response.statusCode == 200) {
       return playersFromJson(response.body);
     } else {
-      throw Exception('Failed to load');
+      throw Exception('Failed to Load Feed');
+    }
+    } catch (e){
+      throw Exception('Failed to Load Feed');
     }
   }
-
 }

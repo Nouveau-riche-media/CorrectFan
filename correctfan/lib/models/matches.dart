@@ -7,8 +7,8 @@ import 'dart:convert';
 List<Fixtures> fixturesFromJson(String str) =>
     List<Fixtures>.from(json.decode(str).map((x) => Fixtures.fromJson(x)));
 
-String fixturesToJson(List<Fixtures> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String fixturesToJson(List<Fixtures>? data) =>
+    json.encode(List<dynamic>.from(data!.map((x) => x.toJson())));
 
 class Fixtures {
   Fixtures({

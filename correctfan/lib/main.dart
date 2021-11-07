@@ -1,4 +1,5 @@
 import 'package:correctfan/Controllers/authControllers.dart';
+import 'package:correctfan/Controllers/matchesController.dart';
 import 'package:correctfan/Screens/Inbox/InboxDetails.dart';
 // import 'package:correctfan/Screens/Livescores/Today.dart';
 import 'package:correctfan/Screens/News/NewsDetail.dart';
@@ -20,7 +21,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
-import 'Controllers/matchesController.dart';
 import 'Controllers/playerController.dart';
 import 'Screens/Livescores/LiveScoreDetail.dart';
 import 'constants/ui.dart';
@@ -33,9 +33,9 @@ void main() async {
   await initialization.then((value) {
     Get.put(AuthController());
     Get.put(TodaysMatchesController());
-    Get.put(TomorrowMatchesController());
     Get.put(YesterdayMatchesController());
     Get.put(NextMatchesController());
+    Get.put(TomorrowMatchesController());
     Get.put(PlayerController());
   });
   runApp(MyApp());
@@ -67,21 +67,22 @@ class MyApp extends StatelessWidget {
   
         // ChipTheme
         chipTheme: ChipThemeData(
-          backgroundColor: Theme.of(context).primaryColor,
-          selectedColor: Colors.white,
+          backgroundColor: blue!,
+          selectedColor: white,
           labelStyle: GoogleFonts.inter(
-            color: Colors.white,
-            // fontSize: text(45, context)
+            fontSize: 8,
+            color: white
           ),
+          
           brightness: Brightness.light,
-          disabledColor: Color.fromARGB(30, 196, 196, 196),
-          padding: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+          disabledColor: lightGrey!,
+          padding: EdgeInsets.symmetric(horizontal: 4, vertical: 4),
           secondarySelectedColor: Color.fromARGB(100, 196, 196, 196),
           secondaryLabelStyle: GoogleFonts.inter(
             // fontSize: text(45, context),
             color: Colors.black
           ),
-          ),
+        ),
   
         // Font Family
         fontFamily: 'Inter',
@@ -92,6 +93,7 @@ class MyApp extends StatelessWidget {
       ),
   
       home: Splash(),
+      // initialRoute: 'on1',
       routes: {
         'yeyu': (context) => Splash(),
         'on1': (context) => Onboarding1(),

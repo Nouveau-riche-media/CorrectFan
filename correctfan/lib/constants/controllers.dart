@@ -12,10 +12,10 @@ AuthController authController = AuthController.instance;
 FavouriteTeamController favouriteteams = Get.put(FavouriteTeamController());
 
 // Initialize Match Controller Instances
-TodaysMatchesController todayController = Get.put(TodaysMatchesController());
-TomorrowMatchesController tomorrowController = Get.put(TomorrowMatchesController());
-YesterdayMatchesController yesterdayController = Get.put(YesterdayMatchesController());
-NextMatchesController nextController = Get.put(NextMatchesController());
+TodaysMatchesController todayController = TodaysMatchesController.todayInstance;
+TomorrowMatchesController tomorrowController = TomorrowMatchesController.tomorrowMatchesInstance;
+YesterdayMatchesController yesterdayController = YesterdayMatchesController.yesterdayInstance;
+NextMatchesController nextController = NextMatchesController.nextInstance;
 
 // Initialize fetchPlayer Controller
-PlayerController playerController = Get.put(PlayerController());
+PlayerController playerController = PlayerController.playerInstance;

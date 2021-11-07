@@ -15,7 +15,7 @@ class Today extends StatefulWidget {
   _TodayState createState() => _TodayState();
 }
 
-final TodaysMatchesController todaysFixtures = Get.find();
+// final TodaysMatchesController todaysFixtures = Get.find();
 
 class _TodayState extends State<Today> {
 
@@ -50,7 +50,7 @@ class _TodayState extends State<Today> {
                     height: height(2, context) + 32,
                     child: Obx(() => ListView.separated(
                         itemBuilder: (context, index) =>
-                            LiveScores(todaysFixtures.fixtures[index]),
+                            LiveScores(todayController.fixtures[index]),
                         separatorBuilder: (index, x) => Divider(
                               color: Theme.of(context).primaryColor,
                             ),

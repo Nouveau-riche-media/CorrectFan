@@ -3,6 +3,9 @@ import 'package:correctfan/services/api_methods.dart';
 import 'package:get/get.dart';
 
 class PlayerController extends GetxController{
+
+    static PlayerController playerInstance = Get.find();
+
     @override
     void onInit() {
       fetchPlayers();
@@ -11,8 +14,9 @@ class PlayerController extends GetxController{
 
     var players = List<Players>.empty().obs;
     
-    void fetchPlayers() async {
+    Future<List<Players>> fetchPlayers() async {
       var playerData = await RemoteServices.fetchPlayers();
       players.value = playerData;
+      return playerData;
     }
 }

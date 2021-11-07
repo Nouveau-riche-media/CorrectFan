@@ -69,10 +69,42 @@ class _StatsState extends State<Stats> {
                     indent: 8,
                     endIndent: 8,
                   ),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      FilterChip(label: Text('Forward', style: AppTheme.headline5(context, white)), onSelected: (bool) {}),
+                      FilterChip(label: Text('Goalkeeper', style: AppTheme.headline5(context, white)), onSelected: (bool) {}),
+                      FilterChip(label: Text('Midfielder',
+                              style: AppTheme.headline5(context, white)),
+                          onSelected: (bool) {}),
+                      FilterChip(label: Text('Defender',
+                              style: AppTheme.headline5(context, white)),
+                          onSelected: (bool) {}),
+                    ],
+                  ),
+
+                  Container(
+                    color: primary,
+                    width: width(1, context),
+                    padding: EdgeInsets.all(12),
+                    margin: EdgeInsets.only(bottom: 8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text('Player', style: AppTheme.headline5(context, white, FontWeight.bold)),
+                        Text('Position', style: AppTheme.headline5(context, white, FontWeight.bold)),
+                        Text('Market Value', style: AppTheme.headline5(context, white, FontWeight.bold)),
+                        Text('Rating', style: AppTheme.headline5(context, white, FontWeight.bold)),
+                        Text('Number', style: AppTheme.headline5(context, white, FontWeight.bold)),
+                      ]
+                    ),
+                  ),
+
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 12),
                     // padding: EdgeInsets.symmetric(horizontal: 32),
-                    height: height(2, context) + 32,
+                    height: height(2, context) - 10,
                     child: Obx(() => ListView.separated(
                       padding: EdgeInsets.only(bottom: 24),
                         itemBuilder: (context, index) => PlayersInfo(playerController.players[index]),

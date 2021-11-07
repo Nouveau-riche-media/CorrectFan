@@ -81,32 +81,32 @@ class Players {
         shortName: json["ShortName"] == null ? null : json["ShortName"],
         // position: json["Position"] == null
         //     ? null
-        //     : draftKingsPositionValues.map[json["Position"]],
+        //     : draftKingsPositionValues.map![json["Position"]],
         // positionCategory: json["PositionCategory"] == null
         //     ? null
-        //     : draftKingsPositionValues.map[json["PositionCategory"]],
+        //     : draftKingsPositionValues.map![json["PositionCategory"]],
         jersey: json["Jersey"] == null ? null : json["Jersey"],
-        // foot: json["Foot"] == null ? null : footValues.map[json["Foot"]],
+        // foot: json["Foot"] == null ? null : footValues.map![json["Foot"]],
         height: json["Height"] == null ? null : json["Height"],
         weight: json["Weight"] == null ? null : json["Weight"],
         // gender:
-            // json["Gender"] == null ? null : genderValues.map[json["Gender"]],
-        birthDate: json["BirthDate"] == null
-            ? null
-            : DateTime.parse(json["BirthDate"]),
+        //     json["Gender"] == null ? null : genderValues.map![json["Gender"]],
+        // birthDate: json["BirthDate"] == null
+        //     ? null
+        //     : DateTime.parse(json["BirthDate"]),
         birthCity: json["BirthCity"] == null ? null : json["BirthCity"],
         birthCountry:
             json["BirthCountry"] == null ? null : json["BirthCountry"],
         nationality: json["Nationality"] == null ? null : json["Nationality"],
         // injuryStatus: json["InjuryStatus"] == null
         //     ? null
-        //     : injuryValues.map[json["InjuryStatus"]],
+        //     : injuryValues.map![json["InjuryStatus"]],
         // injuryBodyPart: json["InjuryBodyPart"] == null
         //     ? null
-        //     : injuryValues.map[json["InjuryBodyPart"]],
+        //     : injuryValues.map![json["InjuryBodyPart"]],
         // injuryNotes: json["InjuryNotes"] == null
         //     ? null
-        //     : injuryValues.map[json["InjuryNotes"]],
+        //     : injuryValues.map![json["InjuryNotes"]],
         injuryStartDate: json["InjuryStartDate"] == null
             ? null
             : DateTime.parse(json["InjuryStartDate"]),
@@ -117,9 +117,9 @@ class Players {
             json["RotoWirePlayerID"] == null ? null : json["RotoWirePlayerID"],
         // draftKingsPosition: json["DraftKingsPosition"] == null
         //     ? null
-        //     : draftKingsPositionValues.map[json["DraftKingsPosition"]],
-        usaTodayPlayerId:
-            json["UsaTodayPlayerID"] == null ? null : json["UsaTodayPlayerID"],
+        //     : draftKingsPositionValues.map![json["DraftKingsPosition"]],
+        // usaTodayPlayerId:
+            // json["UsaTodayPlayerID"] == null ? null : json["UsaTodayPlayerID"],
         usaTodayHeadshotUrl: json["UsaTodayHeadshotUrl"] == null
             ? null
             : json["UsaTodayHeadshotUrl"],
@@ -154,20 +154,20 @@ class Players {
         "BirthCountry": birthCountry == null ? null : birthCountry,
         "Nationality": nationality == null ? null : nationality,
         // "InjuryStatus":
-            // injuryStatus == null ? null : injuryValues.reverse[injuryStatus],
+        //     injuryStatus == null ? null : injuryValues.reverse![injuryStatus],
         // "InjuryBodyPart": injuryBodyPart == null
         //     ? null
-        //     : injuryValues.reverse[injuryBodyPart],
+        //     : injuryValues.reverse![injuryBodyPart],
         // "InjuryNotes":
-        //     injuryNotes == null ? null : injuryValues.reverse[injuryNotes],
-        // "InjuryStartDate":
-        //     injuryStartDate == null ? null : injuryStartDate.toIso8601String(),
-        // "Updated": updated == null ? null : updated.toIso8601String(),
+        //     injuryNotes == null ? null : injuryValues.reverse![injuryNotes],
+        "InjuryStartDate":
+            injuryStartDate == null ? null : injuryStartDate!.toIso8601String(),
+        "Updated": updated == null ? null : updated!.toIso8601String(),
         "PhotoUrl": photoUrl == null ? null : photoUrl,
         "RotoWirePlayerID": rotoWirePlayerId == null ? null : rotoWirePlayerId,
         // "DraftKingsPosition": draftKingsPosition == null
         //     ? null
-        //     : draftKingsPositionValues.reverse[draftKingsPosition],
+        //     : draftKingsPositionValues.reverse![draftKingsPosition],
         "UsaTodayPlayerID": usaTodayPlayerId == null ? null : usaTodayPlayerId,
         "UsaTodayHeadshotUrl":
             usaTodayHeadshotUrl == null ? null : usaTodayHeadshotUrl,
@@ -182,7 +182,7 @@ class Players {
 
 // enum DraftKingsPosition { M, D, A, GK, M_F, F }
 
-// final draftKingsPositionValues = EnumValues({
+// final draftKingsPositionValues = EnumValues.dkposition({
 //   "A": DraftKingsPosition.A,
 //   "D": DraftKingsPosition.D,
 //   "F": DraftKingsPosition.F,
@@ -194,26 +194,29 @@ class Players {
 // enum Foot { RIGHT, LEFT, BOTH }
 
 // final footValues =
-//     EnumValues({"Both": Foot.BOTH, "Left": Foot.LEFT, "Right": Foot.RIGHT});
+//     EnumValues.foot({"Both": Foot.BOTH, "Left": Foot.LEFT, "Right": Foot.RIGHT});
 
 // enum Gender { MALE }
 
-// final genderValues = EnumValues({"Male": Gender.MALE});
+// final genderValues = EnumValues.gender({"Male": Gender.MALE});
 
 // enum Injury { SCRAMBLED }
 
-// final injuryValues = EnumValues({"Scrambled": Injury.SCRAMBLED});
+// final injuryValues = EnumValues.injury({"Scrambled": Injury.SCRAMBLED});
 
 // class EnumValues<T> {
-//   Map<String, T> map;
-//   Map<T, String> reverseMap;
+//   Map<String, T>? map;
+//   Map<T, String>? reverseMap;
 
-//   EnumValues(this.map);
+//   EnumValues.injury(Map<String, Injury> map);
+//   EnumValues.dkposition(Map<String, DraftKingsPosition> map);
+//   EnumValues.gender(Map<String, Gender> map);
+//   EnumValues.foot(Map<String, Foot> map);
 
-//   Map<T, String> get reverse {
+//   Map<T, String>? get reverse {
 //     if (reverseMap == null) {
-//       reverseMap = map.map((k, v) => new MapEntry(v, k));
+//       reverseMap = map!.map((k, v) => new MapEntry(v, k));
 //     }
 //     return reverseMap;
 //   }
-// }
+

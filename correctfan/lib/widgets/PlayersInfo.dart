@@ -12,7 +12,6 @@ class PlayersInfo extends StatelessWidget {
     return Container(
       color: lightGrey,
       padding: EdgeInsets.all(8),
-
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

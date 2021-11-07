@@ -48,12 +48,13 @@ class _NextState extends State<Next> {
                     padding: EdgeInsets.symmetric(horizontal: 32),
                     height: height(2, context) + 32,
                     child: Obx(() => ListView.separated(
-                        itemBuilder: (context, index) =>
-                            LiveScores(nextFixtures.fixtures[index]),
-                        separatorBuilder: (index, x) => Divider(
-                              color: Theme.of(context).primaryColor,
-                            ),
-                        itemCount: nextController.fixtures.length)),
+                          itemBuilder: (context, index) =>
+                              LiveScores(nextController.fixtures[index]),
+                          separatorBuilder: (index, x) => Divider(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                          itemCount: nextController.fixtures.length),
+                    ),
                   )
                 ]),
           ),

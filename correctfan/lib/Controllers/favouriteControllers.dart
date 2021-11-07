@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 // import 'dart:convert';
 
 class FavouriteTeamController extends GetxController{
+  
 
   @override
   void onInit() {
@@ -15,9 +16,10 @@ class FavouriteTeamController extends GetxController{
   final favourites = [].obs;
   var clubList = List<Clubs>.empty().obs;
 
-  void getClubs() async{
+  Future<List<Clubs>> getClubs() async{
     var clubs = await RemoteServices.fetchClubs();
     clubList.value = clubs;
+    return clubs;
   }
 
 }

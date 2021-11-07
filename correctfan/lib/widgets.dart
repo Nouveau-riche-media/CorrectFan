@@ -1,10 +1,12 @@
 // import 'package:correctfan/Screens/News/NewsDetail.dart';
 // import 'package:correctfan/services/flutterfire.dart';
+import 'package:correctfan/Screens/Competetions/Speed50_leaderBoard.dart';
 import 'package:correctfan/constants/ui.dart';
 import 'package:correctfan/models/players.dart';
 import 'package:correctfan/widgets/RulesDialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 // import 'package:provider/provider.dart';
 
@@ -89,7 +91,7 @@ class Button extends StatelessWidget {
           fontSize: 12
         ),),
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(Colors.black),
+        backgroundColor: MaterialStateProperty.all(black),
         minimumSize: MaterialStateProperty.all(Size(270, 32)),
         padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 16))
       ),
@@ -113,7 +115,7 @@ class _NewsFeedState extends State<NewsFeed> {
   Widget build(BuildContext context) {
 
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, 'News Detail'),
+      onTap: () => Get.toNamed('News Detail'),
       child: Card(
         elevation: 8,
         margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -129,7 +131,7 @@ class _NewsFeedState extends State<NewsFeed> {
                   Row(
                     children: [
                       CircleAvatar(
-                        backgroundColor: Theme.of(context).primaryColor,
+                        backgroundColor: primary,
                         child: Text('A'),
                       ),
                       SizedBox(width: 4,),
@@ -137,17 +139,13 @@ class _NewsFeedState extends State<NewsFeed> {
                       'MARTIN ODEGAARD CONFIRMS\nARSENAL EXIT',
                       textWidthBasis: TextWidthBasis.parent,
                       softWrap: true,
-                      style: GoogleFonts.inter(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Theme.of(context).primaryColor),
-                    ),
+                      style: AppTheme.headline4(context, primary))
                     ],
             ),
                       SizedBox(height: 8,),
     
                   Text('Martin Odegaard penned a heartfelt goodbye message to\nArsenal fans after confirming he would return to Real Madrid.',
-                    style: Theme.of(context).textTheme.bodyText1,),
+                    style: AppTheme.headline5(context, black),),
     
                     Row(
                       children: [
@@ -223,234 +221,6 @@ class _NewsFeedState extends State<NewsFeed> {
   }
 }
 
-class ContestCard extends StatefulWidget {
-  // const ContestCard({ Key? key }) : super(key: key);
-
-  @override
-  _ContestCardState createState() => _ContestCardState();
-}
-
-class _ContestCardState extends State<ContestCard> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        color: secondary
-      ),
-      height: 70,
-      width: 160,
-      margin: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            margin: EdgeInsets.only(bottom: 8),
-            alignment: Alignment.center,
-            color: Colors.black,
-            height: 18,
-            width: 160,
-            child: Text('1st Place - \$50K',
-              style: GoogleFonts.lato(
-                fontSize: 12,
-                fontWeight: FontWeight.w700,
-                color: Colors.white
-              ))
-          ),
-
-          Text('\$ 100k Sizzle Sunday',
-            style: GoogleFonts.inter(
-              fontSize: 12,
-              fontWeight: FontWeight.w800,
-              color: Colors.white
-            ),),
-
-            SizedBox(height: 16,),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Entry Fee',
-                  style: GoogleFonts.inter(
-                    fontSize: 12,
-                    color: Colors.white
-                ),),
-
-                Text('\$50',
-                  style: GoogleFonts.inter(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white
-            ),),
-              ],
-            ),
-
-            SizedBox(height: 16,),
-
-            Column(
-              children: [
-                LinearProgressIndicator(
-                  value: 50,
-                  // color: Theme.of(context).accentColor,
-                ),
-
-                SizedBox(height: 4,),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                  Text('50,000 Teams',
-                    style: GoogleFonts.inter(
-                      fontSize: 8,
-                      color: Colors.white
-                    )),
-                  Text('0 left',
-                    style: GoogleFonts.inter(
-                      fontSize: 8,
-                      color: Colors.white
-                    )),
-                ],)
-              ],
-            ),
-
-            // FlipPanel.builder(
-            //   loop: 1,
-            //   itemBuilder: (context, index) => Container(
-            //     color: Colors.white,
-            //     padding: const EdgeInsets.symmetric(horizontal: 6.0),
-            //     child: Text(
-            //       '65878',
-            //       style: GoogleFonts.inter(
-            //         color: Colors.black,
-            //         fontSize: 24,
-            //       ),
-            //     ),
-            //   ),
-            //   itemsCount: 6,
-            //   period: Duration(days: 14)
-            //   ))
-        ],
-      )
-    );
-  }
-}
-
-
-
-// Lobby
-class LobbyContestCard extends StatefulWidget {
-  const LobbyContestCard({ Key? key }) : super(key: key);
-
-  @override
-  _LobbyContestCardState createState() => _LobbyContestCardState();
-}
-
-class _LobbyContestCardState extends State<LobbyContestCard> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-      color: lightGrey,
-      width: width(1, context) - 24,
-      // height: 78,
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Speed 50',
-                    style: GoogleFonts.inter(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.grey[600]
-                    ),),
-                  Text('50/50',
-                    style: GoogleFonts.inter(
-                      fontSize: 10,
-                      color: Colors.grey[600]
-                    ),),
-                ],
-              ),
-
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('250,000',
-                    style: GoogleFonts.inter(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w900,
-                      color: primary
-                    ),),
-                  Text('Winners',
-                    style: GoogleFonts.inter(
-                      fontSize: 10,
-                      color: primary
-                    ),),
-                ],
-              ),
-
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(500)
-                ),
-                child: TextButton( 
-                  onPressed: () {},
-                  // speed50Rules(context),
-                  child: Text('JOIN'),
-                  style: ButtonStyle(
-                    // padding: MaterialStateProperty.all(EdgeInsets.all(16)),
-                    // minimumSize: MaterialStateProperty.all(Size(0, 0)),
-                    foregroundColor: MaterialStateProperty.all(Colors.white),
-                    backgroundColor: MaterialStateProperty.all(secondary),
-                    elevation: MaterialStateProperty.all(0),
-                    alignment: Alignment.center,
-                    textStyle: MaterialStateProperty.all(
-                      GoogleFonts.inter(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 8
-                      )),
-                  ),
-                  ),
-              )
-            ],
-          ),
-
-          Divider(
-            color: Theme.of(context).primaryColor,
-            thickness: 1,
-            ),
-
-            LinearProgressIndicator(
-              value: 100,
-              // color: Theme.of(context).accentColor,
-            ),
-
-            Row(
-              children: [
-                Text('50,000 teams',
-                  style: GoogleFonts.inter(
-                    fontSize: 8,
-                    fontWeight: FontWeight.w600,
-                    color: Theme.of(context).primaryColor
-                  ),),
-                Spacer(flex: 1,),
-                Text('0 slots left',
-                  style: GoogleFonts.inter(
-                    fontSize: 8,
-                    fontWeight: FontWeight.w600,
-                    color: Theme.of(context).primaryColor
-                  ),),
-              ],
-            )
-        ],
-      )
-    );
-  }
-}
 
 
 class InboxMessage extends StatelessWidget {

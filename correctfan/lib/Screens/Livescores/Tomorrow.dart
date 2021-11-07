@@ -16,7 +16,7 @@ class Tomorrow extends StatefulWidget {
   _TomorrowState createState() => _TomorrowState();
 }
 
-final TomorrowMatchesController tomorrowFixtures = Get.find();
+// final TomorrowMatchesController tomorrowFixtures = Get.find();
 
 class _TomorrowState extends State<Tomorrow> {
   @override
@@ -50,7 +50,7 @@ class _TomorrowState extends State<Tomorrow> {
                     height: height(2, context) + 32,
                     child: Obx(() => ListView.separated(
                         itemBuilder: (context, index) =>
-                            LiveScores(tomorrowFixtures.fixtures[index]),
+                            LiveScores(tomorrowController.fixtures[index]),
                         separatorBuilder: (index, x) => Divider(
                               color: Theme.of(context).primaryColor,
                             ),
