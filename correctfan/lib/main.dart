@@ -32,11 +32,6 @@ void main() async {
 
   await initialization.then((value) {
     Get.put(AuthController());
-    Get.put(TodaysMatchesController());
-    Get.put(YesterdayMatchesController());
-    Get.put(NextMatchesController());
-    Get.put(TomorrowMatchesController());
-    Get.put(PlayerController());
   });
   runApp(MyApp());
 }

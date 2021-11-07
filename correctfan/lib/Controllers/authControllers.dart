@@ -1,3 +1,4 @@
+import 'package:correctfan/Controllers/playerController.dart';
 import 'package:correctfan/Screens/Competetions/Speed50_leaderBoard.dart';
 import 'package:correctfan/Screens/Onboarding/onboarding1.dart';
 import 'package:correctfan/Screens/Onboarding/signUp.dart';
@@ -11,6 +12,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'matchesController.dart';
 // import 'package:firebase_core/firebase_core.dart';
 
 class AuthController extends GetxController {
@@ -45,6 +48,11 @@ class AuthController extends GetxController {
     // showLoading();
     try {
       await auth.createUserWithEmailAndPassword(email: email.text.trim(), password: password.text.trim());
+      Get.put(TodaysMatchesController());
+      Get.put(YesterdayMatchesController());
+      Get.put(NextMatchesController());
+      Get.put(TomorrowMatchesController());
+      Get.put(PlayerController());
       // _clearControllers();
     } on FirebaseAuthException catch (e) {
       Get.snackbar('Sign Up failed', 'Please try again\n\n$e',
@@ -61,6 +69,11 @@ class AuthController extends GetxController {
     // showLoading();
     try {
       await auth.signInWithEmailAndPassword(email: email.text.trim(), password: password.text.trim());
+      Get.put(TodaysMatchesController());
+      Get.put(YesterdayMatchesController());
+      Get.put(NextMatchesController());
+      Get.put(TomorrowMatchesController());
+      Get.put(PlayerController());
       // _clearControllers();
     } catch (e) {
       Get.snackbar(

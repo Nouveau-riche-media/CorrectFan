@@ -42,7 +42,7 @@ class Speed50 extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   width: width(1, context),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text('Team Name', style: AppTheme.headline5(context, white, FontWeight.bold),),
                       Text('Points', style:
@@ -56,7 +56,7 @@ class Speed50 extends StatelessWidget {
                 ),
 
                 Container(
-                  height: height(2, context) - 16,
+                  height: height(2, context),
                   child: ListView.builder(
                     scrollDirection: Axis.vertical,
                     itemCount: 20,
@@ -76,7 +76,7 @@ class Speed50 extends StatelessWidget {
                     )
                   ),
                 ),
-                SizedBox(height: 16,)
+                // SizedBox(height: 16,)
               ],
             ),
           )

@@ -7,6 +7,8 @@ import 'package:get/get.dart';
 // import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'signUp.dart';
+
 class Onboarding1 extends StatefulWidget {
   // const Onboarding1({ Key? key }) : super(key: key);
 
@@ -88,7 +90,7 @@ changeScreen(BuildContext context){
                           right: 32,
                           child: TextButton(
                             onPressed:  () {
-                              Get.toNamed('signUp');
+                              Get.offAll(SignUp());
                             },
                             child: Text('Skip>',
                             style: GoogleFonts.inter(

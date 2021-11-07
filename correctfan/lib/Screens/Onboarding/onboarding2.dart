@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 // import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'signUp.dart';
+
 class Onboarding2 extends StatefulWidget {
   // const Onboarding2({ Key? key }) : super(key: key);
 
@@ -90,7 +92,7 @@ class _Onboarding2State extends State<Onboarding2> {
                           child: Row(
                           children: [
                             TextButton(
-                              onPressed:  () => Get.toNamed('signUp'),
+                              onPressed:  () => Get.offAll(SignUp()),
                               child: Text('Skip>',
                               style: GoogleFonts.inter(
                                 fontWeight: FontWeight.bold,
