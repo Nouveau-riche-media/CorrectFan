@@ -40,6 +40,11 @@ class AuthController extends GetxController {
       Get.offAll(() => Onboarding1());
     }
     else {
+      Get.put(TodaysMatchesController());
+      Get.put(YesterdayMatchesController());
+      Get.put(NextMatchesController());
+      Get.put(TomorrowMatchesController());
+      Get.put(PlayerController());
       Get.offAll(() => MainPage());
     }
   }
