@@ -53,10 +53,10 @@ class AuthController extends GetxController {
   void signUp() async {
     // showLoading();
     try {
-      await auth.createUserWithEmailAndPassword(email: email.text.trim(), password: password.text.trim());
-
       final result = await InternetAddress.lookup('google.com');
       if (result.isNotEmpty && result[0].rawAddress.isNotEmpty){
+        await auth.createUserWithEmailAndPassword(
+            email: email.text.trim(), password: password.text.trim());
         Get.put(TodaysMatchesController());
         Get.put(YesterdayMatchesController());
         Get.put(NextMatchesController());
@@ -84,9 +84,10 @@ class AuthController extends GetxController {
   void signIn() async {
     // showLoading();
     try {
-      await auth.signInWithEmailAndPassword(email: email.text.trim(), password: password.text.trim());
       final result = await InternetAddress.lookup('google.com');
       if (result.isNotEmpty && result[0].rawAddress.isNotEmpty){
+        await auth.signInWithEmailAndPassword(
+            email: email.text.trim(), password: password.text.trim());
         Get.put(TodaysMatchesController());
         Get.put(YesterdayMatchesController());
         Get.put(NextMatchesController());
