@@ -1,10 +1,9 @@
 import 'dart:io';
 
 import 'package:correctfan/Controllers/playerController.dart';
-import 'package:correctfan/Screens/Competetions/Speed50_leaderBoard.dart';
+
 import 'package:correctfan/Screens/Onboarding/onboarding1.dart';
-import 'package:correctfan/Screens/Onboarding/signUp.dart';
-import 'package:correctfan/Screens/Onboarding/splash.dart';
+
 import 'package:correctfan/constants/firebase.dart';
 import 'package:correctfan/constants/ui.dart';
 // import 'package:correctfan/helpers/showLoading.dart';
