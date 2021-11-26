@@ -38,11 +38,13 @@ import 'package:flutter_svg/svg.dart';
                       // SizedBox(
                       //   width: 4,
                       // ),
-                      Text(title,
-                          textWidthBasis: TextWidthBasis.parent,
-                          
-                          // softWrap: true,
-                          style: AppTheme.headline4(context, primary, FontWeight.bold))
+                      Expanded(
+                        child: Text('''$title''',
+                            textWidthBasis: TextWidthBasis.parent,
+                            
+                            softWrap: true,
+                            style: AppTheme.headline4(context, primary, FontWeight.bold)),
+                      )
                     ],
                   ),
                   SizedBox(
