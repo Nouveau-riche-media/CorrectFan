@@ -20,8 +20,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-
-import 'Controllers/playerController.dart';
 import 'Screens/Livescores/LiveScoreDetail.dart';
 import 'constants/ui.dart';
 
