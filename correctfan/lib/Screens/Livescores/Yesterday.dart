@@ -48,13 +48,13 @@ class _YesterdayState extends State<Yesterday> {
                     child: Container(
                       // padding: EdgeInsets.symmetric(horizontal: 32),
                       height: height(2, context) + 32,
-                      width: width(2, context),
-                      child: Obx(() => ListView.builder(
+                      // width: width(2, context),
+                      child: Obx(() => ListView.separated(
                           itemBuilder: (context, index) =>
                               LiveScores(yesterdayController.fixtures[index]),
-                          // separatorBuilder: (index, x) => Divider(
-                          //       color: Theme.of(context).primaryColor,
-                          //     ),
+                          separatorBuilder: (index, x) => Divider(
+                                color: Theme.of(context).primaryColor,
+                              ),
                           itemCount: yesterdayController.fixtures.length)),
                     ),
                   )

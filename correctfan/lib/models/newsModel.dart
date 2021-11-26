@@ -21,7 +21,7 @@ class NewsModel {
   });
 
   String? title;
-  String body;
+  String? body;
   String? author;
   Media? image;
 }

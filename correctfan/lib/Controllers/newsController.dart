@@ -14,7 +14,7 @@ Future fetchNews() async {
 
     return decode.items!.map((item) => NewsModel(
       title: item.title,
-      body: item.description!,
+      body: item.description,
       image: item.media,
     )).toList();
   } else {

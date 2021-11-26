@@ -1,12 +1,21 @@
 import 'package:correctfan/constants/ui.dart';
-import 'package:correctfan/models/newsModel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 // import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
+
+  
 
   Widget newsFeed(BuildContext context, String title, String? body) {
+
+    String bodyText() {
+    if (body == null) {
+      return 'Details Shortly';
+    } else {
+      return body;
+    }
+  }
+
     return Card(
       elevation: 8,
       margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -31,15 +40,16 @@ import 'package:google_fonts/google_fonts.dart';
                       // ),
                       Text(title,
                           textWidthBasis: TextWidthBasis.parent,
-                          softWrap: true,
-                          style: AppTheme.headline4(context, primary))
+                          
+                          // softWrap: true,
+                          style: AppTheme.headline4(context, primary, FontWeight.bold))
                     ],
                   ),
                   SizedBox(
                     height: 8,
                   ),
                   Text(
-                    body!,
+                    bodyText(),
                     style: AppTheme.headline5(context, black),
                   ),
                   Row(
@@ -47,13 +57,13 @@ import 'package:google_fonts/google_fonts.dart';
                       Spacer(
                         flex: 1,
                       ),
-                      Text(
-                        '2hrs ago',
-                        style: GoogleFonts.inter(
-                          color: Colors.grey[300],
-                          fontStyle: FontStyle.italic,
-                        ),
-                      )
+                      // Text(
+                      //   '2hrs ago',
+                      //   style: GoogleFonts.inter(
+                      //     color: Colors.grey[300],
+                      //     fontStyle: FontStyle.italic,
+                      //   ),
+                      // )
                     ],
                   )
                 ],

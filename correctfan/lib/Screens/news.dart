@@ -1,5 +1,6 @@
 // import 'package:correctfan/constants/ui.dart';
 import 'package:correctfan/Controllers/newsController.dart';
+import 'package:correctfan/constants/ui.dart';
 import 'package:correctfan/models/newsModel.dart';
 import 'package:correctfan/constants/controllers.dart';
 import 'package:correctfan/widgets.dart';
@@ -84,9 +85,10 @@ class _NewsState extends State<News> {
                 );
           } else if (snapshot.hasError) {
             return Center(
-              child: Text('''${snapshot.hasError.toString()} unable to fetch data:, \n please check your internet connection and try again'''),);
+              child: Text('unable to fetch data:, please check your internet connection and try again',
+              style: AppTheme.headline5(context, grey),),);
           } else {
-            return CircularProgressIndicator();
+            return Center(child: CircularProgressIndicator());
           }
           
         }
