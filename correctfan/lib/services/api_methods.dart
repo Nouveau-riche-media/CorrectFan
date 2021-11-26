@@ -1,97 +1,85 @@
+import 'dart:async';
+import 'dart:io';
+
+// import 'package:correctfan/Screens/news.dart';
 import 'package:correctfan/constants/api.dart';
 import 'package:correctfan/models/clubs.dart';
 import 'package:correctfan/models/matches.dart';
+import 'package:correctfan/models/newsModel.dart';
 import 'package:correctfan/models/players.dart';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:retry/retry.dart';
+import 'package:webfeed/webfeed.dart';
 
 class RemoteServices {
-
   static var client = http.Client();
-  
 
 // Fetch Club List from API
-static Future<List<Clubs>> fetchClubs() async {
-  final response = await client.get(Uri.parse('https://api.sportsdata.io/v3/soccer/scores/json/Teams?key=7788832784ab47388f3326603d86427f'));
+  static Future<List<Clubs>> fetchClubs() async {
+    final response = await client.get(Uri.parse(
+        'https://api.sportsdata.io/v3/soccer/scores/json/Teams?key=7788832784ab47388f3326603d86427f'));
 
-  if (response.statusCode == 200) {
-    return clubsFromJson(response.body);
-  } else {
-    throw Exception('Failed to display');
+    if (response.statusCode == 200) {
+      return clubsFromJson(response.body);
+    } else {
+      throw Exception('Failed to display');
+    }
   }
-}
 
 // Fetch Live Scores from API
-static Future<List<Fixtures>> fetchTodaysMatches() async {
-  try {
-    final response = await client.get(Uri.parse(todayUri));
-      if (response.statusCode == 200){
-      return fixturesFromJson(response.body);
-      }  
-    else {
-      throw Exception('Failed to Load Feed');
-    }}
-  catch (e) {
-    throw Exception('Failed to Load Feed');
-    }
-  } 
-
+  static Future<List<Fixtures>> fetchTodaysMatches() async {
+    final response = await retry(
+        () => client.get(Uri.parse(todayUri)).timeout(Duration(seconds: 5)),
+        retryIf: (e) => e is SocketException || e is TimeoutException);
+    
+    return fixturesFromJson(response.body);
+  }
 
 // Fetch YesterdaysMatches
   static Future<List<Fixtures>> fetchYesterdaysMatches() async {
-    try {
-      final response = await client.get(Uri.parse(yesterdayUri));
+    final response = await retry(
+        () => client.get(Uri.parse(yesterdayUri)).timeout(Duration(seconds: 5)),
 
-      if (response.statusCode == 200) {
-        return fixturesFromJson(response.body);
-      } else{
-        throw Exception('Failed to Load Feed');
-      }
-      } catch (e) {
-        throw Exception('Failed to Load Feed');
+        retryIf: (e) => e is SocketException || e is TimeoutException);
+    if (response.statusCode != 200){
+      return fixturesFromJson('Error ${response.statusCode}: \nCannot Fetch Feed');
+    } else {
+      return fixturesFromJson(response.body);
     }
   }
 
   static Future<List<Fixtures>> fetchTomorrowsMatches() async {
-    try {
-    final response = await client.get(Uri.parse(tomorrowUri));
-
-    if (response.statusCode == 200) {
-      return fixturesFromJson(response.body);
-    } else {
-      throw Exception('Failed to Load Feed');
-    } } catch (e) {
-      throw Exception('Failed to Load Feed');
-    }
+    final response = await retry(
+        () => client.get(Uri.parse(tomorrowUri)).timeout(Duration(seconds: 5)),
+        retryIf: (e) => e is SocketException || e is TimeoutException);
+    // if (response.statusCode == 200){
+    return fixturesFromJson(response.body);
   }
 
   static Future<List<Fixtures>> fetchNextMatches() async {
-    try {
-      final response = await client.get(Uri.parse(nextUri));
+    final response = await retry(
+        () => client.get(Uri.parse(nextUri)).timeout(Duration(seconds: 5)),
 
-      if (response.statusCode == 200) {
-        return fixturesFromJson(response.body);
-      } else {
-        throw Exception('Failed to Load Feed');
-      } 
-
-    } 
-    catch (e) {
-      throw Exception('Failed to Load Feed');
-    }
+        retryIf: (e) => e is SocketException || e is TimeoutException);
+    // if (response.statusCode == 200){
+    return fixturesFromJson(response.body);
   }
 
   static Future<List<Players>> fetchPlayers() async {
-    try{
-    final response = await client.get(Uri.parse(playerURI));
+    final response = await retry(
+        () => client.get(Uri.parse(playerURI)).timeout(Duration(seconds: 5)),
+        maxAttempts: 3,
+        retryIf: (e) => e is SocketException || e is TimeoutException);
+    // if (response.statusCode == 200){
+    return playersFromJson(response.body);
+  }
 
-    if (response.statusCode == 200) {
-      return playersFromJson(response.body);
-    } else {
-      throw Exception('Failed to Load Feed');
-    }
-    } catch (e){
-      throw Exception('Failed to Load Feed');
-    }
+  static Future<List<RssItem>?> fetchNews() async{
+    final response =  await retry(
+      () => client.get(Uri.parse(newsFeed)).timeout(Duration(seconds: 5)),
+      retryIf: (e) => e is SocketException || e is TimeoutException
+    );
+    var news = RssFeed.parse(response.body);
+    return news.items;
   }
 }

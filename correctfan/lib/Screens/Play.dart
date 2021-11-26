@@ -6,7 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'Play/Lobby.dart';
 
 class Play extends StatefulWidget {
-  // const Play({ Key? key }) : super(key: key);
+  const Play({ Key? key }) : super(key: key);
 
   @override
   _PlayState createState() => _PlayState();
@@ -20,6 +20,7 @@ class _PlayState extends State<Play> {
   // The number of tabs / content sections to display.
   length: 3,
   child: Scaffold(
+    
     backgroundColor: Colors.white,
     drawer: CustomDrawer(), 
     appBar: AppBar(

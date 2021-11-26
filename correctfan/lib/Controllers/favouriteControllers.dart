@@ -13,6 +13,8 @@ class FavouriteTeamController extends GetxController{
     super.onInit();
   }
 
+  
+
   final favourites = [].obs;
   var clubList = List<Clubs>.empty().obs;
 
@@ -23,3 +25,4 @@ class FavouriteTeamController extends GetxController{
   }
 
 }
+

@@ -13,6 +13,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'Screens/Drawer/TransactionHistory.dart';
 import 'Screens/Drawer/Verification/AccountVerification.dart';
 import 'constants/controllers.dart';
+import 'models/newsModel.dart';
 // import 'package:flip_panel/flip_panel.dart';
 
 
@@ -103,123 +104,7 @@ class Button extends StatelessWidget {
 
 
 
-class NewsFeed extends StatefulWidget {
-  const NewsFeed({ Key? key }) : super(key: key);
 
-  @override
-  _NewsFeedState createState() => _NewsFeedState();
-}
-
-class _NewsFeedState extends State<NewsFeed> {
-  @override
-  Widget build(BuildContext context) {
-
-    return GestureDetector(
-      onTap: () => Get.toNamed('News Detail'),
-      child: Card(
-        elevation: 8,
-        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: primary,
-                        child: Text('A'),
-                      ),
-                      SizedBox(width: 4,),
-                      Text(
-                      'MARTIN ODEGAARD CONFIRMS\nARSENAL EXIT',
-                      textWidthBasis: TextWidthBasis.parent,
-                      softWrap: true,
-                      style: AppTheme.headline4(context, primary))
-                    ],
-            ),
-                      SizedBox(height: 8,),
-    
-                  Text('Martin Odegaard penned a heartfelt goodbye message to\nArsenal fans after confirming he would return to Real Madrid.',
-                    style: AppTheme.headline5(context, black),),
-    
-                    Row(
-                      children: [
-                        Spacer(
-                          flex: 1,
-                        ),
-                        Text(
-                          '2hrs ago',
-                          style: GoogleFonts.inter(
-                            color: Colors.grey[300],
-                            fontStyle: FontStyle.italic,
-                          ),
-                        )
-                      ],
-                    )
-                ],
-              ),
-                
-    
-              SizedBox(height: 8,),
-    
-              Container(
-                height: 160,
-                width: 320,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Color.fromARGB(50, 229, 229, 229)
-                ),
-                child: Container(
-                  child: SvgPicture.asset('assets/images/logo.svg',
-                    color: Color.fromARGB(100, 229, 229, 229),),
-                )
-              ),
-    
-              SizedBox(height: 16,),
-    
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  // Container(
-                  //   height: 24,
-                  //   width: 120,
-                  //   child: TextField(
-                  //     decoration: InputDecoration(
-                  //       border: OutlineInputBorder(
-                  //         borderRadius: BorderRadius.circular(8),
-                  //         borderSide: BorderSide(
-                  //           style: BorderStyle.solid,
-                  //           color: Color(0xFFBDBDBD),
-                  //           width: 1
-                  //         )
-                  //         )
-                  //       )),
-                  // ),
-                  Row(children: [
-                    Icon(Icons.message),
-                    Text('data')
-                  ],),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                    Icon(Icons.favorite),
-                    Text('data')
-                  ],),
-                ],
-              ),
-    
-            ]
-          ),
-        ),
-      ),
-    );
-  }
-}
 
 
 

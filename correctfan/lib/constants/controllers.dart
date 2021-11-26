@@ -1,6 +1,7 @@
 import 'package:correctfan/Controllers/authControllers.dart';
 import 'package:correctfan/Controllers/favouriteControllers.dart';
 import 'package:correctfan/Controllers/matchesController.dart';
+import 'package:correctfan/Controllers/newsController.dart';
 import 'package:correctfan/Controllers/playerController.dart';
 import 'package:get/get.dart';
 
@@ -19,3 +20,4 @@ NextMatchesController nextController = NextMatchesController.nextInstance;
 
 // Initialize fetchPlayer Controller
 PlayerController playerController = PlayerController.playerInstance;
+

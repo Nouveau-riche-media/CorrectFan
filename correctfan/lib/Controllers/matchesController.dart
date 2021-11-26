@@ -16,7 +16,7 @@ class TodaysMatchesController extends GetxController {
 
   var fixtures = List<Fixtures>.empty().obs;
 
- Future<List<Fixtures>> getTodaysMatches() async {
+  Future<List<Fixtures>> getTodaysMatches() async {
    var matches = await RemoteServices.fetchTodaysMatches();
    fixtures.value = matches;
    return matches;

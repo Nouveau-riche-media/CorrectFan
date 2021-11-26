@@ -1,6 +1,10 @@
 // import 'package:correctfan/constants/ui.dart';
+import 'package:correctfan/Controllers/newsController.dart';
+import 'package:correctfan/models/newsModel.dart';
+import 'package:correctfan/constants/controllers.dart';
 import 'package:correctfan/widgets.dart';
 import 'package:correctfan/widgets/Drawer.dart';
+import 'package:correctfan/widgets/NewsContent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/svg.dart';
@@ -12,6 +16,7 @@ class News extends StatefulWidget {
   @override
   _NewsState createState() => _NewsState();
 }
+
 
 class _NewsState extends State<News> {
   @override
@@ -63,10 +68,30 @@ class _NewsState extends State<News> {
         
 
       // feed
-      body: ListView.builder(
-        itemBuilder: (x, index) => NewsFeed(),
-        itemCount: 4,
-        )
+      body: FutureBuilder(
+        future: fetchNews(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            final news = snapshot.data as List; 
+            return ListView.builder(
+                  itemBuilder: (context, index) {
+                    final NewsModel item = news[index];
+
+                    return newsFeed(
+                    context, item.title!, item.body
+                    );
+                  },
+                  itemCount: news.length,
+                );
+          } else if (snapshot.hasError) {
+            return Center(
+              child: Text('''${snapshot.hasError.toString()} unable to fetch data:, \n please check your internet connection and try again'''),);
+          } else {
+            return CircularProgressIndicator();
+          }
+          
+        }
+      )
       );
   }
 }

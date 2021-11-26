@@ -52,6 +52,12 @@ class _LiveScoreState extends State<LiveScore> {
   // var month = DateTime.now().month;
   // var day = DateTime.now().day;
   
+  List<Widget> view = [
+    Yesterday(),
+    Today(),
+    Tomorrow(),
+    Next(),
+  ];
   
   
   @override

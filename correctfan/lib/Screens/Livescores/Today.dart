@@ -1,6 +1,9 @@
-import 'package:correctfan/Controllers/matchesController.dart';
+import 'package:correctfan/constants/api.dart';
+import 'package:correctfan/services/api_methods.dart';
+import 'package:http/http.dart' as http;
 import 'package:correctfan/constants/controllers.dart';
 import 'package:correctfan/constants/ui.dart';
+
 import 'package:correctfan/widgets/LiveScores.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -14,8 +17,6 @@ class Today extends StatefulWidget {
   @override
   _TodayState createState() => _TodayState();
 }
-
-// final TodaysMatchesController todaysFixtures = Get.find();
 
 class _TodayState extends State<Today> {
 
@@ -48,13 +49,16 @@ class _TodayState extends State<Today> {
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 32),
                     height: height(2, context) + 32,
-                    child: Obx(() => ListView.separated(
+                    child: Obx(() {
+                      return ListView.separated(
                         itemBuilder: (context, index) =>
                             LiveScores(todayController.fixtures[index]),
                         separatorBuilder: (index, x) => Divider(
                               color: Theme.of(context).primaryColor,
                             ),
-                        itemCount: todayController.fixtures.length)),
+                        itemCount: todayController.fixtures.length);
+                      }
+                    ),
                   )
                 ]),
           ),

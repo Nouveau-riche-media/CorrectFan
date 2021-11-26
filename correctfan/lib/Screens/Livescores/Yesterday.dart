@@ -28,6 +28,7 @@ class _YesterdayState extends State<Yesterday> {
             padding: EdgeInsets.symmetric(vertical: 16),
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
+                // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SvgPicture.asset('assets/images/pl.svg'),
                   SizedBox(height: 8),
@@ -43,15 +44,54 @@ class _YesterdayState extends State<Yesterday> {
                     indent: 8,
                     endIndent: 8,
                   ),
+
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 32),
-                    height: height(2, context) + 32,
-                    child: Obx(() => ListView.separated(
-                        itemBuilder: (context, index) => LiveScores(yesterdayController.fixtures[index]),
-                        separatorBuilder: (index, x) => Divider(
-                              color: Theme.of(context).primaryColor,
-                            ),
-                        itemCount: yesterdayController.fixtures.length)),
+                    margin: EdgeInsets.all(12),
+                    child: ListView(
+                      // mainAxisAlignment: MainAxisAlignment.center,
+                      // scrollDirection: Axis.horizontal,
+                      // physics: Ne verScrollableScrollPhysics(),
+                      children: [
+                        Container(
+                          // padding: EdgeInsets.symmetric(horizontal: 32),
+                          height: height(2, context) + 32,
+                          width: width(2, context),
+                          child: Obx(() => ListView.builder(
+                              itemBuilder: (context, index) =>
+                                  Home(yesterdayController.fixtures[index]),
+                              // separatorBuilder: (index, x) => Divider(
+                              //       color: Theme.of(context).primaryColor,
+                              //     ),
+                              itemCount: yesterdayController.fixtures.length)),
+                        ),
+
+                        Container(
+                          // padding: EdgeInsets.symmetric(horizontal: 32),
+                          height: height(2, context) + 32,
+                          width: width(8, context),
+                          child: Obx(() => ListView.builder(
+                              itemBuilder: (context, index) =>
+                                  LiveScores(yesterdayController.fixtures[index]),
+                              // separatorBuilder: (index, x) => Divider(
+                              //       color: Theme.of(context).primaryColor,
+                              //     ),
+                              itemCount: yesterdayController.fixtures.length)),
+                        ),
+
+                        Container(
+                          // padding: EdgeInsets.symmetric(horizontal: 32),
+                          height: height(2, context) + 32,
+                          width: width(2, context),
+                          child: Obx(() => ListView.builder(
+                              itemBuilder: (context, index) =>
+                                  Away(yesterdayController.fixtures[index]),
+                              // separatorBuilder: (index, x) => Divider(
+                              //       color: Theme.of(context).primaryColor,
+                              //     ),
+                              itemCount: yesterdayController.fixtures.length)),
+                        ),
+                      ],
+                    ),
                   )
                 ]),
           ),

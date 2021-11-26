@@ -1,6 +1,8 @@
 import 'dart:io';
 
+import 'package:correctfan/Controllers/newsController.dart';
 import 'package:correctfan/Controllers/playerController.dart';
+
 
 import 'package:correctfan/Screens/Onboarding/onboarding1.dart';
 
@@ -46,6 +48,7 @@ class AuthController extends GetxController {
       Get.put(NextMatchesController());
       Get.put(TomorrowMatchesController());
       Get.put(PlayerController());
+      
       Get.offAll(() => MainPage());
     }
   }
