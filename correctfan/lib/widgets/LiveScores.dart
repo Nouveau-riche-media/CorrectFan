@@ -20,19 +20,32 @@ class LiveScores extends StatelessWidget {
     return GestureDetector(
         onTap: () => Navigator.pushNamed(context, 'LiveScoreDetails'),
         child: Center(
-            child: Column(
+            child: Row(
               children: [
                 Text(
-                  fixtures.clock.toString(),
-                  style: AppTheme.headline6(
-                      context, Colors.green, FontWeight.bold),
+                  fixtures.homeTeamName.toString(),
+                  style: AppTheme.headline4(context, black),
                 ),
+                Column(
+                  children: [
+                    Text(
+                      fixtures.clock.toString(),
+                      style: AppTheme.headline6(
+                          context, Colors.green, FontWeight.bold),
+                    ),
+                    Text(
+                      scores(),
+                      style: AppTheme.headline4(context, black, FontWeight.bold),
+                    )
+                  ],),
+
                 Text(
-                  scores(),
-                  style: AppTheme.headline4(context, black, FontWeight.bold),
-                )
-              ],
-            )));
+              fixtures.homeTeamName.toString(),
+              style: AppTheme.headline6(context, black),
+                ),
+            ])
+          )
+        );
   }
 }
 

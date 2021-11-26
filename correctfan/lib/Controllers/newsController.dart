@@ -12,7 +12,6 @@ Future fetchNews() async {
   if (response.statusCode == 200){
     var decode = RssFeed.parse(response.body);
 
-    
     return decode.items!.map((item) => NewsModel(
       title: item.title,
       body: item.description!,

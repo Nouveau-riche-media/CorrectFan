@@ -1,4 +1,3 @@
-import 'package:correctfan/Controllers/matchesController.dart';
 import 'package:correctfan/constants/controllers.dart';
 import 'package:correctfan/constants/ui.dart';
 import 'package:correctfan/widgets/LiveScores.dart';
@@ -14,7 +13,6 @@ class Yesterday extends StatefulWidget {
   _YesterdayState createState() => _YesterdayState();
 }
 
-// final YesterdayMatchesController yesterdayFixtures = Get.find();
 
 class _YesterdayState extends State<Yesterday> {
   @override
@@ -47,50 +45,17 @@ class _YesterdayState extends State<Yesterday> {
 
                   Container(
                     margin: EdgeInsets.all(12),
-                    child: ListView(
-                      // mainAxisAlignment: MainAxisAlignment.center,
-                      // scrollDirection: Axis.horizontal,
-                      // physics: Ne verScrollableScrollPhysics(),
-                      children: [
-                        Container(
-                          // padding: EdgeInsets.symmetric(horizontal: 32),
-                          height: height(2, context) + 32,
-                          width: width(2, context),
-                          child: Obx(() => ListView.builder(
-                              itemBuilder: (context, index) =>
-                                  Home(yesterdayController.fixtures[index]),
-                              // separatorBuilder: (index, x) => Divider(
-                              //       color: Theme.of(context).primaryColor,
-                              //     ),
-                              itemCount: yesterdayController.fixtures.length)),
-                        ),
-
-                        Container(
-                          // padding: EdgeInsets.symmetric(horizontal: 32),
-                          height: height(2, context) + 32,
-                          width: width(8, context),
-                          child: Obx(() => ListView.builder(
-                              itemBuilder: (context, index) =>
-                                  LiveScores(yesterdayController.fixtures[index]),
-                              // separatorBuilder: (index, x) => Divider(
-                              //       color: Theme.of(context).primaryColor,
-                              //     ),
-                              itemCount: yesterdayController.fixtures.length)),
-                        ),
-
-                        Container(
-                          // padding: EdgeInsets.symmetric(horizontal: 32),
-                          height: height(2, context) + 32,
-                          width: width(2, context),
-                          child: Obx(() => ListView.builder(
-                              itemBuilder: (context, index) =>
-                                  Away(yesterdayController.fixtures[index]),
-                              // separatorBuilder: (index, x) => Divider(
-                              //       color: Theme.of(context).primaryColor,
-                              //     ),
-                              itemCount: yesterdayController.fixtures.length)),
-                        ),
-                      ],
+                    child: Container(
+                      // padding: EdgeInsets.symmetric(horizontal: 32),
+                      height: height(2, context) + 32,
+                      width: width(2, context),
+                      child: Obx(() => ListView.builder(
+                          itemBuilder: (context, index) =>
+                              LiveScores(yesterdayController.fixtures[index]),
+                          // separatorBuilder: (index, x) => Divider(
+                          //       color: Theme.of(context).primaryColor,
+                          //     ),
+                          itemCount: yesterdayController.fixtures.length)),
                     ),
                   )
                 ]),

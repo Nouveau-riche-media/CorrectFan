@@ -76,33 +76,32 @@ import 'package:google_fonts/google_fonts.dart';
               SizedBox(
                 height: 16,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  // Container(
-                  //   height: 24,
-                  //   width: 120,
-                  //   child: TextField(
-                  //     decoration: InputDecoration(
-                  //       border: OutlineInputBorder(
-                  //         borderRadius: BorderRadius.circular(8),
-                  //         borderSide: BorderSide(
-                  //           style: BorderStyle.solid,
-                  //           color: Color(0xFFBDBDBD),
-                  //           width: 1
-                  //         )
-                  //         )
-                  //       )),
-                  // ),
-                  Row(
-                    children: [Icon(Icons.message), Text('data')],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [Icon(Icons.favorite), Text('data')],
-                  ),
-                ],
-              ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //   children: [
+              //     // Container(
+              //     //   height: 24,
+              //     //   width: 120,
+              //     //   child: TextField(
+              //     //     decoration: InputDecoration(
+              //     //       border: OutlineInputBorder(
+              //     //         borderRadius: BorderRadius.circular(8),
+              //     //         borderSide: BorderSide(
+              //     //           style: BorderStyle.solid,
+              //     //           color: Color(0xFFBDBDBD),
+              //     //           width: 1
+              //     //         )
+              //     //         )
+              //     //       )),
+              //     // ),
+              //     Row(
+              //       children: [Icon(Icons.message), Text('data')],
+              //     ),
+              //     Row(
+              //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //       children: [Icon(Icons.favorite), Text('data')],
+              //     ),
+                // ],),
             ]),
       ),
     );

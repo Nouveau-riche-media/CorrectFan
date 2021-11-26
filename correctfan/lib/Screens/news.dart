@@ -76,7 +76,6 @@ class _NewsState extends State<News> {
             return ListView.builder(
                   itemBuilder: (context, index) {
                     final NewsModel item = news[index];
-
                     return newsFeed(
                     context, item.title!, item.body
                     );
