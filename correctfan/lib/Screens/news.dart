@@ -2,14 +2,12 @@
 import 'package:correctfan/Controllers/newsController.dart';
 import 'package:correctfan/constants/ui.dart';
 import 'package:correctfan/models/newsModel.dart';
-import 'package:correctfan/constants/controllers.dart';
-import 'package:correctfan/widgets.dart';
 import 'package:correctfan/widgets/Drawer.dart';
 import 'package:correctfan/widgets/NewsContent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/svg.dart';
-// import 'package:google_fonts/google_fonts.dart';
+
 
 class News extends StatefulWidget {
   // const News({ Key? key }) : super(key: key);
@@ -17,6 +15,7 @@ class News extends StatefulWidget {
   @override
   _NewsState createState() => _NewsState();
 }
+
 
 
 class _NewsState extends State<News> {
@@ -74,19 +73,29 @@ class _NewsState extends State<News> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             final news = snapshot.data as List; 
+            String? titlehandle(int index, NewsModel item) {
+              if (news.length < -1 && news[index] == 0) {
+                return 'More News Shortly';
+              } else {
+                return item.body;
+              }
+            }
             return ListView.builder(
-                  itemBuilder: (context, index) {
-                    final NewsModel item = news[index];
-                    return newsFeed(
-                    context, item.title!, item.body
-                    );
-                  },
-                  itemCount: news.length,
+              itemBuilder: (context, index) {
+                final NewsModel item = news[index];
+                return newsFeed(
+                context, item.title!, item.body
                 );
+              },
+              itemCount: news.length,
+            );
           } else if (snapshot.hasError) {
-            return Center(
-              child: Text('unable to fetch data:, please check your internet connection and try again',
-              style: AppTheme.headline5(context, grey),),);
+            return RefreshIndicator(
+              onRefresh:() => fetchNews(),
+              child: Center(
+                child: Text('unable to fetch data:, please check your internet connection and try again',
+                style: AppTheme.headline5(context, grey),),),
+            );
           } else {
             return Center(child: CircularProgressIndicator());
           }

@@ -1,15 +1,15 @@
-// import 'dart:convert';
-import 'package:flutter/material.dart';
 import 'package:webfeed/domain/media/media.dart';
+
 // import 'dart:html';
 // // import 'package:flutter/material.dart';
 // import 'package:webfeed/webfeed.dart';
 
-// List<News> playersFromJson(String str) =>
-//     List<News>.from(json.decode(str).map((x) => News.fromRss(x)));
+// List<NewsModel> newsFromJson(String str) =>
+//     List<NewsModel>.from(json.decode(str).map((x)));
 
 // String playersToJson(List<News> data) =>
 //     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+  
 
 class NewsModel {
   NewsModel({
@@ -25,9 +25,3 @@ class NewsModel {
   String? author;
   Media? image;
 }
-
-// factory RssFeed.parse(String xmlString) {
-//   return RssFeed(
-//     title: rsFeed[title]
-//   );
-// }

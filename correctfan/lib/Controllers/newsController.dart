@@ -11,16 +11,13 @@ Future fetchNews() async {
 
   if (response.statusCode == 200){
     var decode = RssFeed.parse(response.body);
-
-    return decode.items!.map((item) => NewsModel(
+    var news = decode.items!.map((item) => NewsModel(
       title: item.title,
       body: item.description,
       image: item.media,
     )).toList();
+    return news;
   } else {
-    var error = RssFeed.parse(response.statusCode.toString());
-    return error.items!.map((e) => NewsModel(
-      body: 'Error Couldn\'t Fetch Feed', title: ''
-    )).toList();
+    throw Exception('Unable to load Feed');
   }
 }

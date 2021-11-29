@@ -6,13 +6,15 @@ import 'package:correctfan/constants/api.dart';
 import 'package:correctfan/models/clubs.dart';
 import 'package:correctfan/models/matches.dart';
 import 'package:correctfan/models/newsModel.dart';
+
 import 'package:correctfan/models/players.dart';
 import 'package:http/http.dart' as http;
 import 'package:retry/retry.dart';
-import 'package:webfeed/webfeed.dart';
+import 'package:webfeed/webfeed.dart' as rss;
 
 class RemoteServices {
   static var client = http.Client();
+  static var rssClient = http.Client();
 
 // Fetch Club List from API
   static Future<List<Clubs>> fetchClubs() async {
@@ -60,7 +62,7 @@ class RemoteServices {
     final response = await retry(
         () => client.get(Uri.parse(nextUri)).timeout(Duration(seconds: 5)),
 
-        retryIf: (e) => e is SocketException || e is TimeoutException);
+        retryIf: (e) => e is SocketException || e is TimeoutException );
     // if (response.statusCode == 200){
     return fixturesFromJson(response.body);
   }
@@ -68,18 +70,14 @@ class RemoteServices {
   static Future<List<Players>> fetchPlayers() async {
     final response = await retry(
         () => client.get(Uri.parse(playerURI)).timeout(Duration(seconds: 5)),
-        maxAttempts: 3,
         retryIf: (e) => e is SocketException || e is TimeoutException);
     // if (response.statusCode == 200){
     return playersFromJson(response.body);
   }
 
-  static Future<List<RssItem>?> fetchNews() async{
-    final response =  await retry(
-      () => client.get(Uri.parse(newsFeed)).timeout(Duration(seconds: 5)),
-      retryIf: (e) => e is SocketException || e is TimeoutException
-    );
-    var news = RssFeed.parse(response.body);
-    return news.items;
-  }
+  // static Future<List<NewsModel>> fetchNews() async {
+  //   final response = await retry(() => client.get(Uri.parse(newsFeed)).timeout(Duration(seconds: 5)),
+  //   retryIf: (e) => e is 
+  //   );
+  // }
 }

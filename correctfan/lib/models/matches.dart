@@ -84,7 +84,7 @@ class Fixtures {
   // Winner? winner;
   // VenueType? venueType;
   String? awayTeamKey;
-  String awayTeamName;
+  String? awayTeamName;
   String? awayTeamCountryCode;
   int? awayTeamScore;
   int? awayTeamScorePeriod1;
@@ -92,7 +92,7 @@ class Fixtures {
   dynamic awayTeamScoreExtraTime;
   dynamic awayTeamScorePenalty;
   String? homeTeamKey;
-  String homeTeamName;
+  String? homeTeamName;
   String? homeTeamCountryCode;
   int? homeTeamScore;
   int? homeTeamScorePeriod1;

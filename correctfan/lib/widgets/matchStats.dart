@@ -10,7 +10,7 @@ class MatchStats extends StatelessWidget {
     return Container(
       child: ListView.builder(
         itemCount: 7,
-        itemBuilder: (x, context) => Details()
+        itemBuilder: (context, index) => Details()
         ),
     );
   }

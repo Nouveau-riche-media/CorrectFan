@@ -1,10 +1,7 @@
 import 'package:correctfan/constants/ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-// import 'package:get/get.dart';
 
-
-  
 
   Widget newsFeed(BuildContext context, String title, String? body) {
 
@@ -28,7 +25,6 @@ import 'package:flutter_svg/svg.dart';
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  
                   Row(
                     children: [
                       // CircleAvatar(
@@ -41,14 +37,13 @@ import 'package:flutter_svg/svg.dart';
                       Expanded(
                         child: Text('''$title''',
                             textWidthBasis: TextWidthBasis.parent,
-                            
                             softWrap: true,
                             style: AppTheme.headline4(context, primary, FontWeight.bold)),
                       )
                     ],
                   ),
                   SizedBox(
-                    height: 8,
+                    height: 12,
                   ),
                   Text(
                     bodyText(),
@@ -119,3 +114,4 @@ import 'package:flutter_svg/svg.dart';
     );
   }
 
+  

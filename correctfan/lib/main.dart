@@ -1,5 +1,4 @@
 import 'package:correctfan/Controllers/authControllers.dart';
-import 'package:correctfan/Controllers/matchesController.dart';
 import 'package:correctfan/Screens/Inbox/InboxDetails.dart';
 // import 'package:correctfan/Screens/Livescores/Today.dart';
 import 'package:correctfan/Screens/News/NewsDetail.dart';
@@ -83,7 +82,7 @@ class MyApp extends StatelessWidget {
       //   textTheme: TextTheme(
             
       ),
-  
+      // initialRoute: 'on1',
       home: Splash(),
       // initialRoute: 'on1',
       routes: {

@@ -1,8 +1,12 @@
+import 'package:correctfan/constants/api.dart';
+import 'package:correctfan/services/api_methods.dart';
+import 'package:http/http.dart' as http;
 import 'package:correctfan/constants/controllers.dart';
 import 'package:correctfan/constants/ui.dart';
+
 import 'package:correctfan/widgets/LiveScores.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,7 +16,6 @@ class Yesterday extends StatefulWidget {
   @override
   _YesterdayState createState() => _YesterdayState();
 }
-
 
 class _YesterdayState extends State<Yesterday> {
   @override
@@ -26,7 +29,6 @@ class _YesterdayState extends State<Yesterday> {
             padding: EdgeInsets.symmetric(vertical: 16),
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SvgPicture.asset('assets/images/pl.svg'),
                   SizedBox(height: 8),
@@ -42,21 +44,18 @@ class _YesterdayState extends State<Yesterday> {
                     indent: 8,
                     endIndent: 8,
                   ),
-
                   Container(
-                    margin: EdgeInsets.all(12),
-                    child: Container(
-                      // padding: EdgeInsets.symmetric(horizontal: 32),
-                      height: height(2, context) + 32,
-                      // width: width(2, context),
-                      child: Obx(() => ListView.separated(
+                    padding: EdgeInsets.symmetric(horizontal: 32),
+                    height: height(2, context) + 32,
+                    child: Obx(() {
+                      return ListView.separated(
                           itemBuilder: (context, index) =>
                               LiveScores(yesterdayController.fixtures[index]),
-                          separatorBuilder: (index, x) => Divider(
-                                color: Theme.of(context).primaryColor,
+                          separatorBuilder: (contrext, index) => Divider(
+                                color: blue
                               ),
-                          itemCount: yesterdayController.fixtures.length)),
-                    ),
+                          itemCount: yesterdayController.fixtures.length);
+                    }),
                   )
                 ]),
           ),
